@@ -41,7 +41,7 @@ export default function OurService() {
   );
 }
 
-export const dummyservices = [
+const dummyservices = [
   {
     id: 1,
     title: "Work in Canada",

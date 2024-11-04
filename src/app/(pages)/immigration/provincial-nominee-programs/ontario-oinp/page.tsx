@@ -2,7 +2,7 @@ import Container from "@/components/ui/container";
 import Glass from "@/lib/helpers";
 import { Feature } from "@/components/ui/cards-set";
 import Title from "@/components/ui/Title";
-import { featuresPage } from "../alberta-immigration-aaip/page";
+import { featuresPage } from "@/components/ui/appointmentMap";
 
 export default function Ontario() {
   return (

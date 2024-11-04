@@ -1,12 +1,12 @@
 import Container from "@/components/ui/container";
 import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
-// import { featuresPage } from "./alberta-immigration-aaip";
+
 import { Feature } from "@/components/ui/cards-set";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { featuresPage } from "../alberta-immigration-aaip/page";
-import { FAQ } from "../../express-entry/federal-skilled-worker/page";
-// import { FAQ } from "../express-entry/federal-skilled-worker";
+
+import { FAQ } from "@/components/ui/FAQMap";
+import { featuresPage } from "@/components/ui/appointmentMap";
 
 export default function BritishColumbia() {
   return (

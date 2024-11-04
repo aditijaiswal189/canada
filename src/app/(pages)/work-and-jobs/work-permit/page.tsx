@@ -5,8 +5,7 @@ import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
 import { Feature } from "@/components/ui/cards-set";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { FAQ } from "../../immigration/express-entry/federal-skilled-worker/page";
-// import { FAQ } from "../immigration/express-entry/federal-skilled-worker";
+import { FAQ } from "@/components/ui/FAQMap";
 
 export default function WorkPermit() {
   return (

@@ -9,8 +9,7 @@ import { Feature } from "@/components/ui/cards-set";
 import { ServicesCard } from "@/components/ui/services-card";
 import { truncateTextHeading } from "@/components/ui/newsCard";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { FAQ } from "@/app/(pages)/immigration/express-entry/federal-skilled-worker/page";
-// import { FAQ } from "../immigration/express-entry/federal-skilled-worker";
+import { FAQ } from "@/components/ui/FAQMap";
 
 export default function StudyInCanada() {
   return (

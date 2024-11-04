@@ -6,7 +6,8 @@ import { truncateTextHeading } from "@/components/ui/cta";
 import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { FAQ } from "../../express-entry/federal-skilled-worker/page";
+import { FAQ } from "@/components/ui/FAQMap";
+import { featuresPage } from "@/components/ui/appointmentMap";
 
 export default function Alberta() {
   return (
@@ -327,51 +328,6 @@ const faqAlberta = [
           permanent residency.
         </li>
       </ul>
-    ),
-  },
-];
-export const featuresPage = [
-  {
-    id: 1,
-    title: "Profile Assessment",
-    description:
-      "Our RCIC and expert team can evaluate your qualifications, work experience, and personal circumstances to identify your potential jobs and employers in Canada.",
-    icon: (
-      <Icon
-        icon="material-symbols:person-apron"
-        className="text-6xl w-[50px]"
-      />
-    ),
-  },
-  {
-    id: 2,
-    title: "Provincial Nominee Programs (PNPs)",
-    description:
-      "We can advise on PNPs and help you prepare for provincial nominations, which is suitable with your experiences.",
-    icon: (
-      <Icon
-        icon="material-symbols-light:qr-code-2-rounded"
-        className="text-6xl w-[50px]"
-      />
-    ),
-  },
-  {
-    id: 3,
-    title: "Secure a Job Offers",
-    description:
-      "We can assist in searching for job in Canada. We can also help you understand the requirements for a valid job offer, resume preparation and interview coaching.",
-    icon: <Icon icon="oui:ml-regression-job" className="text-6xl w-[50px]" />,
-  },
-  {
-    id: 4,
-    title: "Educational credential assessment",
-    description:
-      "We can help you navigate the process of obtaining an ECA for your foreign educational credentials,",
-    icon: (
-      <Icon
-        icon="streamline:quality-education-solid"
-        className="text-6xl w-[50px]"
-      />
     ),
   },
 ];

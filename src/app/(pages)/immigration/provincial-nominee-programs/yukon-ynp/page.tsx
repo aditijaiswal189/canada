@@ -3,7 +3,7 @@ import Container from "@/components/ui/container";
 import Glass from "@/lib/helpers";
 import Title from "@/components/ui/Title";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { featuresPage } from "../alberta-immigration-aaip/page";
+import { featuresPage } from "@/components/ui/appointmentMap";
 
 export default function Yukon() {
   return (

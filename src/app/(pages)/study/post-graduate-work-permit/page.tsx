@@ -3,8 +3,7 @@ import Container from "@/components/ui/container";
 import { CTADefault } from "@/components/ui/cta";
 import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
-import { FAQ } from "@/app/(pages)/immigration/express-entry/federal-skilled-worker/page";
-// import { FAQ } from "../immigration/express-entry/federal-skilled-worker";
+import { FAQ } from "@/components/ui/FAQMap";
 
 export default function PostGraduateWorkPermit() {
   return (

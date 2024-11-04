@@ -3,9 +3,8 @@ import Container from "@/components/ui/container";
 import { CTADefault } from "@/components/ui/cta";
 import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
-// import { featuresPage } from "../immigration/provincial-nominee-programs/alberta-immigration-aaip";
 import { Feature } from "@/components/ui/cards-set";
-import { featuresPage } from "../../immigration/provincial-nominee-programs/alberta-immigration-aaip/page";
+import { featuresPage } from "@/components/ui/appointmentMap";
 
 export default function Lmia() {
   return (

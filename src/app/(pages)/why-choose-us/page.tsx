@@ -5,7 +5,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
 import { Feature } from "@/components/ui/cards-set";
 import Title from "@/components/ui/Title";
-import { appointment } from "../book-appointment/page";
+import { appointment } from "@/components/ui/appointmentMap";
 
 export default function WhyChooseUs() {
   return (

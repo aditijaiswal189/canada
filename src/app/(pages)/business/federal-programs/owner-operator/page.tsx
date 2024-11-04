@@ -1,5 +1,6 @@
 import { Feature } from "@/components/ui/cards-set";
 import Container from "@/components/ui/container";
+import { Eligibility } from "@/components/ui/eligibilityMap";
 import HoverCard from "@/components/ui/hover-card";
 import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
@@ -119,34 +120,5 @@ const features = [
         className="text-6xl w-[50px]"
       />
     ),
-  },
-];
-
-export const Eligibility = [
-  {
-    id: 1,
-    title:
-      "Structure ownership relationships between the Company and Temporary Foreign Worker Submit Owner Operator",
-  },
-  {
-    id: 2,
-    title: "LMIA application to the Government of Canada",
-  },
-  {
-    id: 3,
-    title:
-      "Apply for and receive Work Permit at Canada Land Border Crossing based on LMIA",
-  },
-  {
-    id: 4,
-    title: "Apply for Express Entry Federal Skilled Worker",
-  },
-  {
-    id: 5,
-    title: "Invitation to apply for Permanent Residence",
-  },
-  {
-    id: 6,
-    title: "Application for Permanent Residence",
   },
 ];

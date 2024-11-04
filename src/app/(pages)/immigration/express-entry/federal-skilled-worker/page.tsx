@@ -12,7 +12,8 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { truncateTextHeading } from "@/components/ui/newsCard";
 import { ServicesCard } from "@/components/ui/services-card";
 import { Button } from "@/components/ui/custom";
-import { workersList } from "../federal-skilled-trade/page";
+import { workersList } from "@/components/ui/workerlistMap";
+import { FAQ } from "@/components/ui/FAQMap";
 export default function FedralSkilledWorker() {
   return (
     <>
@@ -105,29 +106,6 @@ export default function FedralSkilledWorker() {
     </>
   );
 }
-
-export const FAQ = ({
-  title,
-  description,
-}: {
-  title?: string;
-  description?: void;
-}) => {
-  return (
-    <Accordion
-      type="single"
-      collapsible
-      className="w-full px-2 md:px-0 flex flex-col gap-2"
-    >
-      <AccordionItem value="item-1" className="w-full ">
-        <AccordionTrigger>{title}</AccordionTrigger>
-        <AccordionContent className="">
-          <div className="flex flex-col gap-2 my-2">{description}</div>
-        </AccordionContent>
-      </AccordionItem>
-    </Accordion>
-  );
-};
 
 function CTA() {
   return (
