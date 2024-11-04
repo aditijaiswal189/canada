@@ -15,7 +15,7 @@ import { supabase } from "@/lib/supabase";
 export default function Post() {
   // let postId = useParams();
   // postId = postId.id;
-  let { id } = useParams();
+  const { id } = useParams();
 
   const postId = Array.isArray(id) ? id[0] : id;
   interface PostData {
