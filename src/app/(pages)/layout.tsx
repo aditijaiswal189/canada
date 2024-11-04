@@ -1,6 +1,6 @@
 import Footer from "@/components/ui/footer";
 import HeroDefault from "@/components/ui/hero-all";
-import React from "react";
+import React, { ReactNode } from "react";
 
 interface PageLayoutProps {
   children: ReactNode;
