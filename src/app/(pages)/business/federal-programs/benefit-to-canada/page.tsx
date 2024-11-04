@@ -37,7 +37,7 @@ export default function BenefitToCanada() {
             }
             title={"Economic Contributions"}
             description={
-              "Foreign artists, performers, or cultural figures who can enrich Canada's cultural landscape may be considered"
+              "Foreign artists, performers, or cultural figures who can enrich Canada&aposs cultural landscape may be considered"
             }
           />
           <HoverCard
@@ -61,7 +61,7 @@ export default function BenefitToCanada() {
             icon={"arcticons:netbenefits"}
             title={"Other Significant Benefits"}
             description={
-              "The provision is flexible and can apply to various scenarios where the individual's presence in Canada would bring substantial advantages"
+              "The provision is flexible and can apply to various scenarios where the individual&aposs presence in Canada would bring substantial advantages"
             }
           />
         </div>
@@ -71,11 +71,14 @@ export default function BenefitToCanada() {
           <Title
             title={"Eligibility"}
             description={
-              "You should also demonstrate the benefit of their activities to Canada's culture, society, and economy and show groundwork in Canada, like establishing business contacts, accommodation, and business location for self-employed individuals."
+              "You should also demonstrate the benefit of their activities to Canada&aposs culture, society, and economy and show groundwork in Canada, like establishing business contacts, accommodation, and business location for self-employed individuals."
             }
           />
-          {Eligibility.map((item) => (
-            <div className="text-left flex gap-2 items-start justify-center">
+          {Eligibility.map((item, index) => (
+            <div
+              key={index}
+              className="text-left flex gap-2 items-start justify-center"
+            >
               <Icon
                 icon={"material-symbols:library-add-check-rounded"}
                 className="mt-1"

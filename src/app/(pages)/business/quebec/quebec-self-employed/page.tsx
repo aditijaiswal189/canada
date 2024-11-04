@@ -20,7 +20,7 @@ export default function SelfEmployed() {
           individuals with experience in cultural, artistic, or athletic fields
           who wish to pursue their self-employed career in Québec. It provides a
           pathway to Canadian permanent residency and the opportunity to
-          contribute to Québec's vibrant cultural and artistic communities.
+          contribute to Québec&aposs vibrant cultural and artistic communities.
         </p>
       </div>
       <FeatureSection
@@ -36,8 +36,8 @@ export default function SelfEmployed() {
       >
         <div className="flex w-full flex-col gap-4 justify-start items-start ">
           <p className="text-left">List of conditions to be honoured:.</p>
-          {quebecFAQ.map((item) => (
-            <FAQ description={item.answer} title={item.question} />
+          {quebecFAQ.map((item, index) => (
+            <FAQ key={index} description={item.answer} title={item.question} />
           ))}
         </div>
       </FeatureSection>
@@ -48,8 +48,9 @@ export default function SelfEmployed() {
           description="To establish and run an innovative business in Québec, you are required to collaborate with a support organization, which could be a business accelerator, business incubator, or a university entrepreneurship center"
         />
         <div className="flex gap-4">
-          {points.map((item) => (
+          {points.map((item, index) => (
             <ServicesCard
+              key={index}
               title={item.title}
               description={truncateTextHeading(item.description, 22)}
             />
@@ -111,7 +112,7 @@ H2Y 1T8 CANADA"
             className="justify-center items-center mt-4"
             title={
               <p className="text-2xl text-black/50 w-full text">
-                Take the first step towards your family's Canadian dream
+                Take the first step towards your family&aposs Canadian dream
               </p>
             }
             description={
@@ -218,7 +219,7 @@ const features = [
     id: 2,
     title: "Guidance on Provincial Requirements",
     description:
-      "Québec has specific immigration requirements, and we can provide guidance on how to fulfill these requirements, including the completion of a Québec Selection Certificate (CSQ) application. We assist in calculating the applicant's points under the Québec immigration system, helping to ensure that you meets the minimum required points for eligibility",
+      "Québec has specific immigration requirements, and we can provide guidance on how to fulfill these requirements, including the completion of a Québec Selection Certificate (CSQ) application. We assist in calculating the applicant&aposs points under the Québec immigration system, helping to ensure that you meets the minimum required points for eligibility",
 
     icon: (
       <Icon

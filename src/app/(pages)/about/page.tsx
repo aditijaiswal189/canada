@@ -76,6 +76,7 @@ export default function About() {
           //   flip={false}
           // />
           <MovingCardBorder
+            key={index}
             animate
             color="w-[450px] bg-gray-100 bg-opacity-20 backdrop-blur-md h-[500px] flex-wrap"
           >
@@ -89,7 +90,10 @@ export default function About() {
             </div>
             <div className="flex gap-1.5 flex-col justify-start items-start w-full px-6 relative z-10">
               {item.list.map((item, index) => (
-                <li className="list-none flex gap-1 justify-start items-start text-left text-black/60">
+                <li
+                  key={index}
+                  className="list-none flex gap-1 justify-start items-start text-left text-black/60"
+                >
                   <div className="w-6 mt-2">
                     <Icon
                       icon={"material-symbols:bookmark-check-outline-rounded"}
@@ -292,11 +296,11 @@ export default function About() {
                     Government of Canada Licensed
                   </h4>
                   <p className="text-sm">
-                    We are authorized to legally represent our clients' files,
-                    working directly with the Immigration Department of Canada
-                    and the Government of Canada. Our RCIC experts ensure that
-                    our clients' files are processed accurately, legally, and
-                    securely.
+                    We are authorized to legally represent our clients&apos
+                    files, working directly with the Immigration Department of
+                    Canada and the Government of Canada. Our RCIC experts ensure
+                    that our clients&apos files are processed accurately,
+                    legally, and securely.
                   </p>
                 </div>
               </MovingCardBorder>

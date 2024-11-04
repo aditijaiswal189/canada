@@ -35,15 +35,18 @@ export default function InDemandJobs() {
               </h3>
 
               <p className="text-sm text-black/60 text-left">
-                GreenTech Resources Worldwide Canada's partners currently have a
-                demand for hiring foreign workers for the following positions.
-                Please contact us to submit your application and arrange for
-                interviews
+                GreenTech Resources Worldwide Canada&aposs partners currently
+                have a demand for hiring foreign workers for the following
+                positions. Please contact us to submit your application and
+                arrange for interviews
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4   h-max justify-center items-center">
                 {data.map((item, index) => (
                   <CardDemo>
-                    <div className="flex flex-col gap-0 w-full px-6 relative z-10">
+                    <div
+                      key={index}
+                      className="flex flex-col gap-0 w-full px-6 relative z-10"
+                    >
                       <h5 className="text-4xl text-left text-highlight">
                         {item.title}
                       </h5>
@@ -53,7 +56,10 @@ export default function InDemandJobs() {
                     </div>
                     <div className="flex gap-1.5 flex-col justify-start items-start w-full px-6 relative z-10">
                       {item.list.map((item, index) => (
-                        <li className="list-none flex gap-1 justify-start items-start text-left text-black/60">
+                        <li
+                          key={index}
+                          className="list-none flex gap-1 justify-start items-start text-left text-black/60"
+                        >
                           <div className="w-6 mt-2">
                             <Icon
                               icon={
@@ -80,6 +86,7 @@ export default function InDemandJobs() {
         <div className="grid lg:grid-cols-3 justify-center items-center md:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-full gap-10">
           {jobsConfig.map((item, index) => (
             <HoverCard
+              key={index}
               className="h-80"
               color={item.color}
               icon={

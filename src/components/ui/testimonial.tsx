@@ -41,7 +41,7 @@ const testimonials = [
   },
   {
     quote:
-      "It's been an amazing journey, a friend refered me to Mr Manoj Goswam a very welcoming and patient man.He got me to send my credentials ,I had not done my IELTS test yet and he recommended I do the test,very patient he was all took time but he never gave up on me.Later he introduced me to Ms Zinal I love how transparent they are good bussiness ethics.",
+      "It&aposs been an amazing journey, a friend refered me to Mr Manoj Goswam a very welcoming and patient man.He got me to send my credentials ,I had not done my IELTS test yet and he recommended I do the test,very patient he was all took time but he never gave up on me.Later he introduced me to Ms Zinal I love how transparent they are good bussiness ethics.",
     name: "Freeman Chinonzwa",
     title: "feedback published in our google page by customer",
     image: "/customer/freeman.jpg",

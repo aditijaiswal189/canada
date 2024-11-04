@@ -118,6 +118,7 @@ export default function BritishColumbia() {
           {faqBritish.map((item) => {
             return (
               <FAQ
+                key={item.id}
                 title={item.title}
                 id={item.id}
                 description={item.description()}

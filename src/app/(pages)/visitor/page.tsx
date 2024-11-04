@@ -60,7 +60,7 @@ export default function Visitor() {
                 Sponsors commit to providing financial support to the sponsored
                 family members for a specific period.
               </p>
-              <Title subtitle="Requirements for Sponsor's Family Members" />
+              <Title subtitle="Requirements for Sponsor&aposs Family Members" />
 
               <p className="text-sm text-black/60 text-left">
                 Sponsored family members must also meet specific eligibility
@@ -69,9 +69,9 @@ export default function Visitor() {
                 be genuine, and for sponsoring parents and grandparents, they
                 must pass a medical examination.
               </p>
-              <Title subtitle="If you don't meet the eligibility criteria for family sponsorship programs" />
+              <Title subtitle="If you don&apost meet the eligibility criteria for family sponsorship programs" />
               <p className="text-sm text-black/60 text-left">
-                If you don't meet the eligibility criteria for family
+                If you don&apost meet the eligibility criteria for family
                 sponsorship programs (e.g., due to age, marital status, or
                 indirect family relationships), you may consider applying
                 through provincial nominee programs (PNPs)
@@ -88,7 +88,7 @@ export default function Visitor() {
       </Container>
       <Container>
         {/* <Title
-          subtitle="Take the first step towards your family's Canadian dream"
+          subtitle="Take the first step towards your family&aposs Canadian dream"
           title={
             <p className="text-xl text-black/50 w-full text-left pt-3">
               Contact GreenTech Resource Worldwide Canada for a personalized
@@ -102,7 +102,7 @@ export default function Visitor() {
             <p className="text-2xl text-white/90">
               Book a consultation today to explore immigration options
               <br />
-              and secure your family's future in Canada.
+              and secure your family&aposs future in Canada.
             </p>
           }
           image={"/service.jpg"}

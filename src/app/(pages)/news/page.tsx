@@ -39,7 +39,7 @@ export default function News() {
         // Only parse fields that are actually JSON strings
         const parsedData = response.data.map((row) => ({
           ...row,
-          categories: row.categories ? JSON.parse(row.categories) : [], // Parse only if it's a JSON string
+          categories: row.categories ? JSON.parse(row.categories) : [], // Parse only if it&aposs a JSON string
         }));
 
         setData(parsedData);

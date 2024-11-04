@@ -39,8 +39,8 @@ export default function WhyChooseUs() {
               <p className="text-sm text-black/60 text-left">
                 <ul>
                   <li>
-                    Providing immigration solutions tailored to each client's
-                    profile
+                    Providing immigration solutions tailored to each
+                    client&aposs profile
                   </li>
                   <li>Connecting clients with employers in Canada</li>
                   <li>Promoting business investment projects</li>

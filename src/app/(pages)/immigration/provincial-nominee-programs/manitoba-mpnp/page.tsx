@@ -33,7 +33,8 @@ export default function Manitoba() {
                 initiative that enables Manitoba to nominate individuals for
                 permanent residency in Canada. Designed to address economic and
                 labor market needs, the program attracts skilled workers,
-                businesspeople, and families to contribute to Manitoba's growth.
+                businesspeople, and families to contribute to Manitoba&aposs
+                growth.
               </p>
 
               <p className="text-sm text-black/60 text-left">
@@ -42,7 +43,7 @@ export default function Manitoba() {
                 Education, each tailored to specific qualifications and skills
                 required in the province. Successful candidates receive an
                 invitation to apply for permanent residence, contributing to
-                Manitoba's economic and demographic goals.
+                Manitoba&aposs economic and demographic goals.
               </p>
             </div>
           </div>

@@ -98,13 +98,13 @@ export default function DesignatedLearningInstitution() {
           circumstances
         </p>
         <CTADefault
-          title="Take the first step towards your family's Canadian dream
+          title="Take the first step towards your family&aposs Canadian dream
 "
           subtitle={
             <p className="text-4xl text-white/90">
               Book a consultation today to explore immigration options
               <br />
-              and secure your family's future in Canada.
+              and secure your family&aposs future in Canada.
             </p>
           }
           image={"/service.jpg"}

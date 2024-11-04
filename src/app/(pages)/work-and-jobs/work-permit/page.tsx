@@ -59,18 +59,22 @@ export default function WorkPermit() {
         </p>
         <div className="flex flex-col gap-2">
           {workPermitFaq.map((item) => (
-            <FAQ description={item.description()} title={item.question} />
+            <FAQ
+              description={item.description()}
+              key={item.id}
+              title={item.question}
+            />
           ))}
         </div>
       </Container>
       <CTADefault
-        title="Take the first step towards your family's Canadian dream
+        title="Take the first step towards your family&aposs Canadian dream
 "
         subtitle={
           <p className="text-xl text-white/90">
             Book a consultation today to explore immigration options
             <br />
-            and secure your family's future in Canada.
+            and secure your family&aposs future in Canada.
           </p>
         }
         image={"/service.jpg"}
@@ -146,12 +150,12 @@ const workPermitFaq = [
           specific criteria and regulations that apply to your situation.
         </p>
         <p>
-          It's important to research and consult with immigration authorities as
-          GTR Worldwide to determine the right work permit for your needs.
-          Ensuring that you have the correct work permit is not only a legal
-          requirement but also crucial for your overall work experience, your
-          rights, and your ability to take advantage of other opportunities,
-          such as pathways to permanent residency in Canada
+          It&aposs important to research and consult with immigration
+          authorities as GTR Worldwide to determine the right work permit for
+          your needs. Ensuring that you have the correct work permit is not only
+          a legal requirement but also crucial for your overall work experience,
+          your rights, and your ability to take advantage of other
+          opportunities, such as pathways to permanent residency in Canada
         </p>
       </>
     ),
@@ -162,14 +166,14 @@ const workPermitFaq = [
     description: () => (
       <>
         <p>
-          You'll typically need a job offer from a Canadian employer before
+          You&aposll typically need a job offer from a Canadian employer before
           applying for a work permit (LMIA/ JAL process may needed).
         </p>
         <p>
           Foreigners can apply for a work permit in Canada without a job offer
           under specific circumstances. One of the primary pathways to obtaining
-          a work permit without a job offer is through Canada's Express Entry
-          system and Provincial Nominee Programs (PNPs).
+          a work permit without a job offer is through Canada&aposs Express
+          Entry system and Provincial Nominee Programs (PNPs).
         </p>
       </>
     ),

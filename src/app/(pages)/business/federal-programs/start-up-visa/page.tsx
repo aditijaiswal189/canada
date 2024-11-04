@@ -105,19 +105,26 @@ export default function StartUpVisa() {
       <Title
         title={"Eligibility"}
         description={
-          "Meeting the program's eligibility criteria and demonstrating the potential for business success in Canada are key factors in the selection process"
+          "Meeting the program&aposs eligibility criteria and demonstrating the potential for business success in Canada are key factors in the selection process"
         }
       />
       <div className="flex flex-col gap-2">
-        {startUpFAQ.map((item) => (
-          <FAQ description={item.description()} title={item.question} />
+        {startUpFAQ.map((item, index) => (
+          <FAQ
+            key={item.id}
+            description={item.description()}
+            title={item.question}
+          />
         ))}
       </div>
 
       <div>
         <FeatureSection title="SUV ROADMAP" subtitle="RoadMap">
           {features.map((item, index) => (
-            <div className="max-w-md sm:mx-auto sm:text-center flex flex-col justify-center items-center">
+            <div
+              key={index}
+              className="max-w-md sm:mx-auto sm:text-center flex flex-col justify-center items-center"
+            >
               <div className="flex items-center justify-center w-16 h-16 mb-4 rounded-full bg-indigo-50 sm:mx-auto sm:w-24 sm:h-24">
                 {item.icon}
               </div>
@@ -145,8 +152,12 @@ export default function StartUpVisa() {
         />
 
         <div className="flex flex-col gap-2">
-          {visaFAQ.map((item) => (
-            <FAQ description={item.description()} title={item.question} />
+          {visaFAQ.map((item, index) => (
+            <FAQ
+              key={index}
+              description={item.description()}
+              title={item.question}
+            />
           ))}
         </div>
       </div>

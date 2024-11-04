@@ -69,8 +69,8 @@ const PriceCard = ({ title, price, points }) => {
         </div>
       </div>
       <div className="flex flex-col gap-1">
-        {points.map((point) => (
-          <p className="flex items-center text-sm">
+        {points.map((point, index) => (
+          <p key={index} className="flex items-center text-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"
@@ -133,8 +133,8 @@ const PriceCardGradient = ({ title, price, points }) => {
         </div>
       </div>
       <div className="flex flex-col gap-1">
-        {points.map((point) => (
-          <p className="flex items-center text-sm">
+        {points.map((point, index) => (
+          <p key={index} className="flex items-center text-sm">
             <svg
               xmlns="http://www.w3.org/2000/svg"
               viewBox="0 0 24 24"

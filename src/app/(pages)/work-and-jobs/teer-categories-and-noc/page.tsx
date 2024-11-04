@@ -74,8 +74,8 @@ export default function TeerCategoriesAndNoc() {
         </Glass>
       </Container>
       <CTADefault
-        title="Take the first step towards your family's Canadian dream"
-        subtitle="Book a consultation today to explore options and secure your family's future in Canada"
+        title="Take the first step towards your family&aposs Canadian dream"
+        subtitle="Book a consultation today to explore options and secure your family&aposs future in Canada"
         image="/toronto.jpg"
       />
       <Container>{/* <NewsShowcase /> */}</Container>

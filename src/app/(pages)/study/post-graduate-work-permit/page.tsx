@@ -90,10 +90,14 @@ export default function PostGraduateWorkPermit() {
         </Glass>
       </Container>
       <Container>
-        <Title title={"FAQ's"} />
+        <Title title={"FAQ&aposs"} />
         <div className="flex flex-col gap-2">
-          {pgFaq.map((item) => (
-            <FAQ description={item.description()} title={item.question} />
+          {pgFaq.map((item, index) => (
+            <FAQ
+              key={index}
+              description={item.description()}
+              title={item.question}
+            />
           ))}
         </div>
       </Container>
@@ -118,13 +122,13 @@ export default function PostGraduateWorkPermit() {
           circumstances
         </p>
         <CTADefault
-          title="Take the first step towards your family's Canadian dream
+          title="Take the first step towards your family&aposs Canadian dream
 "
           subtitle={
             <p className="text-xl text-white/90">
               Book a consultation today to explore immigration options
               <br />
-              and secure your family's future in Canada.
+              and secure your family&aposs future in Canada.
             </p>
           }
           image={"/service.jpg"}

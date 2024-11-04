@@ -39,8 +39,11 @@ export default function OwnerOperator() {
       <div>
         <div className="flex w-full flex-col gap-4 justify-start items-start ">
           <Title title={"Eligibility"} description={"What are the steps?"} />
-          {Eligibility.map((item) => (
-            <div className="text-left flex gap-2 items-start justify-center">
+          {Eligibility.map((item, index) => (
+            <div
+              key={index}
+              className="text-left flex gap-2 items-start justify-center"
+            >
               <Icon
                 icon={"material-symbols:library-add-check-rounded"}
                 className="mt-1"

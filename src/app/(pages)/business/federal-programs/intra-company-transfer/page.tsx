@@ -12,7 +12,7 @@ export default function IntraCompanyTransfer() {
         <p>
           This program is designed to facilitate the temporary relocation of
           employees who possess specialized knowledge, skills, or expertise, and
-          it's a valuable tool for global businesses to foster expertise
+          it&aposs a valuable tool for global businesses to foster expertise
           exchange and streamline international operations.
         </p>
         <p>

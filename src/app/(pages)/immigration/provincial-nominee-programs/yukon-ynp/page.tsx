@@ -162,7 +162,7 @@ const twoFeatures = [
     id: 1,
     title: "Yukon Nominee Program (YNP)",
     description:
-      "The Yukon Nominee Program allows employers to hire long-term employees. Foreign workers, called nominees, nominated to work under the Yukon Nominee Program are accepted with the expectation that they'll live in Yukon over the long term.",
+      "The Yukon Nominee Program allows employers to hire long-term employees. Foreign workers, called nominees, nominated to work under the Yukon Nominee Program are accepted with the expectation that they&aposll live in Yukon over the long term.",
     icon: (
       <Icon
         icon="material-symbols:person-apron"

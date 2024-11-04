@@ -99,6 +99,7 @@ export default function StudyInCanada() {
               <FAQ
                 title={item.title}
                 id={item.id}
+                key={item.id}
                 description={item.description()}
               />
             );
@@ -111,7 +112,7 @@ export default function StudyInCanada() {
             subtitle="PLAN YOUR STUDY IN CANADA"
             title={
               <p className="text-4xl text-black/50 w-full text-left pt-3">
-                Let's GreenTech Resources Worldwide Canada assist you!
+                Let&aposs GreenTech Resources Worldwide Canada assist you!
               </p>
             }
           />
@@ -168,7 +169,7 @@ const faqStudy = [
     description: () => (
       <p>
         Research information about schools and programs in Canada. Apply to the
-        institutions you're interested in and participate in the admissions
+        institutions you&aposre interested in and participate in the admissions
         process
       </p>
     ),
@@ -178,8 +179,8 @@ const faqStudy = [
     title: "Apply for a study permit",
     description: () => (
       <p>
-        After receiving acceptance from a Canadian school, you'll need to apply
-        for a Study Permit, which allows you to study in Canada
+        After receiving acceptance from a Canadian school, you&aposll need to
+        apply for a Study Permit, which allows you to study in Canada
       </p>
     ),
   },
@@ -286,7 +287,7 @@ const features = [
     title:
       "Provide guidance / present you to apply Post-Graduation Work Permit (PGWP)",
     description:
-      "After you complete your program in Canada, we'll offer guidance on obtaining a Post-Graduation Work Permit (PGWP). The PGWP allows you to work in Canada for up to three years after graduation and provides the opportunity to transition to permanent resident status",
+      "After you complete your program in Canada, we&aposll offer guidance on obtaining a Post-Graduation Work Permit (PGWP). The PGWP allows you to work in Canada for up to three years after graduation and provides the opportunity to transition to permanent resident status",
     icon: (
       <Icon
         icon="streamline:quality-education-solid"
@@ -298,7 +299,7 @@ const features = [
     id: 5,
     title: "Assistance with accommodation and adaptation",
     description:
-      "We'll provide information to help you find suitable accommodation in Canada and support you in adapting to life in the country. This includes guidance on Canadian culture, healthcare services, transportation, and other essential amenities.",
+      "We&aposll provide information to help you find suitable accommodation in Canada and support you in adapting to life in the country. This includes guidance on Canadian culture, healthcare services, transportation, and other essential amenities.",
     icon: (
       <Icon
         icon="streamline:quality-education-solid"

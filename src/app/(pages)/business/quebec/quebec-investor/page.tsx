@@ -24,15 +24,18 @@ export default function QuebecInvestor() {
       <FeatureSection
         title={"Eligibility"}
         description={
-          "Quebec's dynamic cities, picturesque landscapes, and strong economy make it an appealing choice for immigration."
+          "Quebec&aposs dynamic cities, picturesque landscapes, and strong economy make it an appealing choice for immigration."
         }
         subtitle={"Quebec Immigrant Investor Program (QIIP)"}
         childClass="lg:grid-cols-1"
         className="py-8"
       >
         <div className="flex w-full flex-col gap-4 justify-start items-start ">
-          {Eligibility.map((item) => (
-            <div className="text-left flex gap-2 items-start justify-center">
+          {Eligibility.map((item, index) => (
+            <div
+              key={index}
+              className="text-left flex gap-2 items-start justify-center"
+            >
               <Icon
                 icon={"material-symbols:library-add-check-rounded"}
                 className="mt-1"

@@ -73,6 +73,7 @@ export const SideBar = ({ group, setIsOpen }) => {
           {group.apis.map((item, index) => (
             <>
               <div
+                key={index}
                 className={cn(
                   "top-0 left-0 w-full h-6 rounded-md border border-transparent flex justify-start items-center transition-all",
                   `/${activeId}` === item.path ? group.active : "text-white"

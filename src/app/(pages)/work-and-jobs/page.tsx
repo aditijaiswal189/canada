@@ -41,9 +41,9 @@ export default function WorkAndJobs() {
               </p>
 
               <p className="text-sm text-black/60 text-left">
-                Canada's job market is diverse, covering various industries such
-                as technology, healthcare, finance, natural resources, and more.
-                This diversity allows individuals to find employment that
+                Canada&aposs job market is diverse, covering various industries
+                such as technology, healthcare, finance, natural resources, and
+                more. This diversity allows individuals to find employment that
                 matches their skills and qualifications.
               </p>
               <Title subtitle="Route from employment in Canada to achieve Permanent Residency in Canada" />
@@ -96,9 +96,9 @@ export default function WorkAndJobs() {
       <Container>
         <Title subtitle="Work Permits" />
         <p className="text-sm text-black/60 text-left">
-          Ensure you're eligible to work in Canada with the required work permit
-          or immigration status. Explore immigration options as Express Entry or
-          Provincial nominee programs
+          Ensure you&aposre eligible to work in Canada with the required work
+          permit or immigration status. Explore immigration options as Express
+          Entry or Provincial nominee programs
         </p>
         <Title subtitle="Resume and Cover Letter" />
         <p className="text-sm text-black/60 text-left">
@@ -186,13 +186,13 @@ export default function WorkAndJobs() {
       </Container>
 
       <CTADefault
-        title="Take the first step towards your family's Canadian dream
+        title="Take the first step towards your family&aposs Canadian dream
 "
         subtitle={
           <p className="text-xl text-white/90">
             Book a consultation today to explore immigration options
             <br />
-            and secure your family's future in Canada.
+            and secure your family&aposs future in Canada.
           </p>
         }
         image={"/service.jpg"}
@@ -219,7 +219,7 @@ const featureswork = [
     id: 2,
     title: "Family Sponsorship",
     description:
-      "Foreign workers in Canada can sponsor their families to come, work, and study in Canada. The children of foreign workers have the right to use Canada's public education system (elementary and high school tuition is free",
+      "Foreign workers in Canada can sponsor their families to come, work, and study in Canada. The children of foreign workers have the right to use Canada&aposs public education system (elementary and high school tuition is free",
 
     icon: (
       <Icon
