@@ -1,4 +1,5 @@
 "use client";
+
 import { animate, motion } from "framer-motion";
 import React, { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
@@ -18,46 +19,59 @@ export function CardDemo({ children }) {
 const Skeleton = () => {
   const scale = [1, 1.1, 1];
   const transform = ["translateY(0px)", "translateY(-4px)", "translateY(0px)"];
-
-  // Define each sequence with the correct transitions
   const sequence = [
     [
       ".circle-1",
-      { scale, transform },
-      { duration: 0.8, repeat: Infinity, repeatDelay: 1 },
+      {
+        scale,
+        transform,
+      },
+      { duration: 0.8 },
     ],
     [
       ".circle-2",
-      { scale, transform },
-      { duration: 0.8, repeat: Infinity, repeatDelay: 1 },
+      {
+        scale,
+        transform,
+      },
+      { duration: 0.8 },
     ],
     [
       ".circle-3",
-      { scale, transform },
-      { duration: 0.8, repeat: Infinity, repeatDelay: 1 },
+      {
+        scale,
+        transform,
+      },
+      { duration: 0.8 },
     ],
     [
       ".circle-4",
-      { scale, transform },
-      { duration: 0.8, repeat: Infinity, repeatDelay: 1 },
+      {
+        scale,
+        transform,
+      },
+      { duration: 0.8 },
     ],
     [
       ".circle-5",
-      { scale, transform },
-      { duration: 0.8, repeat: Infinity, repeatDelay: 1 },
+      {
+        scale,
+        transform,
+      },
+      { duration: 0.8 },
     ],
   ];
 
   useEffect(() => {
-    // Animate each sequence individually with looping transitions
-    sequence.forEach(([selector, animation, options]) => {
-      animate(selector as string, animation, options);
+    // @ts-ignore
+    animate(sequence, {
+      repeat: Infinity,
+      repeatDelay: 1,
     });
   }, []);
-
   return (
     <div className="p-8 overflow-hidden h-full relative flex items-center justify-center">
-      <div className="h-40 w-px absolute top-20 m-auto z-40 to-transparent animate-move">
+      <div className="h-40 w-px absolute top-20 m-auto z-40  to-transparent animate-move">
         <div className="w-10 h-32 top-1/2 -translate-y-1/2 absolute -left-10">
           <Sparkles />
         </div>
