@@ -12,7 +12,7 @@ import {
 } from "@/components/ui/table";
 import Glass from "@/lib/helpers";
 import React, { useState } from "react";
-import NewsShowcase from "../news/news-showcase";
+// import NewsShowcase from "../news/news-showcase";
 
 export default function TeerCategoriesAndNoc() {
   const [count, setCount] = useState(70);
