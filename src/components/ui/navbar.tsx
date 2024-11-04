@@ -20,6 +20,8 @@ import Link from "next/link";
 
 export default function Navbar({ defaultStyle = false, type = "default" }) {
   const [isOpen, setIsOpen] = useState(false);
+  const [hoveredPath, setHoveredPath] = useState(null);
+
   return (
     <>
       <div className="md:hidden flex py-2 z-50 relative bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-gray-100 rounded-t-2xl  px-8">
@@ -159,7 +161,11 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
                     {navItem.children && (
                       <NavigationMenuContent className="absolute bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-3xl bg-opacity-80 border-gray-100 rounded-md overflow-visible left-0 px-0">
                         <div className="w-[200px] py-2">
-                          {renderSubmenus(navItem.children)}
+                          {renderSubmenus(
+                            navItem.children,
+                            hoveredPath,
+                            setHoveredPath
+                          )}
                         </div>
                       </NavigationMenuContent>
                     )}
@@ -182,9 +188,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
   );
 }
 
-const renderSubmenus = (submenus) => {
-  const [hoveredPath, setHoveredPath] = useState(null);
-
+const renderSubmenus = (submenus, hoveredPath, setHoveredPath) => {
   return (
     <ul>
       {submenus.map((subPage) => (

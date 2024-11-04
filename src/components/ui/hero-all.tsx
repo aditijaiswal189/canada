@@ -9,7 +9,7 @@ import { getCachedData } from "@/app/(pages)/custom";
 export default function HeroDefault() {
   const path = usePathname();
   const lastPath = path.split("/").pop();
-  let { text, image } = getCachedData(lastPath);
+  const { text, image } = getCachedData(lastPath);
   const img = image || "/gt-removebg.png";
 
   return (

@@ -42,7 +42,7 @@ export default function InDemandJobs() {
               </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4   h-max justify-center items-center">
                 {data.map((item, index) => (
-                  <CardDemo>
+                  <CardDemo key={index}>
                     <div
                       key={index}
                       className="flex flex-col gap-0 w-full px-6 relative z-10"
