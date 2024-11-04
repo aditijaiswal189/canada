@@ -22,7 +22,16 @@ import { supabase } from "@/lib/supabase";
 // import { Link } from "react-router-dom";
 
 export default function News() {
-  const [data, setData] = useState([]);
+  interface NewsItem {
+    id: number;
+    pub_date: string;
+    title: string;
+    description: string;
+    categories: string[];
+    creator: string;
+  }
+
+  const [data, setData] = useState<NewsItem[]>([]);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -79,14 +88,10 @@ export default function News() {
                   borderRight: `7px solid ${bgColor}`,
                 }}
                 date={formattedDate}
-                dateClassName={{
-                  color: "black",
-                  fontSize: "90px",
-                  display: "flex !important",
-                }}
+                dateClassName="custom-date-class"
                 contentStyle={{
                   background: bgColor,
-                  alignText: "left",
+                  textAlign: "left",
                   display: "flex",
                   justifyContent: "start",
                   zIndex: "999999",

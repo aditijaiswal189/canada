@@ -12,7 +12,12 @@
       display: flex;
     }
   }
-  
+  .custom-date-class {
+    color: black;
+    font-size: 90px;
+    display: flex !important;
+  }
+ 
 
   .vertical-timeline-element-content {
     background-color: yellow !important;
