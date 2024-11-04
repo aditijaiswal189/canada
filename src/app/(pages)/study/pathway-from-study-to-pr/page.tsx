@@ -112,7 +112,6 @@ export default function PathwayFromStudyToPr() {
           {dummypathway.map((item, index) => (
             <HoverCard
               className="w-[550px]"
-              id={item.id}
               key={item.id}
               color={item.color}
               title={item.title}
