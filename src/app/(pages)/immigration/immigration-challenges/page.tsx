@@ -39,7 +39,7 @@ export default function ImmigrationChallenges() {
                 process.
               </p>
             </div>
-            <div className="pt-4">
+            {/* <div className="pt-4">
               <Button
                 className="py-2 px-4  text-stone-50"
                 icon={
@@ -51,7 +51,7 @@ export default function ImmigrationChallenges() {
               >
                 <span className="text-xs">Free Consultation</span>
               </Button>
-            </div>
+            </div> */}
           </div>
         </Glass>
         <div className="grid grid-cols-1 md:grid-cols-4 gap-3">
