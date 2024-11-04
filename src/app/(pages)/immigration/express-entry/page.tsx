@@ -7,6 +7,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { ServicesCard } from "@/components/ui/services-card";
 import { truncateTextHeading } from "@/components/ui/newsCard";
 import { FAQ } from "@/components/ui/FAQMap";
+import { features } from "@/components/ui/featuresMap";
 
 export default function ExpressEntry() {
   return (

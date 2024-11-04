@@ -4,13 +4,16 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@radix-ui/react-accordion";
+import { ReactNode } from "react";
 
 export const FAQ = ({
   title,
   description,
+  id,
 }: {
   title?: string;
-  description?: void;
+  description?: string | ReactNode;
+  id?: number;
 }) => {
   return (
     <Accordion

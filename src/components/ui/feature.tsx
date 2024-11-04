@@ -9,9 +9,9 @@ export function FeatureSection({
   children,
   childClass,
 }: {
-  title: string;
-  subtitle: string;
-  description: string;
+  title?: string;
+  subtitle?: string;
+  description?: string;
   children?: React.ReactNode;
   className?: string;
   childClass?: string;
@@ -197,7 +197,18 @@ export function FeatureSection({
     </Container>
   );
 }
-export const FeatureSection2 = ({ children, title, description }) => {
+interface FeatureProps {
+  title?: string;
+
+  children?: React.ReactNode;
+  description?: string;
+}
+
+export const FeatureSection2 = ({
+  children,
+  title,
+  description,
+}: FeatureProps) => {
   return (
     <Container className="w-full">
       <Glass className="bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-gray-100">

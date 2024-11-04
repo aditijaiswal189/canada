@@ -1,4 +1,3 @@
-import { albertaImmigrationAAIP } from "@/assets/data/alberta-immigration-aaip";
 import { FeatureSection, FeatureSection2 } from "@/components/ui/feature";
 import { Feature } from "@/components/ui/cards-set";
 import Container from "@/components/ui/container";

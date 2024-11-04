@@ -62,6 +62,7 @@ export default function SelfEmployedPersons() {
       </Container>
 
       <CTADefault
+        subtitle=""
         title="If you intend to live in Quebec"
         image={"/toronto.jpg"}
       />

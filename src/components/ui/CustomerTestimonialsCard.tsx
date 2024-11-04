@@ -1,15 +1,17 @@
 import Glass from "@/lib/helpers";
 import { Icon } from "@iconify/react/dist/iconify.js";
-import { Link } from "react-router-dom";
 export const CustomerTestimonialsCard = ({
   name,
   rating,
   description,
+  id,
 }: {
   // title?: string;
   name?: string;
   rating?: number;
   description?: string;
+
+  id?: number; // Add `id` here to match the prop type
 }) => {
   return (
     <Glass className="flex flex-col px-10  py-12 relative ">

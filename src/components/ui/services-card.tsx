@@ -5,9 +5,11 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 export const ServicesCard = ({
   title,
   description,
+  id,
 }: {
   title?: string;
   description?: string;
+  id?: number;
 }) => {
   return (
     <Glass className="flex flex-col px-10 gap-3 ">

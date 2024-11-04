@@ -52,7 +52,7 @@ export default function SelfEmployed() {
             <ServicesCard
               key={index}
               title={item.title}
-              description={truncateTextHeading(item.description, 22)}
+              description={truncateTextHeading(item.description)}
             />
           ))}
         </div>

@@ -18,7 +18,6 @@ export default function CTA() {
               Comprehensive solutions for <br /> all your needs!
             </p>
           }
-          href={""}
           subtitle={"WHAT ARE YOU LOOKING FOR?"}
           cta={"All Solutions"}
         />
@@ -60,7 +59,6 @@ export default function CTA() {
               Comprehensive solutions for <br /> all your needs!
             </p>
           }
-          href={""}
           subtitle={"WHAT ARE YOU LOOKING FOR?"}
           cta={"All Solutions"}
         />
@@ -75,8 +73,14 @@ export default function CTA() {
     </>
   );
 }
+interface ItemProps {
+  image: string;
+  title: string;
+  description: string;
+  href: string;
+}
 
-export const CtaCard = ({ item }) => {
+export const CtaCard = ({ item }: { item: ItemProps }) => {
   return (
     <div className="rounded-2xl bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-xl bg-opacity-20 border-gray-100 h-max shadow-2xl w-[320px] justify-start items-center">
       <div className="">
@@ -105,8 +109,12 @@ export const CtaCard = ({ item }) => {
     </div>
   );
 };
+interface CtaCard2Props {
+  item: ItemProps;
+  flip: boolean;
+}
 
-export const CtaCard2 = ({ item, flip }) => {
+export const CtaCard2: React.FC<CtaCard2Props> = ({ item, flip }) => {
   return (
     <div
       className={cn(
@@ -154,13 +162,16 @@ export const CtaCard2 = ({ item, flip }) => {
   );
 };
 
-export function truncateText(text) {
+export function truncateText(text: string): string {
+  if (!text) return ""; // Handle undefined or empty text
   const words = text.split(" ");
-  return words.slice(0, 35).join(" ");
+  return words.slice(0, 35).join(" ") + (words.length > 35 ? "..." : "");
 }
-export function truncateTextHeading(text) {
+
+export function truncateTextHeading(text: string): string {
+  if (!text) return ""; // Handle undefined or empty text
   const words = text.split(" ");
-  return words.slice(0, 9).join(" ");
+  return words.slice(0, 9).join(" ") + (words.length > 9 ? "..." : "");
 }
 
 const CtaDetails = [

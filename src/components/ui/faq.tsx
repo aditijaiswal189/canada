@@ -1,3 +1,4 @@
+import { ReactNode } from "react";
 import {
   Accordion,
   AccordionContent,
@@ -10,7 +11,7 @@ export const FAQ = ({
   description,
 }: {
   title?: string;
-  description?: void;
+  description?: string | ReactNode;
 }) => {
   return (
     <Accordion type="single" collapsible className="w-full flex flex-col gap-2">
