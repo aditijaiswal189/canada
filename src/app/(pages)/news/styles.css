@@ -19,10 +19,7 @@
   }
  
 
-  .vertical-timeline-element-content {
-    background-color: yellow !important;
-    border: 2px solid red;
-  }
+ 
   .post h2 {
     font-size: 48px;
     letter-spacing: 0.1em;
