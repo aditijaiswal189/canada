@@ -214,12 +214,16 @@ const text = {
 };
 
 export const getCachedData = (pathname: string) => {
+  type TextKeys = keyof typeof text;
   const sanitizedPath = pathname.replace(/^\/|\/$/g, ""); // removes leading and trailing slashes
   //   console.log(sanitizedPath, "sanitizedPath"); // helpful for debugging
-  if (text[sanitizedPath]) {
-    // console.log(text[sanitizedPath]);
-    return text[sanitizedPath];
+  if (sanitizedPath in text) {
+    return text[sanitizedPath as TextKeys]; // Cast `sanitizedPath` to `TextKeys` here
   }
+  // if (text[sanitizedPath]) {
+  //   // console.log(text[sanitizedPath]);
+  //   return text[sanitizedPath];
+  // }
 
   return {
     text: "Default Text",
