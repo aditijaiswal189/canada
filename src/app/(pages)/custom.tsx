@@ -1,3 +1,4 @@
+"use client";
 const text = {
   "/": "We are a team of professionals who are passionate about helping you achieve",
   about: {
