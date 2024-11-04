@@ -1,8 +1,12 @@
 import Footer from "@/components/ui/footer";
 import Hero from "@/components/ui/hero";
-import React from "react";
+import React, { ReactNode } from "react";
 
-export default function PageLayout({ children }) {
+interface PageLayoutProps {
+  children: ReactNode;
+}
+
+export default function PageLayout({ children }: PageLayoutProps) {
   return (
     <div
       className="layout relative mx-auto flex justify-center items-center flex-col py-4 w-full bg-cover
