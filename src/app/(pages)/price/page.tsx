@@ -59,7 +59,13 @@ export default function Price() {
   );
 }
 
-const PriceCard = ({ title, price, points }) => {
+interface PriceCardProps {
+  title: string;
+  price: string;
+  points: string[];
+}
+
+const PriceCard = ({ title, price, points }: PriceCardProps) => {
   return (
     <Glass className="cursor-pointer flex flex-col items-center h-[320px] bg-slate-100 rounded-2xl p-14 shadow-lg max-w-sm">
       <div>
@@ -105,7 +111,7 @@ const PriceCard = ({ title, price, points }) => {
   );
 };
 
-const PriceCardGradient = ({ title, price, points }) => {
+const PriceCardGradient = ({ title, price, points }: PriceCardProps) => {
   return (
     <div className="cursor-pointer flex flex-col h-[320px] items-center bg-gradient-to-br from-blue-100 via-orange-100 to-purple-100 p-8 rounded-lg shadow-lg relative border-8 border-orange-200 max-w-sm">
       <svg
