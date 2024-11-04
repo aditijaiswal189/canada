@@ -13,10 +13,26 @@ import Link from "next/link";
 import { supabase } from "@/lib/supabase";
 
 export default function Post() {
-  let postId = useParams();
-  postId = postId.id;
-  const [data, setData] = useState(null);
-  const [recent, setRecent] = useState([]);
+  // let postId = useParams();
+  // postId = postId.id;
+  let { id } = useParams();
+
+  const postId = Array.isArray(id) ? id[0] : id;
+  interface PostData {
+    image?: string;
+    Content: string;
+    Date: string;
+    creator: string;
+    categories: string;
+  }
+
+  const [data, setData] = useState<PostData | null>(null);
+  interface RecentPost {
+    id: string;
+    title: string;
+  }
+
+  const [recent, setRecent] = useState<RecentPost[]>([]);
   const [nextPost, setNextPost] = useState(null);
   const [prevPost, setPrevPost] = useState(null);
 
@@ -111,17 +127,19 @@ export default function Post() {
           <div className="flex gap-2">
             {data &&
               JSON.parse(data.categories) &&
-              JSON.parse(data.categories).map((category, index) => (
-                <Badge
-                  key={index}
-                  className={cn(
-                    "py-1 cursor-pointer",
-                    index === 0 && "bg-red-400"
-                  )}
-                >
-                  {category}
-                </Badge>
-              ))}
+              (JSON.parse(data.categories) as string[]).map(
+                (category: string, index: number) => (
+                  <Badge
+                    key={index}
+                    className={cn(
+                      "py-1 cursor-pointer",
+                      index === 0 && "bg-red-400"
+                    )}
+                  >
+                    {category}
+                  </Badge>
+                )
+              )}
           </div>
         </div>
         {/* 
@@ -204,10 +222,10 @@ function HoverCard({
         )}
       ></span>
 
-      <Link href={to} className="relative z-10 mx-auto h-20 w-full ">
+      <Link href={to || "#"} className="relative z-10 mx-auto h-20 w-full ">
         <p className="text-xs font-primary tracking-widest flex gap-2 items-center">
           <span>
-            <Icon icon={icon} className="-mt-1" />
+            {typeof icon === "string" && <Icon icon={icon} className="-mt-1" />}
           </span>
           {subtitle}
         </p>

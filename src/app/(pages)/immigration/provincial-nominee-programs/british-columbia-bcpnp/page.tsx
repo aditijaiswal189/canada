@@ -90,7 +90,7 @@ export default function BritishColumbia() {
         <p className="text-sm text-black/60 text-left ">
           This stream also has an Express Entry BC option.
         </p>
-        <p className="text-sm text-black/60 text-left text-highlight">
+        <p className="text-sm text-black/60 text-left ">
           * Your job offer does not need to be indeterminate if it is in a
           priority technology occupation or is in NOC 41200 (university
           professors and lecturers).
@@ -111,7 +111,7 @@ export default function BritishColumbia() {
           to B.C. as a temporary resident, and then apply to stay permanently
           once you have successfully started a business.
         </p>
-        <p className="text-sm text-black/60 text-left text-highlight">
+        <p className="text-sm text-black/60 text-left ">
           Streams for entrepreneurs:
         </p>
         <div className="py-6 ">

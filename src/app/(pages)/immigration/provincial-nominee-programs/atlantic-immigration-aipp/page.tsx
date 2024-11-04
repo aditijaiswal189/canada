@@ -53,7 +53,7 @@ export default function Atlantic() {
                 decided to invite 6250 immigrants for the Permanent Resident
                 application through this Atlantic Immigration Pilot Program.
               </p>
-              <p className="text-highlight text-sm text-black/60 text-left">
+              <p className="text-highlight text-sm  text-left">
                 Atlantic Immigration Pilot Program set to become permanent
                 January 1, 2022
               </p>
