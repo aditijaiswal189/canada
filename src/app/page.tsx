@@ -23,7 +23,7 @@ function App() {
   return (
     <div
       className="layout relative mx-auto flex justify-center items-center flex-col py-4 w-full bg-cover
-    bg-gradient-to-r from-neutral-300 to-teal-200
+    bg-gradient-to-r from-neutral-300 to-teal-200 abc
      "
     >
       <Hero />
