@@ -30,7 +30,7 @@ export default function OurService() {
       <CTADefault
         title="We Provide The Best Service"
         subtitle={
-          <p className="text-4xl text-white/90">
+          <p className="text-4xl text-center text-white/90">
             Book a session today and <br />
             start changing your life!
           </p>

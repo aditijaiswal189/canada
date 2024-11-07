@@ -1,5 +1,5 @@
 "use client";
-// import "../style.css";
+import "./style.css";
 import "@/components/ui/style.css";
 import React, { useState, useEffect } from "react";
 import Container from "@/components/ui/container";
@@ -42,46 +42,41 @@ export default function Post() {
         // Fetch the single post
         const postResponse = await supabase
           .from("News")
-          .select("content")
-          .eq("id", postId)
+          .select("*")
+          .eq("id", id)
           .single();
         if (postResponse.data) {
-          setData(JSON.parse(postResponse.data.content));
+          setData(postResponse.data);
         }
 
         // Fetch recent posts
         const recentResponse = await supabase
-          .from("news")
-          .select("id, content")
+          .from("News")
+          .select("*")
           .order("created_at", { ascending: false })
           .limit(10);
         if (recentResponse.data) {
-          setRecent(
-            recentResponse.data.map((row) => ({
-              ...JSON.parse(row.content),
-              id: row.id,
-            }))
-          );
+          setRecent(recentResponse.data);
         }
 
         // Fetch the next post
         const nextResponse = await supabase
-          .from("news")
-          .select("content")
+          .from("Nws")
+          .select("*")
           .eq("id", Number(postId) + 1)
           .single();
         if (nextResponse.data) {
-          setNextPost(JSON.parse(nextResponse.data.content));
+          setNextPost(nextResponse.data);
         }
 
         // Fetch the previous post
         const prevResponse = await supabase
-          .from("news")
-          .select("content")
+          .from("News")
+          .select("*")
           .eq("id", Number(postId) - 1)
           .single();
         if (prevResponse.data) {
-          setPrevPost(JSON.parse(prevResponse.data.content));
+          setPrevPost(prevResponse.data);
         }
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -89,7 +84,7 @@ export default function Post() {
     };
 
     fetchData();
-  }, [postId]);
+  }, [id]);
 
   if (!data) return <div>Loading...</div>;
 
@@ -98,6 +93,8 @@ export default function Post() {
     month: "long",
     day: "numeric",
   });
+
+  console.log(recent, "checkData");
 
   return (
     <Container className="text-left post flex gap-6 flex-row">
@@ -116,8 +113,8 @@ export default function Post() {
           />
         )}
         <div
-          dangerouslySetInnerHTML={{ __html: data.Content }}
-          className="text-sm"
+          dangerouslySetInnerHTML={{ __html: data?.content }}
+          className="text-sm dangerouHtml"
         />
         <div className="flex justify-between items-center w-full">
           <div className="flex gap-2">

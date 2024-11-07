@@ -1,4 +1,3 @@
-import { CTAWithImage } from "./cta";
 import { CTADefault } from "./cta";
 import HoverCard from "./hover-card";
 import { List, UL } from "./list";
@@ -56,8 +55,6 @@ export function DynamicComponent({ data }) {
       return <Container {...props}>{renderChildren()}</Container>;
     case "CTADefault":
       return <CTADefault {...props} />;
-    case "CTAWithImage":
-      return <CTAWithImage {...props} />;
     case "HoverCard":
       console.log("Rendering HoverCard:", props);
       return (

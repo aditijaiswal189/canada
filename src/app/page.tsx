@@ -2,14 +2,10 @@
 
 import Container from "@/components/ui/container";
 import CTA, { CTADefault } from "@/components/ui/cta";
-// import PnpProgramSlider from "@/components/ui/pnpProgramSlider";
 import { InfiniteMovingCardsDemo } from "@/components/ui/testimonial";
 import Title from "@/components/ui/Title";
 import WhyChooseUs from "@/components/ui/why-choose-us";
 import Glass from "@/lib/helpers";
-// import { Icon } from "@radix-ui/react-select";
-// import Image from "next/image";
-// import dynamic from "next/dynamic";
 import Hero from "@/components/ui/hero";
 import Footer from "@/components/ui/footer";
 import { Icon } from "@iconify/react/dist/iconify.js";
@@ -43,7 +39,7 @@ function App() {
               <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
                 <Icon
                   icon={"mdi:checkbox-marked-outline"}
-                  className="text-5xl cursor-pointer  rounded-full py-2 px-2"
+                  className="text-6xl cursor-pointer text-amber-500 rounded-full py-2 px-2"
                 />
                 <div className="flex gap-2 justify-center items-center">
                   <CountUp
@@ -53,14 +49,16 @@ function App() {
                   />
                   <span className="text-4xl">+</span>
                 </div>
-                <span className="uppercase text-lg font-primary tracking-widest">
+                <span className="uppercase text-center text-lg font-primary tracking-widest">
                   successful visas in 2023
                 </span>
               </div>
               <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
                 <Icon
-                  icon={"icon-park-outline:message-success"}
-                  className="text-5xl cursor-pointer  rounded-full py-2 px-2"
+                  icon={
+                    "streamline:interface-arrows-button-to-top-arrow-up-line-to-top"
+                  }
+                  className="text-6xl text-green-400 cursor-pointer  rounded-full py-2 px-2"
                 />
 
                 <div className="flex gap-2 justify-center items-center">
@@ -70,14 +68,14 @@ function App() {
                     className="text-6xl"
                   />
                 </div>
-                <span className="uppercase text-lg font-primary tracking-widest">
+                <span className="uppercase text-center text-lg font-primary tracking-widest">
                   Success Start Up Visa
                 </span>
               </div>
               <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
                 <Icon
                   icon={"cil:happy"}
-                  className="text-5xl cursor-pointer  rounded-full py-2 px-2"
+                  className="text-6xl text-red-600 cursor-pointer  rounded-full py-2 px-2"
                 />
                 <div className="flex gap-2 justify-center items-center">
                   <CountUp
@@ -95,7 +93,7 @@ function App() {
               <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
                 <Icon
                   icon={"game-icons:trophy-cup"}
-                  className="text-5xl cursor-pointer rounded-full py-2 px-2"
+                  className="text-6xl text-yellow-500 cursor-pointer rounded-full py-2 px-2"
                 />
                 <div className="flex gap-2 flex-col  justify-center items-center">
                   <CountUp

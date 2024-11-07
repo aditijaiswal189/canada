@@ -4,7 +4,7 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { Button } from "./custom";
 
 export default function Hero() {
-  const images = ["/aaa.jpg", "/hero-2.jpg", "/hero-3.jpg"];
+  const images = ["/british.jpg", "/hero-2.jpg", "/hero-3.jpg"];
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [nextImageIndex, setNextImageIndex] = useState(1);
   const [slide, setSlide] = useState(true);

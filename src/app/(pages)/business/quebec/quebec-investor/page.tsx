@@ -1,5 +1,7 @@
 import Container from "@/components/ui/container";
 import { FeatureSection, FeatureSection2 } from "@/components/ui/feature";
+import { features } from "@/components/ui/featuresMap";
+import { truncateTextHeading } from "@/components/ui/newsCard";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function QuebecInvestor() {
@@ -51,7 +53,7 @@ export default function QuebecInvestor() {
           "GTR Worldwide can assist you in increasing your Comprehensive Ranking System (CRS) score for Express Entry in several ways:"
         }
       >
-        {/* {features.map((item) => (
+        {features.map((item) => (
           <div className="space-y-3 flex justify-start items-start flex-col">
             {item.icon}
 
@@ -82,7 +84,7 @@ export default function QuebecInvestor() {
               </svg>
             </a>
           </div>
-        ))} */}
+        ))}
       </FeatureSection2>
     </Container>
   );

@@ -12,16 +12,18 @@ export default function CTA() {
   return (
     <>
       <Container effect="slide-left" className="hidden md:flex">
-        <Title
-          title={
-            <p className="text-5xl text-black/50 w-full text-left">
-              Comprehensive solutions for <br /> all your needs!
-            </p>
-          }
-          subtitle={"WHAT ARE YOU LOOKING FOR?"}
-          cta={"All Solutions"}
-        />
-        <div className="flex gap-4 min-h-screen w-[80%] mx-auto">
+        <div className="lg:px-10">
+          <Title
+            title={
+              <p className="text-5xl  text-black/50 w-full text-left">
+                Comprehensive solutions for <br /> all your needs!
+              </p>
+            }
+            subtitle={"WHAT ARE YOU LOOKING FOR?"}
+            cta={"All Solutions"}
+          />
+        </div>
+        <div className="flex gap-4 min-h-screen w-[90%] mx-auto">
           <div className="flex-1 items-center flex justify-start">
             <CtaCard item={CtaDetails[0]} />
           </div>

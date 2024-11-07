@@ -112,7 +112,7 @@ export default function Navbar({ defaultStyle = false, type = "default" }) {
               {/* </span> */}
             </a>
             <Button
-              className="py-2 px-4  text-stone-50"
+              className="py-0.5 px-4  text-stone-50"
               icon={
                 <div className="flex gap-2 justify-center items-center text-xs">
                   <Icon icon={"mdi:phone"} />

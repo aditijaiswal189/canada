@@ -22,7 +22,7 @@ export default function HeroDefault() {
         <Navbar defaultStyle={true} />
         <div className="flex justify-center items-center w-full h-full mt-10 ">
           <div
-            className="text-6xl h-full flex justify-center items-center font-primary tracking-widest text-white md:mt-0 mt-40"
+            className="text-6xl text-center h-full flex justify-center items-center font-primary tracking-widest text-white md:mt-0 mt-40"
             dangerouslySetInnerHTML={{ __html: text }}
           />
         </div>
@@ -39,7 +39,7 @@ export default function HeroDefault() {
           className="text-white/60 -mt-1"
         />
         <span className="text-white font-bold uppercase font-primary tracking-widest">
-          {path}
+          {lastPath}
         </span>
       </div>
       {/* </div> */}

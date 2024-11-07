@@ -1,5 +1,4 @@
 import Container from "@/components/ui/container";
-import { CTADefault } from "@/components/ui/cta";
 import Title from "@/components/ui/Title";
 import Glass from "@/lib/helpers";
 import React from "react";
@@ -34,7 +33,10 @@ export default function StudentDirectStream() {
                 processing, according to High Commission of Canada, students
                 will need to:
               </p>
-              <Title subtitle="Understanding the Canadian Visitor Visa" />
+              <Title
+                className="text-center"
+                subtitle="Understanding the Canadian Visitor Visa"
+              />
               <p className="text-sm text-black/60 text-left">
                 The Canadian Visitor Visa is designed for individuals who wish
                 to enter the country temporarily for tourism, family visits, or
@@ -88,18 +90,18 @@ export default function StudentDirectStream() {
           specific requirements and eligibility for these pathways based on your
           circumstances
         </p>
-        <CTADefault
-          title="Take the first step towards your family&aposs Canadian dream
-"
-          subtitle={
-            <p className="text-4xl text-white/90">
-              Book a consultation today to explore immigration options
-              <br />
-              and secure your family&aposs future in Canada.
-            </p>
-          }
-          image={"/service.jpg"}
-        />
+        {/* <CTADefault
+            title="Take the first step towards your family&aposs Canadian dream
+  "
+            subtitle={
+              <p className="text-4xl text-white/90">
+                Book a consultation today to explore immigration options
+                <br />
+                and secure your family&aposs future in Canada.
+              </p>
+            }
+            image={"/service.jpg"}
+          /> */}
       </Container>
     </>
   );
