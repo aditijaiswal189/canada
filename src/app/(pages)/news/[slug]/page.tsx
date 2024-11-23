@@ -11,97 +11,149 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import { supabase } from "@/lib/supabase";
+import { gql } from "graphql-request";
+import { client } from "@/lib/graphql-client";
 
 export default function Post() {
   // let postId = useParams();
   // postId = postId.id;
-  const { id } = useParams();
+  const { slug } = useParams();
+  console.log(slug, "checkSlug");
 
-  const postId = Array.isArray(id) ? id[0] : id;
-  interface PostData {
-    image?: string;
-    Content: string;
-    Date: string;
-    creator: string;
-    categories: string;
-  }
-
-  const [data, setData] = useState<PostData | null>(null);
-  interface RecentPost {
-    id: string;
-    title: string;
-  }
-
-  const [recent, setRecent] = useState<RecentPost[]>([]);
+  const [data, setData] = useState(null);
+  const [recent, setRecent] = useState([]);
   const [nextPost, setNextPost] = useState(null);
   const [prevPost, setPrevPost] = useState(null);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        // Fetch the single post
-        const postResponse = await supabase
-          .from("News")
-          .select("*")
-          .eq("id", id)
-          .single();
-        if (postResponse.data) {
-          setData(postResponse.data);
-        }
+        // Fetch the single post by slug
+        const postQuery = gql`
+          query GetPostBySlug($slug: String!) {
+            postBy(slug: $slug) {
+              id
+              title
+              content
+              date
+              excerpt
+              slug
+              categories {
+                nodes {
+                  id
+                  name
+                  slug
+                  description
+                }
+              }
+              tags {
+                nodes {
+                  id
+                  name
+                  slug
+                }
+              }
+              featuredImage {
+                node {
+                  id
+                  sourceUrl
+                  altText
+                  title
+                }
+              }
+              author {
+                node {
+                  id
+                  name
+                  email
+                  avatar {
+                    url
+                  }
+                }
+              }
+              comments {
+                nodes {
+                  id
+                  author {
+                    node {
+                      name
+                    }
+                  }
+                  content
+                  date
+                }
+              }
+            }
+          }
+        `;
 
-        // Fetch recent posts
-        const recentResponse = await supabase
-          .from("News")
-          .select("*")
-          .order("created_at", { ascending: false })
-          .limit(10);
-        if (recentResponse.data) {
-          setRecent(recentResponse.data);
-        }
+        const postResponse = await client.request(postQuery, { slug });
 
-        // Fetch the next post
-        const nextResponse = await supabase
-          .from("Nws")
-          .select("*")
-          .eq("id", Number(postId) + 1)
-          .single();
-        if (nextResponse.data) {
-          setNextPost(nextResponse.data);
-        }
-
-        // Fetch the previous post
-        const prevResponse = await supabase
-          .from("News")
-          .select("*")
-          .eq("id", Number(postId) - 1)
-          .single();
-        if (prevResponse.data) {
-          setPrevPost(prevResponse.data);
+        console.log(postResponse, "checkPostResponse");
+        if (postResponse?.postBy) {
+          setData(postResponse.postBy);
         }
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error fetching post data:", error);
+      } finally {
+        setLoading(false);
       }
     };
 
     fetchData();
-  }, [id]);
+  }, [slug]);
+
+  useEffect(() => {
+    const fetchRecentPosts = async () => {
+      try {
+        const recentPostsQuery = gql`
+          query GetRecentPosts {
+            posts(first: 10, where: { orderby: { field: DATE, order: DESC } }) {
+              nodes {
+                id
+                title
+                date
+                slug
+                excerpt
+                featuredImage {
+                  node {
+                    sourceUrl
+                    altText
+                  }
+                }
+              }
+            }
+          }
+        `;
+
+        const response = await client.request(recentPostsQuery);
+        console.log(response, "setRecent");
+        setRecent(response.posts.nodes);
+      } catch (error) {
+        console.error("Error fetching recent posts:", error);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchRecentPosts();
+  }, []);
 
   if (!data) return <div>Loading...</div>;
 
-  const formattedDate = new Date(data.Date).toLocaleDateString(undefined, {
-    year: "numeric",
-    month: "long",
-    day: "numeric",
-  });
+  const formattedDate = (dateString: string) => {
+    return dateString.split("T")[0];
+  };
 
   console.log(recent, "checkData");
 
   return (
     <Container className="text-left post flex gap-6 flex-row">
       <Glass className="px-14 w-[70%] py-10 flex flex-col gap-8">
-        {data.image ? (
+        {data.featuredImage.node.sourceUrl ? (
           <img
-            src={data.image || getRandomImage()}
+            src={data.featuredImage.node.sourceUrl || getRandomImage()}
             alt="news"
             className="w-full rounded-2xl h-[400px] object-cover"
           />
@@ -118,25 +170,17 @@ export default function Post() {
         />
         <div className="flex justify-between items-center w-full">
           <div className="flex gap-2">
-            <Badge className="bg-yellow-400">{formattedDate}</Badge>
-            <Badge className="bg-sky-400">Author: {data.creator}</Badge>
+            <Badge className="bg-yellow-400">{formattedDate(data.date)}</Badge>
+            <Badge className="bg-sky-400">
+              Author: {data.author.node.name}
+            </Badge>
           </div>
           <div className="flex gap-2">
-            {data &&
-              JSON.parse(data.categories) &&
-              (JSON.parse(data.categories) as string[]).map(
-                (category: string, index: number) => (
-                  <Badge
-                    key={index}
-                    className={cn(
-                      "py-1 cursor-pointer",
-                      index === 0 && "bg-red-400"
-                    )}
-                  >
-                    {category}
-                  </Badge>
-                )
-              )}
+            {data.categories.nodes.map(
+              (category: { name: string }, index: number) => (
+                <li key={index}>{category.name}</li>
+              )
+            )}
           </div>
         </div>
         {/* 
@@ -174,7 +218,7 @@ export default function Post() {
           {recent.map((item) => (
             <Link
               className="flex text-xs gap-2"
-              href={`/tin-tuc/${item.id}`}
+              href={`/tin-tuc/${item.slug}`}
               key={item.id}
             >
               <Icon icon="material-symbols:article" className="mt-1" />
