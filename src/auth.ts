@@ -9,6 +9,7 @@ export const signIn = async (email, password) => {
     password,
   });
   if (error) throw error;
+  console.log(user);
   return user;
 };
 
