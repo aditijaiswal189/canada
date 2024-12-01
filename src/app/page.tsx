@@ -19,125 +19,125 @@ function App() {
   //   AOS.refresh();
   // }, []);
   return (
-    // <div
-    //   className="layout relative mx-auto flex justify-center items-center flex-col py-4 w-full bg-cover
-    // bg-gradient-to-r from-neutral-300 to-teal-200 abc
-    //  "
-    // >
-    //   <Hero />
-    //   <div className="py-10 flex flex-col gap-12">
-    //     <CTA />
-    //     <WhyChooseUs />
-    //     <Container>
-    //       <Glass
-    //         className="flex-col  gap-8 py-20 justify-center items-center bg-cover bg-center relative"
-    //         style={{
-    //           backgroundImage: `url(/immigration.png)`,
-    //         }}
-    //       >
-    //         <div className="bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 rounded-2xl border-gray-100  h-full absolute top-0 left-0 w-full"></div>
+    <div
+      className="layout relative mx-auto flex justify-center items-center flex-col py-4 w-full bg-cover
+    bg-gradient-to-r from-neutral-300 to-teal-200 abc
+     "
+    >
+      <Hero />
+      <div className="py-10 flex flex-col gap-12">
+        <CTA />
+        <WhyChooseUs />
+        <Container>
+          <Glass
+            className="flex-col  gap-8 py-20 justify-center items-center bg-cover bg-center relative"
+            style={{
+              backgroundImage: `url(/immigration.png)`,
+            }}
+          >
+            <div className="bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 rounded-2xl border-gray-100  h-full absolute top-0 left-0 w-full"></div>
 
-    //         <div className="md:flex-row flex-col flex z-10 gap-20 justify-start items-start">
-    //           <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-    //             <Icon
-    //               icon={"mdi:checkbox-marked-outline"}
-    //               className="text-6xl cursor-pointer text-amber-500 rounded-full py-2 px-2"
-    //             />
-    //             <div className="flex gap-2 justify-center items-center">
-    //               <CountUp
-    //                 enableScrollSpy={true}
-    //                 end={100}
-    //                 className="text-6xl"
-    //               />
-    //               <span className="text-4xl">+</span>
-    //             </div>
-    //             <span className="uppercase text-center text-lg font-primary tracking-widest">
-    //               successful visas in 2023
-    //             </span>
-    //           </div>
-    //           <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-    //             <Icon
-    //               icon={
-    //                 "streamline:interface-arrows-button-to-top-arrow-up-line-to-top"
-    //               }
-    //               className="text-6xl text-green-400 cursor-pointer  rounded-full py-2 px-2"
-    //             />
+            <div className="md:flex-row flex-col flex z-10 gap-20 justify-start items-start">
+              <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
+                <Icon
+                  icon={"mdi:checkbox-marked-outline"}
+                  className="text-6xl cursor-pointer text-amber-500 rounded-full py-2 px-2"
+                />
+                <div className="flex gap-2 justify-center items-center">
+                  <CountUp
+                    enableScrollSpy={true}
+                    end={100}
+                    className="text-6xl"
+                  />
+                  <span className="text-4xl">+</span>
+                </div>
+                <span className="uppercase text-center text-lg font-primary tracking-widest">
+                  successful visas in 2023
+                </span>
+              </div>
+              <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
+                <Icon
+                  icon={
+                    "streamline:interface-arrows-button-to-top-arrow-up-line-to-top"
+                  }
+                  className="text-6xl text-green-400 cursor-pointer  rounded-full py-2 px-2"
+                />
 
-    //             <div className="flex gap-2 justify-center items-center">
-    //               <CountUp
-    //                 enableScrollSpy={true}
-    //                 end={14}
-    //                 className="text-6xl"
-    //               />
-    //             </div>
-    //             <span className="uppercase text-center text-lg font-primary tracking-widest">
-    //               Success Start Up Visa
-    //             </span>
-    //           </div>
-    //           <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-    //             <Icon
-    //               icon={"cil:happy"}
-    //               className="text-6xl text-red-600 cursor-pointer  rounded-full py-2 px-2"
-    //             />
-    //             <div className="flex gap-2 justify-center items-center">
-    //               <CountUp
-    //                 enableScrollSpy={true}
-    //                 end={95}
-    //                 className="text-6xl"
-    //               />
-    //               <span className="text-4xl"> %</span>
-    //             </div>
+                <div className="flex gap-2 justify-center items-center">
+                  <CountUp
+                    enableScrollSpy={true}
+                    end={14}
+                    className="text-6xl"
+                  />
+                </div>
+                <span className="uppercase text-center text-lg font-primary tracking-widest">
+                  Success Start Up Visa
+                </span>
+              </div>
+              <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
+                <Icon
+                  icon={"cil:happy"}
+                  className="text-6xl text-red-600 cursor-pointer  rounded-full py-2 px-2"
+                />
+                <div className="flex gap-2 justify-center items-center">
+                  <CountUp
+                    enableScrollSpy={true}
+                    end={95}
+                    className="text-6xl"
+                  />
+                  <span className="text-4xl"> %</span>
+                </div>
 
-    //             <span className="uppercase text-lg font-primary tracking-widest">
-    //               happy clients
-    //             </span>
-    //           </div>
-    //           <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-    //             <Icon
-    //               icon={"game-icons:trophy-cup"}
-    //               className="text-6xl text-yellow-500 cursor-pointer rounded-full py-2 px-2"
-    //             />
-    //             <div className="flex gap-2 flex-col  justify-center items-center">
-    //               <CountUp
-    //                 enableScrollSpy={true}
-    //                 end={3}
-    //                 className="text-6xl"
-    //               />
-    //             </div>
-    //             <span className="uppercase text-lg font-primary tracking-widest">
-    //               Consultants
-    //             </span>
-    //           </div>
-    //         </div>
-    //       </Glass>
-    //     </Container>
-    //     <Container effect="slide-up" className="flex gap-10">
-    //       <Title
-    //         cta="All News & Events"
-    //         subtitle="Canada Immigration News"
-    //         title="Latest News & Events"
-    //         to="/news"
-    //       />
-    //       {/* <NewsShowcase /> */}
-    //     </Container>
-    //     <CTADefault
-    //       title="Empowering Your Canadian Dream"
-    //       subtitle={
-    //         <p className="text-xl text-white/90">
-    //           Take the first step towards your family’s Canadian dream. Book a
-    //           consultation today to explore <br />
-    //           immigration options and secure your family’s future in Canada.
-    //         </p>
-    //       }
-    //       image={"/immigrate.jpg"}
-    //     />
+                <span className="uppercase text-lg font-primary tracking-widest">
+                  happy clients
+                </span>
+              </div>
+              <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
+                <Icon
+                  icon={"game-icons:trophy-cup"}
+                  className="text-6xl text-yellow-500 cursor-pointer rounded-full py-2 px-2"
+                />
+                <div className="flex gap-2 flex-col  justify-center items-center">
+                  <CountUp
+                    enableScrollSpy={true}
+                    end={3}
+                    className="text-6xl"
+                  />
+                </div>
+                <span className="uppercase text-lg font-primary tracking-widest">
+                  Consultants
+                </span>
+              </div>
+            </div>
+          </Glass>
+        </Container>
+        <Container effect="slide-up" className="flex gap-10">
+          <Title
+            cta="All News & Events"
+            subtitle="Canada Immigration News"
+            title="Latest News & Events"
+            to="/news"
+          />
+          {/* <NewsShowcase /> */}
+        </Container>
+        <CTADefault
+          title="Empowering Your Canadian Dream"
+          subtitle={
+            <p className="text-xl text-white/90">
+              Take the first step towards your family’s Canadian dream. Book a
+              consultation today to explore <br />
+              immigration options and secure your family’s future in Canada.
+            </p>
+          }
+          image={"/immigrate.jpg"}
+        />
 
-    //     <InfiniteMovingCardsDemo />
-    //     {/* <Jobs /> */}
-    //   </div>
-    //   <Footer />
-    // </div>
-    <AirplanePath />
+        <InfiniteMovingCardsDemo />
+        {/* <Jobs /> */}
+      </div>
+      <Footer />
+    </div>
+    // <AirplanePath />
   );
 }
 
