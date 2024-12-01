@@ -1,4 +1,4 @@
-import { PackageTracking } from "@/components/package-tracking"
+import { PackageTracking } from "../../components/package-tracking";
 
 export default function TrackingPage() {
   return (
@@ -8,6 +8,5 @@ export default function TrackingPage() {
         <PackageTracking />
       </div>
     </div>
-  )
+  );
 }
-

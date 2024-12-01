@@ -1,6 +1,6 @@
-import { BlogHeader } from "@/components/blog-header"
-import { BlogPostList } from "@/components/blog-post-list"
-import { Button } from "@/components/ui/button"
+import { Button } from "@/components/ui/button";
+import { BlogHeader } from "../../components/blog-header";
+import { BlogPostList } from "../../components/blog-post-list";
 
 export default function BlogPage() {
   return (
@@ -9,12 +9,14 @@ export default function BlogPage() {
       <main className="container mx-auto px-4 py-16">
         <BlogPostList />
         <div className="mt-12 text-center">
-          <Button variant="outline" className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white">
+          <Button
+            variant="outline"
+            className="border-green-600 text-green-600 hover:bg-green-600 hover:text-white"
+          >
             Load More Posts
           </Button>
         </div>
       </main>
     </div>
-  )
+  );
 }
-

@@ -1,16 +1,21 @@
 import { AnimatedBackground } from "./components/animated-background";
 import BackgroundWithImage from "./components/background-sections";
+// import BackgroundWithImage from "./components/background-sections";
 import { CountrySelection } from "./components/country-selection";
 import { Footer } from "./components/footer";
 import { Header } from "./components/header";
 import { Subtitle, Title } from "./components/heading";
+// import { Header } from "./components/header";
+// import { Subtitle, Title } from "./components/heading";
 import { HeroSection } from "./components/hero-section";
 import ImageFrameSection from "./components/image-frame-section";
 import NewsShowcase from "./components/news-showcase";
 import PnpProgramSlider from "./components/pnp-programme-slider";
+// import PnpProgramSlider from "./components/pnp-programme-slider";
 import { StatsSection } from "./components/stats-section";
 import { TestimonialsSection } from "./components/testimonials-section";
 import { VisaServices } from "./components/visa-services";
+// import { VisaServices } from "./components/visa-services";
 
 export default function Page() {
   return (
