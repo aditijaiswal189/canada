@@ -1,27 +1,27 @@
-import { FileCheck, Globe2, Shield, Users } from 'lucide-react'
+import { FileCheck, Globe2, Shield, Users, Smile } from "lucide-react";
 
 const stats = [
   {
     icon: FileCheck,
-    value: "5k+",
-    label: "Visa Approval"
+    value: "100+",
+    label: "Successful visas in 2023",
   },
   {
     icon: Globe2,
-    value: "38k+",
-    label: "Visa Consultation"
+    value: "14+",
+    label: "Success Start Up Visa",
   },
   {
-    icon: Shield,
-    value: "25+",
-    label: "Visa Categories"
+    icon: Smile,
+    value: "95%",
+    label: "Happy clients",
   },
   {
     icon: Users,
-    value: "80+",
-    label: "Consultants"
-  }
-]
+    value: "3",
+    label: "Consultants",
+  },
+];
 
 export function StatsSection() {
   return (
@@ -40,6 +40,5 @@ export function StatsSection() {
         </div>
       </div>
     </section>
-  )
+  );
 }
-
