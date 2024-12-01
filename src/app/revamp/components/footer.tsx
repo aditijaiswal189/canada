@@ -1,24 +1,31 @@
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
-import { Facebook, Instagram, Mail, Phone, PinIcon as Pinterest, Twitter } from 'lucide-react'
-import Image from "next/image"
-import Link from "next/link"
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import {
+  Facebook,
+  Instagram,
+  Mail,
+  Phone,
+  PinIcon as Pinterest,
+  Twitter,
+} from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
 
 const quickLinks = [
-  "IELTS Coaching",
-  "TOEFL Coaching",
-  "GRE Coaching",
-  "GMAT Coaching",
-  "SAT Coaching"
-]
+  "About Us",
+  "Our Services",
+  "Why Choose Us",
+  "Make Appointment",
+  "Work and Jobs",
+];
 
 const pages = [
   "About Company",
   "Meet the Team",
-  "News & Media",
-  "Our Projects",
-  "Contact"
-]
+  "News",
+  "Testimonials",
+  "Contact",
+];
 
 const galleryImages = [
   "/placeholder.svg?height=150&width=150",
@@ -26,8 +33,8 @@ const galleryImages = [
   "/placeholder.svg?height=150&width=150",
   "/placeholder.svg?height=150&width=150",
   "/placeholder.svg?height=150&width=150",
-  "/placeholder.svg?height=150&width=150"
-]
+  "/placeholder.svg?height=150&width=150",
+];
 
 export function Footer() {
   return (
@@ -37,19 +44,21 @@ export function Footer() {
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">
           <div className="flex items-center">
             <Image
-              src="/placeholder.svg?height=40&width=120"
-              alt="Visaz Logo"
-              width={120}
-              height={40}
+              src="/gtr-white.png"
+              alt="GTR Logo"
+              width={140}
+              height={60}
               className="brightness-0 invert"
             />
           </div>
           <div className="flex-1 max-w-md">
-            <div className="text-xl font-semibold mb-2">Subscribe to Newsletter</div>
+            <div className="text-xl font-semibold mb-2">
+              Subscribe to Newsletter
+            </div>
             <div className="flex gap-2">
-              <Input 
-                type="email" 
-                placeholder="Email Address" 
+              <Input
+                type="email"
+                placeholder="Email Address"
                 className="bg-white/10 border-0 text-white placeholder:text-gray-400"
               />
               <Button className="bg-green-600 hover:bg-green-700 text-white px-8">
@@ -64,25 +73,38 @@ export function Footer() {
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {/* About Company */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-6">About Company</h3>
+            <h3 className="text-white text-lg font-semibold mb-6">
+              About Company
+            </h3>
             <p className="text-sm mb-6">
-              Sed ut perspiciatis unde omnis iste natus error sit voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae abillo inventore veritatis et quase
+              At GreenTech Resource Worldwide Canada, we understand that
+              immigration is a transformative journey, often filled with
+              uncertainties and challenges. Our goal and mission revolve around
+              being your trusted partner on this journey.
             </p>
             <div className="space-y-2">
-              <a href="mailto:needhelp@company.com" className="flex items-center gap-2 hover:text-green-500">
+              <a
+                href="mailto:needhelp@company.com"
+                className="flex items-center gap-2 hover:text-green-500"
+              >
                 <Mail className="h-4 w-4" />
-                needhelp@company.com
+                info@gtrworldwide.com
               </a>
-              <a href="tel:+92666888000" className="flex items-center gap-2 hover:text-green-500">
+              <a
+                href="tel:+92666888000"
+                className="flex items-center gap-2 hover:text-green-500"
+              >
                 <Phone className="h-4 w-4" />
-                +92 666 888 0000
+                +1-855-477-9797
               </a>
             </div>
           </div>
 
           {/* Quick Links */}
           <div>
-            <h3 className="text-white text-lg font-semibold mb-6">Quick Link</h3>
+            <h3 className="text-white text-lg font-semibold mb-6">
+              Quick Link
+            </h3>
             <ul className="space-y-3">
               {quickLinks.map((link) => (
                 <li key={link}>
@@ -109,27 +131,13 @@ export function Footer() {
           </div>
 
           {/* Gallery */}
-          <div>
-            <h3 className="text-white text-lg font-semibold mb-6">Gallery</h3>
-            <div className="grid grid-cols-3 gap-2">
-              {galleryImages.map((image, index) => (
-                <Link key={index} href="#" className="block relative aspect-square">
-                  <Image
-                    src={image}
-                    alt={`Gallery image ${index + 1}`}
-                    fill
-                    className="object-cover hover:opacity-80 transition-opacity"
-                  />
-                </Link>
-              ))}
-            </div>
-          </div>
         </div>
 
         {/* Footer Bottom */}
         <div className="border-t border-white/10 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
           <p className="text-sm">
-            © Copyright 2024 by ThemeMascot.com
+            © Copyright 2024 by Green Tech Resources Worldwide Canada - All
+            rights reserved
           </p>
           <div className="flex gap-4">
             <Link href="#" className="hover:text-green-500">
@@ -152,6 +160,5 @@ export function Footer() {
         </div>
       </div>
     </footer>
-  )
+  );
 }
-

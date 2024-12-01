@@ -1,13 +1,13 @@
-import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
-import { Card, CardContent } from "@/components/ui/card"
-import { Star } from 'lucide-react'
+import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar";
+import { Card, CardContent } from "@/components/ui/card";
+import { Star } from "lucide-react";
 
 interface TestimonialCardProps {
-  name: string
-  role: string
-  image: string
-  rating: number
-  quote: string
+  name: string;
+  role: string;
+  image: string;
+  rating: number;
+  quote: string;
 }
 
 export function TestimonialCard({
@@ -15,7 +15,7 @@ export function TestimonialCard({
   role,
   image,
   rating,
-  quote
+  quote,
 }: TestimonialCardProps) {
   return (
     <div className="relative">
@@ -35,7 +35,9 @@ export function TestimonialCard({
                   <Star
                     key={i}
                     className={`w-4 h-4 ${
-                      i < rating ? "fill-green-600 text-green-600" : "fill-gray-200 text-gray-200"
+                      i < rating
+                        ? "fill-green-600 text-green-600"
+                        : "fill-gray-200 text-gray-200"
                     }`}
                   />
                 ))}
@@ -43,13 +45,14 @@ export function TestimonialCard({
             </div>
           </div>
           <blockquote className="text-muted-foreground relative">
-            <span className="absolute -left-6 -top-2 text-4xl text-green-600">"</span>
-            {quote}
+            <span className="absolute -left-6 -top-2 text-4xl text-green-600">
+              "
+            </span>
+            <h6 className="line-clamp-4">{quote}</h6>
             <span className="absolute text-4xl text-green-600">"</span>
           </blockquote>
         </CardContent>
       </Card>
     </div>
-  )
+  );
 }
-

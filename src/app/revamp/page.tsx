@@ -1,61 +1,68 @@
-import { AnimatedBackground } from "./components/animated-background"
-import { BlogPostCard } from "./components/blog-post-card"
-import { ContactForm } from "./components/contact-form"
-import { CountrySelection } from "./components/country-selection"
-import { FeaturesSection } from "./components/features-section"
-import { Footer } from "./components/footer"
-import { HeroSection } from "./components/hero-section"
-import { SiteHeader } from "./components/site-header"
-import { StatsSection } from "./components/stats-section"
-import { TestimonialsSection } from "./components/testimonials-section"
-import { VisaServices } from "./components/visa-services"
+import { AnimatedBackground } from "./components/animated-background";
+import BackgroundWithImage from "./components/background-sections";
+import { CountrySelection } from "./components/country-selection";
+import { Footer } from "./components/footer";
+import { Header } from "./components/header";
+import { Subtitle, Title } from "./components/heading";
+import { HeroSection } from "./components/hero-section";
+import ImageFrameSection from "./components/image-frame-section";
+import NewsShowcase from "./components/news-showcase";
+import PnpProgramSlider from "./components/pnp-programme-slider";
+import { StatsSection } from "./components/stats-section";
+import { TestimonialsSection } from "./components/testimonials-section";
+import { VisaServices } from "./components/visa-services";
 
 export default function Page() {
   return (
-    <div className="relative min-h-screen overflow-hidden">
-      <AnimatedBackground />
-      <SiteHeader />
-      <main className="min-h-screen bg-gray-50">
-        <HeroSection />
-        <CountrySelection />
-        <FeaturesSection />
-        <VisaServices />
-        <StatsSection />
-        <div className="container mx-auto px-4 py-16">
-          <ContactForm />
-          <TestimonialsSection />
-          <section className="py-16">
-            <div className="text-center mb-12">
-              <div className="text-green-600 font-medium mb-2">NEWS & BLOG</div>
-              <h2 className="text-3xl md:text-4xl font-bold mb-4">
-                Read Our Latest News & Blog
-              </h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-8">
-              <BlogPostCard
-                date="31"
-                month="Aug"
-                category="Consulting"
-                title="The Human Rights and Study Visa Programs"
-                excerpt="These case are perfectly simple easy to distinguish free ho take trivial example undertakes"
-                image="/placeholder.svg?height=240&width=400"
-                comments={0}
-              />
-              <BlogPostCard
-                date="31"
-                month="Aug"
-                category="Immigration"
-                title="Reasons for Australian Student Visa Refusal"
-                excerpt="These case are perfectly simple easy to distinguish free ho take trivial example undertakes"
-                image="/placeholder.svg?height=240&width=400"
-                comments={0}
-              />
-            </div>
-          </section>
-        </div>
-      </main>
-      <Footer />
-    </div>
-  )
-}
+    <>
+      <Header />
+      <div className="relative min-h-screen overflow-hidden">
+        {/* <AnimatedBackground /> */}
+        <main className="min-h-screen flex flex-col bg-gray-50">
+          <HeroSection />
+          <ImageFrameSection
+            subtitle="ABOUT COMPANY"
+            title="We Always Ready To Make Your Canada Dream Come True."
+            description="Our team of experienced professionals is dedicated to your success,
+          offering personalized guidance, up-to-date expertise, and unwavering
+          support throughout your immigration process. With our proven track
+          record, we ensure a smooth, stress-free, and successful transition to
+          your new life in Canana"
+            point1="Professional consulting team"
+            point2="Personalized solutions"
+            point3="Affordable cost"
+            point4="10+ years experience"
+          />
 
+          <CountrySelection />
+
+          {/* <FeaturesSection /> */}
+          <VisaServices />
+          <StatsSection />
+          <BackgroundWithImage className="flex flex-col gap-4">
+            <Subtitle className="text-center" position="center">
+              Selecting the Right PNP is the key to achieving your canadian PR
+              dream
+            </Subtitle>
+            <Title className="text-white text-center">
+              Provincial Nomination Programs
+            </Title>
+            <PnpProgramSlider />
+          </BackgroundWithImage>
+          <div className="container mx-auto px-4 py-16">
+            {/* <ContactForm /> */}
+            <TestimonialsSection />
+            <section className="py-16">
+              <div className="text-center mb-12">
+                <Subtitle position="center">NEWS & BLOG</Subtitle>
+                <Title>Read Our Latest News & Blog</Title>
+              </div>
+              <NewsShowcase />
+            </section>
+          </div>
+        </main>
+        <Footer />
+      </div>
+    </>
+  );
+}

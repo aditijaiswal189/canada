@@ -1,20 +1,19 @@
-"use client"
-
-import { ChevronDown, ChevronRight, X } from 'lucide-react'
-import Image from "next/image"
-import Link from "next/link"
-import { useState } from "react"
-import { Button } from "@/components/ui/button"
+"use client";
+import { ChevronDown, ChevronRight, X } from "lucide-react";
+import Image from "next/image";
+import Link from "next/link";
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
 import {
   Collapsible,
   CollapsibleContent,
   CollapsibleTrigger,
-} from "@/components/ui/collapsible"
+} from "@/components/ui/collapsible";
 
 interface NavItem {
-  title: string
-  href?: string
-  children?: NavItem[]
+  title: string;
+  href?: string;
+  children?: NavItem[];
 }
 
 const navigation: NavItem[] = [
@@ -44,10 +43,10 @@ const navigation: NavItem[] = [
   { title: "COACHING", href: "/coaching" },
   { title: "SERVICES", href: "/services" },
   { title: "BLOG", href: "/blog" },
-]
+];
 
 export function MainNav() {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   return (
     <div className="fixed inset-0 bg-white z-50 overflow-auto">
@@ -76,11 +75,11 @@ export function MainNav() {
         ))}
       </nav>
     </div>
-  )
+  );
 }
 
 function NavItem({ item }: { item: NavItem }) {
-  const [isOpen, setIsOpen] = useState(false)
+  const [isOpen, setIsOpen] = useState(false);
 
   if (!item.children) {
     return (
@@ -91,7 +90,7 @@ function NavItem({ item }: { item: NavItem }) {
         {item.title}
         {!item.href && <ChevronRight className="ml-auto h-4 w-4" />}
       </Link>
-    )
+    );
   }
 
   return (
@@ -112,6 +111,5 @@ function NavItem({ item }: { item: NavItem }) {
         ))}
       </CollapsibleContent>
     </Collapsible>
-  )
+  );
 }
-
