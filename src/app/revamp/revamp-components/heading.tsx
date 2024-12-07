@@ -72,7 +72,7 @@ export function List({ children, className = "" }) {
 export function ListItem({
   children,
   className = "",
-  icon,
+  icon = "simple-icons:aircanada",
   descriptionClassName = "",
 }) {
   return (

@@ -22,7 +22,7 @@ export const Button = ({
   return (
     <button
       className={cn(
-        "relative bg-highlight text-white flex justify-center group/modal-btn",
+        "relative bg-green-600 text-white flex justify-center group/modal-btn",
         className
       )}
       {...props}

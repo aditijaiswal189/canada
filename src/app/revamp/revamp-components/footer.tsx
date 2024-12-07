@@ -38,7 +38,7 @@ const galleryImages = [
 
 export function Footer() {
   return (
-    <footer className="bg-[#1a1a1a] text-gray-300">
+    <footer className="bg-[#1a1a1a] text-gray-300 w-full">
       {/* Newsletter Section */}
       <div className="container mx-auto px-4 py-12">
         <div className="flex flex-col md:flex-row items-center justify-between gap-6 mb-12">

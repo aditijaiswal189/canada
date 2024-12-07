@@ -1,21 +1,16 @@
-import { AnimatedBackground } from "./components/animated-background";
-import BackgroundWithImage from "./components/background-sections";
-// import BackgroundWithImage from "./components/background-sections";
-import { CountrySelection } from "./components/country-selection";
-import { Footer } from "./components/footer";
-import { Header } from "./components/header";
-import { Subtitle, Title } from "./components/heading";
-// import { Header } from "./components/header";
-// import { Subtitle, Title } from "./components/heading";
-import { HeroSection } from "./components/hero-section";
-import ImageFrameSection from "./components/image-frame-section";
-import NewsShowcase from "./components/news-showcase";
-import PnpProgramSlider from "./components/pnp-programme-slider";
-// import PnpProgramSlider from "./components/pnp-programme-slider";
-import { StatsSection } from "./components/stats-section";
-import { TestimonialsSection } from "./components/testimonials-section";
-import { VisaServices } from "./components/visa-services";
-// import { VisaServices } from "./components/visa-services";
+"use client";
+import { AnimatedBackground } from "./revamp-components/animated-background";
+import BackgroundWithImage from "./revamp-components/background-sections";
+import { Footer } from "./revamp-components/footer";
+import { Header } from "./revamp-components/header";
+import { Subtitle, Title } from "./revamp-components/heading";
+import { HeroSection } from "./revamp-components/hero-section";
+import ImageFrameSection from "./revamp-components/image-frame-section";
+import NewsShowcase from "./revamp-components/news-showcase";
+import PnpProgramSlider from "./revamp-components/pnp-programme-slider";
+import { StatsSection } from "./revamp-components/stats-section";
+import { TestimonialsSection } from "./revamp-components/testimonials-section";
+import { VisaServices } from "./revamp-components/visa-services";
 
 export default function Page() {
   return (
@@ -39,7 +34,7 @@ export default function Page() {
             point4="10+ years experience"
           />
 
-          <CountrySelection />
+          {/* <FULLCTA {...ctaData} /> */}
 
           {/* <FeaturesSection /> */}
           <VisaServices />

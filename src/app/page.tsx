@@ -1,207 +1,94 @@
-"use client";
+import BackgroundWithImage from "./revamp/revamp-components/background-sections";
+import { FULLCTA } from "./revamp/revamp-components/full-cta";
+import { Footer } from "./revamp/revamp-components/footer";
+import { Header } from "./revamp/revamp-components/header";
+import { Subtitle, Title } from "./revamp/revamp-components/heading";
+import { HeroSection } from "./revamp/revamp-components/hero-section";
+import ImageFrameSection from "./revamp/revamp-components/image-frame-section";
+import NewsShowcase from "./revamp/revamp-components/news-showcase";
+import PnpProgramSlider from "./revamp/revamp-components/pnp-programme-slider";
+import { StatsSection } from "./revamp/revamp-components/stats-section";
+import { TestimonialsSection } from "./revamp/revamp-components/testimonials-section";
+import { VisaServices } from "./revamp/revamp-components/visa-services";
 
-import Container from "@/components/ui/container";
-import CTA, { CTADefault } from "@/components/ui/cta";
-import { InfiniteMovingCardsDemo } from "@/components/ui/testimonial";
-import Title from "@/components/ui/Title";
-import WhyChooseUs from "@/components/ui/why-choose-us";
-import Glass from "@/lib/helpers";
-import Hero from "@/components/ui/hero";
-import Footer from "@/components/ui/footer";
-import { Icon } from "@iconify/react/dist/iconify.js";
-import CountUp, { useCountUp } from "react-countup";
-import AirplanePath from "./aeroplane";
-// import AirplanePath from "./aeroplane";
+const ctaData = {
+  flip: false,
+  backgroundColor: "bg-black",
+  imageSrc: "/revamp/why-choose-us.webp",
+  subtitle: "Why Trust Us?",
+  title: "Your Trusted Partner for Immigration Solutions",
+  description:
+    "We offer tailored services to help you achieve your immigration goals efficiently and effectively.",
+  listItems: [
+    {
+      icon: "material-symbols:personal-injury",
+      text: "Customized immigration plans based on your unique profile",
+    },
+    {
+      icon: "material-symbols:connecting-airports",
+      text: "Seamless relocation and employment opportunities in Canada",
+    },
+    {
+      icon: "lineicons:investment",
+      text: "Investment options and secure settlement services",
+    },
+  ],
+  additionalDescription:
+    "Our multilingual team is ready to assist you in various languages, ensuring smooth communication throughout your journey.",
+  highlightClassName: "text-highlight",
+};
 
-function App() {
-  // useEffect(() => {
-  //   AOS.init();
-  //   AOS.refresh();
-  // }, []);
+export default function Page() {
   return (
-    <div
-      className="layout relative mx-auto flex justify-center items-center flex-col py-4 w-full bg-cover
-    bg-gradient-to-r from-neutral-300 to-teal-200 abc
-     "
-    >
-      <Hero />
-      <div className="py-10 flex flex-col gap-12">
-        <CTA />
-        <WhyChooseUs />
-        <Container>
-          <Glass
-            className="flex-col  gap-8 py-20 justify-center items-center bg-cover bg-center relative"
-            style={{
-              backgroundImage: `url(/immigration.png)`,
-            }}
-          >
-            <div className="bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 rounded-2xl border-gray-100  h-full absolute top-0 left-0 w-full"></div>
-
-            <div className="md:flex-row flex-col flex z-10 gap-20 justify-start items-start">
-              <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-                <Icon
-                  icon={"mdi:checkbox-marked-outline"}
-                  className="text-6xl cursor-pointer text-amber-500 rounded-full py-2 px-2"
-                />
-                <div className="flex gap-2 justify-center items-center">
-                  <CountUp
-                    enableScrollSpy={true}
-                    end={100}
-                    className="text-6xl"
-                  />
-                  <span className="text-4xl">+</span>
-                </div>
-                <span className="uppercase text-center text-lg font-primary tracking-widest">
-                  successful visas in 2023
-                </span>
-              </div>
-              <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-                <Icon
-                  icon={
-                    "streamline:interface-arrows-button-to-top-arrow-up-line-to-top"
-                  }
-                  className="text-6xl text-green-400 cursor-pointer  rounded-full py-2 px-2"
-                />
-
-                <div className="flex gap-2 justify-center items-center">
-                  <CountUp
-                    enableScrollSpy={true}
-                    end={14}
-                    className="text-6xl"
-                  />
-                </div>
-                <span className="uppercase text-center text-lg font-primary tracking-widest">
-                  Success Start Up Visa
-                </span>
-              </div>
-              <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-                <Icon
-                  icon={"cil:happy"}
-                  className="text-6xl text-red-600 cursor-pointer  rounded-full py-2 px-2"
-                />
-                <div className="flex gap-2 justify-center items-center">
-                  <CountUp
-                    enableScrollSpy={true}
-                    end={95}
-                    className="text-6xl"
-                  />
-                  <span className="text-4xl"> %</span>
-                </div>
-
-                <span className="uppercase text-lg font-primary tracking-widest">
-                  happy clients
-                </span>
-              </div>
-              <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-                <Icon
-                  icon={"game-icons:trophy-cup"}
-                  className="text-6xl text-yellow-500 cursor-pointer rounded-full py-2 px-2"
-                />
-                <div className="flex gap-2 flex-col  justify-center items-center">
-                  <CountUp
-                    enableScrollSpy={true}
-                    end={3}
-                    className="text-6xl"
-                  />
-                </div>
-                <span className="uppercase text-lg font-primary tracking-widest">
-                  Consultants
-                </span>
-              </div>
-            </div>
-          </Glass>
-        </Container>
-        <Container effect="slide-up" className="flex gap-10">
-          <Title
-            cta="All News & Events"
-            subtitle="Canada Immigration News"
-            title="Latest News & Events"
-            to="/news"
+    <>
+      <Header />
+      <div className="relative min-h-screen overflow-hidden">
+        {/* <AnimatedBackground /> */}
+        <main className="min-h-screen flex flex-col bg-gray-50">
+          <HeroSection />
+          <ImageFrameSection
+            subtitle="ABOUT COMPANY"
+            title="We Always Ready To Make Your Canada Dream Come True."
+            description="Our team of experienced professionals is dedicated to your success,
+          offering personalized guidance, up-to-date expertise, and unwavering
+          support throughout your immigration process. With our proven track
+          record, we ensure a smooth, stress-free, and successful transition to
+          your new life in Canana"
+            point1="Professional consulting team"
+            point2="Personalized solutions"
+            point3="Affordable cost"
+            point4="10+ years experience"
           />
-          {/* <NewsShowcase /> */}
-        </Container>
-        <CTADefault
-          title="Empowering Your Canadian Dream"
-          subtitle={
-            <p className="text-xl text-white/90">
-              Take the first step towards your family’s Canadian dream. Book a
-              consultation today to explore <br />
-              immigration options and secure your family’s future in Canada.
-            </p>
-          }
-          image={"/immigrate.jpg"}
-        />
 
-        <InfiniteMovingCardsDemo />
-        {/* <Jobs /> */}
+          <FULLCTA {...ctaData} />
+
+          {/* <FeaturesSection /> */}
+          <VisaServices />
+          <StatsSection />
+          <BackgroundWithImage className="flex flex-col gap-4">
+            <Subtitle className="text-center" position="center">
+              Selecting the Right PNP is the key to achieving your canadian PR
+              dream
+            </Subtitle>
+            <Title className="text-white text-center">
+              Provincial Nomination Programs
+            </Title>
+            <PnpProgramSlider />
+          </BackgroundWithImage>
+          <div className="container mx-auto px-4 py-16">
+            {/* <ContactForm /> */}
+            <TestimonialsSection />
+            <section className="py-16">
+              <div className="text-center mb-12">
+                <Subtitle position="center">NEWS & BLOG</Subtitle>
+                <Title>Read Our Latest News & Blog</Title>
+              </div>
+              <NewsShowcase />
+            </section>
+          </div>
+        </main>
+        <Footer />
       </div>
-      <Footer />
-    </div>
-    // <AirplanePath />
+    </>
   );
 }
-
-export default App;
-
-export const dummyNews = [
-  {
-    id: 1,
-    image: "/news-1.jpg",
-    date: "2023-11-28",
-    title: "India Launches Chandrayaan-3 Mission",
-    subTitle: "A Giant Leap for India",
-    description:
-      "India successfully launched its third lunar exploration mission, Chandrayaan-3, aiming to land on the Moon&aposs south pole.",
-    comments: "This is a great achievement for India&aposs space program!",
-  },
-  {
-    id: 2,
-    image: "/news-2.jpg",
-    date: "2024-03-15",
-    title: "Artificial Intelligence Breakthrough",
-    subTitle: "New Era of Technology",
-    description:
-      "Scientists achieve a significant breakthrough in artificial intelligence, developing a model capable of human-level understanding.",
-    comments: "AI is going to change the world as we know it.",
-  },
-  {
-    id: 3,
-    image: "/news-3.jpg",
-    date: "2024-05-08",
-    title: "Climate Change Summit",
-    subTitle: "Global Leaders Unite",
-    description:
-      "World leaders gather for a crucial climate change summit to address rising global temperatures and environmental challenges.",
-    comments: "We need to take immediate action to protect our planet.",
-  },
-  {
-    id: 4,
-    image: "/news-4.jpg",
-    date: "2024-06-22",
-    title: "Economic Recession Fears",
-    subTitle: "Global Markets in Turmoil",
-    description:
-      "Concerns about a global economic recession grow as stock markets experience significant volatility.",
-    comments: "It&aposs a tough time for the economy.",
-  },
-  {
-    id: 5,
-    image: "/news-5.webp",
-    date: "2024-07-12",
-    title: "New Electric Car Model",
-    subTitle: "Revolutionizing Transportation",
-    description:
-      "A leading automaker unveils a groundbreaking electric car model with impressive range and performance.",
-    comments: "The future of transportation is electric.",
-  },
-  {
-    id: 6,
-    image: "/news-6.jpg",
-    date: "2024-08-01",
-    title: "Space Tourism Takes Off",
-    subTitle: "Commercial Flights to Space",
-    description:
-      "The first commercial space tourism flights are announced, marking a new era of space exploration.",
-    comments: "Space tourism is the next big thing!",
-  },
-];

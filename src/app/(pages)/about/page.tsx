@@ -1,4 +1,18 @@
 "use client";
+import ContentWithCard from "@/app/revamp/revamp-components/content-with-card";
+import { Feature } from "@/app/revamp/revamp-components/feature";
+import { FULLCTA } from "@/app/revamp/revamp-components/full-cta";
+import {
+  CardTitle,
+  Description,
+  ListItem,
+  Subtitle,
+  Title,
+} from "@/app/revamp/revamp-components/heading";
+import HighlightCards from "@/app/revamp/revamp-components/highlighting-card";
+import IconBackground from "@/app/revamp/revamp-components/icon-background";
+import ImageFrameSection from "@/app/revamp/revamp-components/image-frame-section";
+import { StatsSection } from "@/app/revamp/revamp-components/stats-section";
 import Container from "@/components/ui/container";
 import { Button } from "@/components/ui/custom";
 import MovingCardBorder from "@/components/ui/moving-card-border";
@@ -7,362 +21,157 @@ import { cn } from "@/lib/utils";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import CountUp, { useCountUp } from "react-countup";
 
+const departmentsConfig = [
+  {
+    id: 1,
+    title: "Business Immigration Department",
+    description:
+      "A dedicated team of business immigration specialists, with extensive experience and industry relationships, specializing in supporting business projects and Canadian investment immigration.",
+  },
+  {
+    id: 2,
+    title: "Canada Recruitment Department",
+    description:
+      "Specialized in working closely with partners and businesses in Canada. They also manage the CIC Canada Job Bank.",
+  },
+  {
+    id: 3,
+    title: "Application Processing Team",
+    description:
+      "A team of seasoned professionals skilled in the management and oversight of immigration applications to ensure that your documentation is complete, accurate, and submitted correctly to avoid errors or delays.",
+  },
+  {
+    id: 4,
+    title: "Asian Customer Service Center",
+    description:
+      "We have established a customer service center in the Philippines to ensure optimal service and support for our valued clients.",
+  },
+];
+
+const ctaData = {
+  flip: false,
+  backgroundColor: "bg-black",
+  imageSrc: "/hero-3.jpg",
+  subtitle: "GreenTech Resource Worldwide Canada",
+  title: "We Are The Leading Canada Immigration Company",
+  description:
+    "GreenTech Resource Worldwide Canada is ranked as the 3rd top recruitment agency and immigration consultant in Saskatchewan. We are confident in our ability to provide solutions to shorten the journey to the peaceful and beautiful country of Canada for your entire family",
+  listItems: [
+    {
+      icon: "material-symbols:personal-injury",
+      text: "Providing immigration solutions tailored to each client's profile",
+    },
+    {
+      icon: "material-symbols:connecting-airports",
+      text: "Connecting clients with employers in Canada",
+    },
+    {
+      icon: "lineicons:investment",
+      text: "Promoting business investment projects",
+    },
+  ],
+  additionalDescription:
+    "Established in 2016, GreenTech Resource Worldwide Canada has its headquarters based in Regina, Saskatchewan, Canada.",
+  highlightClassName: "text-highlight",
+};
+
 export default function About() {
   return (
     <div>
-      <Container>
-        <Glass className="flex gap-2 px-10 py-10">
-          <div className="flex-1 flex flex-col gap-2">
-            <div className="relative w-max">
-              <div className="absolute top-0 left-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute top-[12px] transform rotate-90 -left-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
+      <FULLCTA {...ctaData} />
+      <StatsSection />
+      <ImageFrameSection
+        subtitle="Our team"
+        title="The minds behind the magic."
+        descriptionClassName="text-sm"
+        description="We take immense pride in our collaboration with licensed immigration experts certified by RCIC, under the experienced and passionate leadership of Mr. Manoj Goswami – Regulated Canadian Immigration Consultant (RCIC), Founder, CEO of GreenTech Resource Worldwide Canada. Mr. Manoj Goswami is a licensed and registered Regulated Canadian Immigration Consultant (RCIC) with over a decade of experience in recruitment, consulting, and immigration file support."
+        additionalDescription={[
+          "Manoj Goswami, an immigrant to Canada since the early 2000s, brings nearly two decades of experience to his role. He holds an Executive Master of Business Administration from the University of Regina’s Levin School of Business and has studied at prestigious institutions such as the University of Toronto and Ashton College in British Columbia. Manoj boasts a rich portfolio of designations, including P.Ag, PMP, SCMP, CPSM, and CRM, which paved the way for his career as an Immigration Consultant and Foreign Worker Recruiter since 2016. He is a Registered Canadian Immigration Consultant (RCIC) and a proud member of professional organizations like CICC and CAPIC.",
+          "In addition to fluent English, Manoj is proficient in nine languages, including Hindi, Urdu, Nepali, and Bengali. The GreenTech Resources Worldwide Canada team serves clients from diverse backgrounds worldwide and can provide support in languages such as Vietnamese, Tagalog, Arabic, Chinese, French, and Spanish",
+        ]}
+      />
 
-              <div className="px-3 py-1.5">
-                <h5 className="tracking-widest text-xl">Our team</h5>
-              </div>
+      <ContentWithCard />
 
-              <div className="absolute bottom-0 right-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute bottom-[12px] transform rotate-90 -right-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-            </div>
-            <div className="flex flex-col justify-start gap-6">
-              <h3 className="tracking-wide text-left text-4xl text-black/70">
-                The minds behind the magic.
-              </h3>
-              <p className="text-sm text-black/60 text-left">
-                We take immense pride in our collaboration with licensed
-                immigration experts certified by RCIC, under the experienced and
-                passionate leadership of Mr. Manoj Goswami – Regulated Canadian
-                Immigration Consultant (RCIC), Founder, CEO of GreenTech
-                Resource Worldwide Canada. Mr. Manoj Goswami is a licensed and
-                registered Regulated Canadian Immigration Consultant (RCIC) with
-                over a decade of experience in recruitment, consulting, and
-                immigration file support.
-              </p>
-              <p className="text-sm text-black/60 text-left">
-                Manoj Goswami, an immigrant to Canada since the early 2000s,
-                brings nearly two decades of experience to his role. He holds an
-                Executive Master of Business Administration from the University
-                of Regina’s Levin School of Business and has studied at
-                prestigious institutions such as the University of Toronto and
-                Ashton College in British Columbia. Manoj boasts a rich
-                portfolio of designations, including P.Ag, PMP, SCMP, CPSM, and
-                CRM, which paved the way for his career as an Immigration
-                Consultant and Foreign Worker Recruiter since 2016. He is a
-                Registered Canadian Immigration Consultant (RCIC) and a proud
-                member of professional organizations like CICC and CAPIC.
-              </p>
-              <p className="text-sm text-black/60 text-left">
-                In addition to fluent English, Manoj is proficient in nine
-                languages, including Hindi, Urdu, Nepali, and Bengali. The
-                GreenTech Resources Worldwide Canada team serves clients from
-                diverse backgrounds worldwide and can provide support in
-                languages such as Vietnamese, Tagalog, Arabic, Chinese, French,
-                and Spanish
-              </p>
-            </div>
-          </div>
-          <div className="flex-1 flex flex-col gap-3 justify-end items-end px-10">
-            <img src="/team.jpg" className="rounded-2xl h-[70%]" alt="" />
-          </div>
-        </Glass>
-      </Container>
-      <Container className="flex gap-8 flex-row flex-wrap h-max justify-center items-center">
-        {data.map((item, index) => (
-          // <Card
-          //   key={index}
-          //   image={item.image}
-          //   title={item.title}
-          //   list={item.list}
-          //   flip={false}
-          // />
-          <MovingCardBorder
-            key={index}
-            animate
-            color="w-[450px] bg-gray-100 bg-opacity-20 backdrop-blur-md h-[500px] flex-wrap"
-          >
-            <div className="flex flex-col gap-0 w-full px-6 relative z-10">
-              <h5 className="text-4xl text-left text-highlight">
-                {item.title}
-              </h5>
-              {/* <p className="text-sm text-left text-black/70">
-            {truncateTextHeading(item.subtitle)}
-          </p> */}
-            </div>
-            <div className="flex gap-1.5 flex-col justify-start items-start w-full px-6 relative z-10">
-              {item.list.map((item, index) => (
-                <li
-                  key={index}
-                  className="list-none flex gap-1 justify-start items-start text-left text-black/60"
-                >
-                  <div className="w-6 mt-2">
-                    <Icon
-                      icon={"material-symbols:bookmark-check-outline-rounded"}
-                    />
-                  </div>
-                  <div className=" flex justify-start">{item.title}</div>
-                </li>
-              ))}
-            </div>
-          </MovingCardBorder>
-        ))}
-      </Container>
-
-      <Container>
-        <Glass className="flex gap-2 px-10 py-10">
-          <div className="flex-1 flex flex-col gap-2">
-            <div className="relative w-max">
-              <div className="absolute top-0 left-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute top-[12px] transform rotate-90 -left-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-
-              <div className="px-3 py-1.5">
-                <h5 className="tracking-widest text-xl">Our Partners</h5>
-              </div>
-
-              <div className="absolute bottom-0 right-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute bottom-[12px] transform rotate-90 -right-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-            </div>
-            <div className="flex flex-col justify-start gap-6">
-              <h3 className="tracking-wide text-left text-2xl text-black/70">
-                Strategic Partners
-              </h3>
-              <p className="text-sm text-black/60 text-left">
-                With an expansive vision in developing Canadian immigration
-                services, we are committed to seeking and building close
-                partnerships with partners in key markets such as Vietnam,
-                India, South Africa, Mexico, and the Philippines. We see
-                tremendous potential in these countries to support people in
-                settling and working in Canada, including high-quality labor,
-                multi-disciplinary experts, and entrepreneurs.
-              </p>
-              <p className="text-sm text-black/60 text-left">
-                We believe that through close collaboration with partners in
-                these markets, we can offer diverse and flexible Canadian
-                immigration solutions, helping many individuals successfully
-                complete their immigration journey and thrive in their new lives
-                in Canada.
-              </p>
-            </div>
-
-            {/* <div className="w-full mt-10 gap-2 flex justify-center items-center">
-              <div className="relative h-[140px] w-[180px]">
-                <img
-                  src="/foru1.png"
-                  className="w-full h-full rounded-2xl"
-                  alt=""
-                />
-                <div className="absolute w-full h-full rounded-2xl top-0 left-0 bg-black/40"></div>
-              </div>
-              <div className="h-[140px] w-[180px] relative">
-                <img
-                  src="/foru2.png"
-                  className="w-full h-full rounded-2xl bg-cover"
-                  alt=""
-                />
-                <div className="absolute w-full h-full rounded-2xl top-0 left-0 bg-black/40"></div>
-              </div>
-            </div> */}
-
-            <Button
-              className="py-3 w-[190px] mt-6"
-              icon={
-                <div className="flex gap-2 text-[10px] justify-center items-center">
-                  <Icon icon={"mdi:phone"} />
-                  <span>+1855 477 9797</span>
+      <div className="flex flex-col gap-6 w-full">
+        <div>
+          <Subtitle position="center" className="text-center">
+            GreenTech Resource Worldwide Canada
+          </Subtitle>
+          <Title className="text-center">Our Services</Title>
+        </div>
+        <div className="grid grid-cols-1 lg:grid-cols-4 px-10 h-max justify-start items-start">
+          {data.map((item, index) => (
+            <Feature
+              index={index}
+              key={index}
+              className=""
+              description={
+                <div className="flex gap-1.5 py-4 flex-col justify-start items-start w-full relative z-10 overflow-y-auto pretty-scroll ">
+                  {item.list.map((item, index) => (
+                    <ListItem
+                      key={index}
+                      className="list-none text-xs flex gap-1 justify-start items-start text-left text-black/60"
+                    >
+                      {item.title}
+                    </ListItem>
+                  ))}
                 </div>
               }
-            >
-              <span className="text-[10px] relative flex gap-1 justify-start items-center">
-                <Icon
-                  icon={"teenyicons:appointments-outline"}
-                  className="-mt-0.5"
-                />
-                BOOK AN APPOINTMENT
-              </span>
-            </Button>
-          </div>
-        </Glass>
-      </Container>
-      <Container>
-        <Glass
-          className="flex-col  gap-8 py-20 justify-center items-center bg-cover bg-center relative"
-          style={{
-            backgroundImage: `url(/immigration.png)`,
-          }}
+              icon={"ooui:view-details-ltr"}
+              title={item.title}
+            />
+          ))}
+        </div>
+      </div>
+      <div className="flex-1 flex flex-col gap-2 px-10">
+        <Subtitle
+          className="tracking-widest text-xl text-center"
+          position="center"
         >
-          <div className="bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 rounded-2xl border-gray-100  h-full absolute top-0 left-0 w-full"></div>
+          Our Partners
+        </Subtitle>
 
-          <div className="md:flex-row flex-col flex z-10 gap-20 justify-start items-start">
-            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-              <Icon
-                icon={"mdi:checkbox-marked-outline"}
-                className="text-5xl cursor-pointer  rounded-full py-2 px-2"
-              />
-              <div className="flex gap-2 justify-center items-center">
-                <CountUp
-                  enableScrollSpy={true}
-                  end={100}
-                  className="text-6xl"
-                />
-                <span className="text-4xl">+</span>
-              </div>
-              <span className="uppercase text-lg font-primary tracking-widest">
-                successful visas in 2023
-              </span>
+        <div className="flex flex-col justify-center items-center gap-6">
+          <Title className="tracking-wide text-center  text-black/70">
+            Strategic Partners
+          </Title>
+          <Description className="text-sm text-black/60 text-center">
+            With an expansive vision in developing Canadian immigration
+            services, we are committed to seeking and building close
+            partnerships with partners in key markets such as Vietnam, India,
+            South Africa, Mexico, and the Philippines. We see tremendous
+            potential in these countries to support people in settling and
+            working in Canada, including high-quality labor, multi-disciplinary
+            experts, and entrepreneurs.
+          </Description>
+          <Description className="text-sm text-black/60 text-center">
+            We believe that through close collaboration with partners in these
+            markets, we can offer diverse and flexible Canadian immigration
+            solutions, helping many individuals successfully complete their
+            immigration journey and thrive in their new lives in Canada.
+          </Description>
+        </div>
+
+        <Button
+          className="py-3 w-[190px] mx-auto mt-6"
+          icon={
+            <div className="flex gap-2 text-[10px] justify-center items-center">
+              <Icon icon={"mdi:phone"} />
+              <span>+1855 477 9797</span>
             </div>
-            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-              <Icon
-                icon={"icon-park-outline:message-success"}
-                className="text-5xl cursor-pointer  rounded-full py-2 px-2"
-              />
-
-              <div className="flex gap-2 justify-center items-center">
-                <CountUp enableScrollSpy={true} end={14} className="text-6xl" />
-              </div>
-              <span className="uppercase text-lg font-primary tracking-widest">
-                Success Start Up Visa
-              </span>
-            </div>
-            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-              <Icon
-                icon={"cil:happy"}
-                className="text-5xl cursor-pointer  rounded-full py-2 px-2"
-              />
-              <div className="flex gap-2 justify-center items-center">
-                <CountUp enableScrollSpy={true} end={95} className="text-6xl" />
-                <span className="text-4xl"> %</span>
-              </div>
-
-              <span className="uppercase text-lg font-primary tracking-widest">
-                happy clients
-              </span>
-            </div>
-            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-              <Icon
-                icon={"game-icons:trophy-cup"}
-                className="text-5xl cursor-pointer rounded-full py-2 px-2"
-              />
-              <div className="flex gap-2 flex-col  justify-center items-center">
-                <CountUp enableScrollSpy={true} end={3} className="text-6xl" />
-              </div>
-              <span className="uppercase text-lg font-primary tracking-widest">
-                Consultants
-              </span>
-            </div>
-          </div>
-        </Glass>
-      </Container>
-      <Container>
-        <Glass className="flex flex-col gap-8 px-10 py-10">
-          <div className="flex md:flex-row flex-col gap-8">
-            <div className="flex-1 flex flex-col gap-2">
-              <div className="relative w-max">
-                <div className="absolute top-0 left-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-                <div className="absolute top-[12px] transform rotate-90 -left-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-
-                <div className="px-3 py-1.5">
-                  <h5 className="tracking-widest text-xl">
-                    why choose GreenTech Resource Worldwide Canada
-                  </h5>
-                </div>
-
-                <div className="absolute bottom-0 right-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-                <div className="absolute bottom-[12px] transform rotate-90 -right-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-              </div>
-              <div className="flex flex-col justify-start gap-6">
-                <h3 className="tracking-wide text-left text-4xl text-black/70">
-                  We are always ready for every challenge. Please trust us
-                </h3>
-                <p className="text-sm text-black/60 text-left">
-                  At GreenTech Resource Worldwide Canada, we understand that
-                  immigration is a transformative journey, often filled with
-                  uncertainties and challenges. Our goal and mission revolve
-                  around being your trusted partner on this journey.
-                </p>
-                <p className="text-sm text-black/60 text-left">
-                  With our unwavering support, we aim to help you turn your
-                  dreams into reality, bridging horizons and embracing new
-                  opportunities that await you in a foreign land.
-                </p>
-              </div>
-            </div>
-            <div className="flex flex-col justify-center items-center w-full gap-4">
-              <MovingCardBorder
-                color="bg-sky-400/80"
-                className="justify-start items-center  flex flex-col gap-2 py-8 w-full rounded-2xl text-left bg-center bg-cover cursor-pointer"
-                animate={true}
-              >
-                <div className="relative z-10 text-white flex flex-col gap-4">
-                  <h4 className="tracking-widest text-3xl">
-                    Government of Canada Licensed
-                  </h4>
-                  <p className="text-sm">
-                    We are authorized to legally represent our clients&apos
-                    files, working directly with the Immigration Department of
-                    Canada and the Government of Canada. Our RCIC experts ensure
-                    that our clients&apos files are processed accurately,
-                    legally, and securely.
-                  </p>
-                </div>
-              </MovingCardBorder>
-            </div>
-          </div>
-
-          <div className="flex gap-4 md:flex-row flex-col">
-            <MovingCardBorder
-              className="justify-start items-center  flex flex-col gap-2 py-8 w-full flex-1 rounded-2xl text-left bg-center bg-cover cursor-pointer"
-              animate={true}
-              color="bg-highlight/80"
-            >
-              <div className="relative z-10 text-white flex flex-col gap-4">
-                <h4 className="tracking-widest text-3xl">High Success Rate</h4>
-                <p className="text-sm">
-                  This is achieved through a personalized strategy for each of
-                  our clients. Each file is analyzed specifically, identifying
-                  strengths and weaknesses that need to be addressed. Our wealth
-                  of experience helps us anticipate and provide proactive
-                  solutions to shorten processing times and ensure success.
-                </p>
-              </div>
-            </MovingCardBorder>
-            <MovingCardBorder
-              className="justify-start items-center  flex flex-col gap-2 py-8 w-full flex-1 rounded-2xl text-left bg-center bg-cover cursor-pointer"
-              animate={true}
-              color="bg-yellow-400/80"
-            >
-              <div className="relative z-10 text-white flex flex-col gap-4">
-                <h4 className="tracking-widest text-3xl">
-                  Years Of Experience
-                </h4>
-                <p className="text-sm">
-                  GreenTech Resource Worldwide Canada is a Canada-based company
-                  led by Immigration Expert Mr. Manoj Goswami, the founder and
-                  CEO of the company. With an educational background and over 20
-                  years of working experience in Canada, he and his team have a
-                  deep understanding of the labor market.
-                </p>
-              </div>
-            </MovingCardBorder>
-
-            <MovingCardBorder
-              color="bg-green-400/80 text-white"
-              className="justify-start items-center flex flex-col gap-2 py-8 w-full rounded-2xl flex-1 text-left bg-center bg-cover cursor-pointer"
-              animate={true}
-            >
-              <div className="relative z-10 text-white flex flex-col gap-4">
-                <h4 className="tracking-widest text-3xl">
-                  Reasonable cost guaranteed quality
-                </h4>
-                <p className="text-sm">
-                  At GreenTech Resource Worldwide Canada, we offer high-quality
-                  immigration services at affordable rates, ensuring your
-                  journey towards a new beginning is both accessible and
-                  excellent. We have transparent refund.
-                </p>
-              </div>
-            </MovingCardBorder>
-          </div>
-        </Glass>
-      </Container>
+          }
+        >
+          <span className="text-[10px] text-white relative flex gap-1 justify-start items-center">
+            <Icon
+              icon={"teenyicons:appointments-outline"}
+              className="-mt-0.5"
+            />
+            BOOK AN APPOINTMENT
+          </span>
+        </Button>
+      </div>
+      <HighlightCards config={departmentsConfig} />
     </div>
   );
 }
@@ -372,6 +181,7 @@ const data = [
     id: 1,
     title: "Entrepreneurs",
     image: "/aaa.jpg",
+    icon: "",
     list: [
       {
         id: 1,
@@ -397,28 +207,13 @@ const data = [
         id: 6,
         title: "Closed Work Permit for Applicant",
       },
-      {
-        id: 7,
-        title: "Open Work Permit for spouse",
-      },
-      {
-        id: 8,
-        title: "Visitor/ Study Permit for dependent children",
-      },
-      {
-        id: 9,
-        title: "PR application",
-      },
-      {
-        id: 10,
-        title: "Settlement",
-      },
     ],
   },
   {
     id: 2,
     title: "Foreign Workers",
     image: "/aaa.jpg",
+    icon: "",
     list: [
       {
         id: 1,
@@ -449,6 +244,7 @@ const data = [
   {
     id: 3,
     title: "Students",
+    icon: "",
     image: "/aaa.jpg",
     list: [
       {
@@ -481,6 +277,7 @@ const data = [
     id: 4,
     title: "Employers",
     image: "/aaa.jpg",
+    icon: "",
     list: [
       {
         id: 1,

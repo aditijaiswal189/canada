@@ -1,7 +1,7 @@
-import { AccordionSection } from "../../components/accordion-section";
-import { CardGrid } from "../../components/card-grid";
-import { CollapsibleSection } from "../../components/collapsible-section";
-import { TabbedContent } from "../../components/tabbed-content";
+import { AccordionSection } from "../../revamp-components/accordion-section";
+import { CardGrid } from "../../revamp-components/card-grid";
+import { CollapsibleSection } from "../../revamp-components/collapsible-section";
+import { TabbedContent } from "../../revamp-components/tabbed-content";
 
 const faqItems = [
   {

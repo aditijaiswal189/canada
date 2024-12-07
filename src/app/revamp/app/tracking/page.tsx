@@ -1,4 +1,4 @@
-import { PackageTracking } from "../../components/package-tracking";
+import { PackageTracking } from "../../revamp-components/package-tracking";
 
 export default function TrackingPage() {
   return (

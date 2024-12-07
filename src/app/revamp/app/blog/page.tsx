@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { BlogHeader } from "../../components/blog-header";
-import { BlogPostList } from "../../components/blog-post-list";
+import { BlogHeader } from "../../revamp-components/blog-header";
+import { BlogPostList } from "../../revamp-components/blog-post-list";
 
 export default function BlogPage() {
   return (

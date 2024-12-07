@@ -64,8 +64,8 @@ export function MainNav() {
                       </NavigationMenuTrigger>
                     )}
                     {navItem.children && (
-                      <NavigationMenuContent className="absolute bg-green-600 z-[100000000] overflow-visible left-0 px-0 rounded-none border-none">
-                        <div className="w-[200px] py-2">
+                      <NavigationMenuContent className="absolute bg-green-600 overflow-visible left-0 px-0 rounded-none border-none z-[9999999999]">
+                        <div className="w-[200px] py-2 ">
                           {renderSubmenus(
                             navItem.children,
                             hoveredPath,
@@ -111,7 +111,7 @@ export function MainNav() {
 
 const renderSubmenus = (submenus, hoveredPath, setHoveredPath) => {
   return (
-    <ul>
+    <ul className="z-[10000000000000000000]">
       {submenus.map((subPage) => (
         <li
           key={subPage.path}

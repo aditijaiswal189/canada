@@ -13,6 +13,8 @@ export default function ImageFrameSection({
   point2,
   point3,
   point4,
+  descriptionClassName,
+  additionalDescription,
 }: {
   image?: string;
   bgImage?: string;
@@ -23,6 +25,8 @@ export default function ImageFrameSection({
   point2?: string;
   point3?: string;
   point4?: string;
+  descriptionClassName?: string;
+  additionalDescription?: string[];
 }) {
   return (
     <div className="px-8 flex gap-2 min-h-[80vh] py-14">
@@ -52,13 +56,22 @@ export default function ImageFrameSection({
         <Title className="w-full leading-[50px]">
           We Always Ready To Make Your Canada Dream Come True.
         </Title>
-        <Description>
+        <Description className={descriptionClassName}>
           Our team of experienced professionals is dedicated to your success,
           offering personalized guidance, up-to-date expertise, and unwavering
           support throughout your immigration process. With our proven track
           record, we ensure a smooth, stress-free, and successful transition to
           your new life in Canana
         </Description>
+        {additionalDescription && (
+          <div className="flex flex-col gap-2">
+            {additionalDescription.map((description, index) => (
+              <Description className={descriptionClassName} key={index}>
+                {description}
+              </Description>
+            ))}
+          </div>
+        )}
         <div className="grid grid-cols-2 gap-6 mt-4">
           {point1 && point2 && (
             <>
