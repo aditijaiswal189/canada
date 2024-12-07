@@ -1,12 +1,24 @@
+import { Subtitle, Title } from "@/app/revamp/revamp-components/heading";
+import HighlightCards from "@/app/revamp/revamp-components/highlighting-card";
+import { StatsSection } from "@/app/revamp/revamp-components/stats-section";
 import Container from "@/components/ui/container";
 import { CTADefault } from "@/components/ui/cta";
 import { ServicesCard } from "@/components/ui/services-card";
-import Title from "@/components/ui/Title";
 export default function OurService() {
   return (
-    <Container className="flex flex-col py-20 gap-20">
-      {/* <Title /> */}
-      <Title
+    <>
+      <div className="px-10">
+        <div className="pt-10">
+          <Subtitle className="text-left" position="left">
+            We provide what
+          </Subtitle>
+          <Title className="text-left w-full">
+            Recruitment, Immigration and Settlement Services
+          </Title>
+        </div>
+
+        {/* <Title /> */}
+        {/* <Title
         //         subtitle="Our goal is to provide customers with the best service, for us to help customers
         // overcome their barriers and obtain Permanent Residensy in Canada"
         subtitle="We provide what"
@@ -16,17 +28,16 @@ export default function OurService() {
           </p>
         }
         to=""
-      />
-      <div className="grid  grid-cols-1 md:grid-cols-3 gap-8">
-        {dummyservices.map((item, index) => (
-          <ServicesCard
-            key={item.id}
-            id={item.id}
-            title={item.title}
-            description={item.description}
-          />
-        ))}
+      /> */}
+
+        <HighlightCards
+          config={dummyservices}
+          className="lg:grid-cols-3"
+          mainClassName="px-0 py-0"
+        />
       </div>
+      <StatsSection />
+
       <CTADefault
         title="We Provide The Best Service"
         subtitle={
@@ -37,7 +48,7 @@ export default function OurService() {
         }
         image={"/service.jpg"}
       />
-    </Container>
+    </>
   );
 }
 
