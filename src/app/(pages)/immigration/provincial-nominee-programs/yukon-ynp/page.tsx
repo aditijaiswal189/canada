@@ -4,51 +4,32 @@ import Glass from "@/lib/helpers";
 import Title from "@/components/ui/Title";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { featuresPage } from "@/components/ui/appointmentMap";
+import ContentBox from "@/app/revamp/revamp-components/content-box";
 
 export default function Yukon() {
   return (
     <>
-      <Container>
-        <Glass className="flex gap-2 px-10 py-10">
-          <div className="flex-1 flex flex-col gap-2">
-            <div className="relative w-max">
-              <div className="absolute top-0 left-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute top-[12px] transform rotate-90 -left-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-
-              <div className="px-3 py-1.5">
-                <h5 className="tracking-widest text-xl">
-                  Canada Provincial Immigration Program
-                </h5>
-              </div>
-
-              <div className="absolute bottom-0 right-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute bottom-[12px] transform rotate-90 -right-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-            </div>
-            <div className="flex flex-col justify-start gap-6">
-              <h3 className="tracking-wide text-left text-4xl text-black/70">
-                Yukon Provincial Nominee Program (YNP)​
-              </h3>
-
-              <p className="text-sm text-black/60 text-left">
-                The Yukon Nominee Program (YNP), a Provincial Nominee Program
+      <ContentBox
+        className="lg:-mt-0.5"
+        title="Yukon Provincial Nominee Program (YNP)​"
+        subtitle="Canada Provincial Immigration Program"
+        description={[
+          ` The Yukon Nominee Program (YNP), a Provincial Nominee Program
                 (PNP), is a collection of immigration pathways enabling foreign
                 nationals to become Canadian permanent residents. The Yukon
-                territory operates several immigration streams.
-              </p>
-            </div>
-          </div>
-        </Glass>
-      </Container>
+                territory operates several immigration streams.`,
+        ]}
+      />
       <Container>
         <Title subtitle="The BC PNP has two main components" />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  relative z-10 py-2 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  relative z-10 py-2 w-full">
           {twoFeatures.map((feature, index) => (
             <Feature key={feature.title} {...feature} index={index} />
           ))}
         </div>
         <Title subtitle="Yukon Nominee Program (YNP) Requirements" />
-        <p className="text-sm text-black/60 text-left">
+        <p className="text-sm text-black text-left">
           Just like other provinces Yukon is also required, skilled workers. To
           fill that Yukon is providing an excellent opportunity to nominate
           Skilled Foreign Workers for permanent residence in Canada using YNP.
@@ -64,7 +45,7 @@ export default function Yukon() {
           </ul>
         </p>
         <Title subtitle="Yukon Business Nominee Requirements" />
-        <p className="text-sm text-black/60 text-left">
+        <p className="text-sm text-black text-left">
           <ul className="pl-6 list-disc">
             <li>Language proficiency of minimum CLB LVL 4.</li>
             <li>Education must minimum at a high school level</li>
@@ -80,21 +61,14 @@ export default function Yukon() {
         </p>
       </Container>
       <Container>
-        <Title
-          subtitle="Benefits"
-          title={
-            <p className="text-4xl text-black/50 w-full text-left pt-3">
-              Benefits for your family
-            </p>
-          }
-        />
-        <p className="text-sm text-black/60 text-left">
+        <Title subtitle="Benefits" title={"Benefits for your family"} />
+        <p className="text-sm text-black text-left">
           With provincial nomination, your entire family, including your spouse
           and children under 22 years of age (at the time of submitting the
           provincial nomination application), can submit for Canada Permanent
           Resident to enjoy most of the benefits like Canadian citizen
         </p>
-        <p className="text-sm text-black/60 text-left ">
+        <p className="text-sm text-black text-left ">
           During the wait for permanent residency, your family can apply to
           come, work and study in Canada
           <ul className="pl-6 list-disc">
@@ -102,7 +76,7 @@ export default function Yukon() {
             <li>Legal protection under Canadian laws</li>
           </ul>
         </p>
-        <p className="text-sm text-black/60 text-left ">
+        <p className="text-sm text-black text-left ">
           When you become Canada Permanent Resident
           <ul className="pl-6 list-disc">
             <li>
@@ -129,30 +103,23 @@ export default function Yukon() {
           <Title
             subtitle="
 British Columbia provincial nominee program"
-            title={
-              <p className="text-4xl text-black/50 w-full text-left pt-3">
-                What can we help you?
-              </p>
-            }
+            title={"What can we help you?"}
           />
 
           <div className="flex flex-col justify-start gap-6">
-            <p className="text-sm text-black/60 text-left">
+            <p className="text-sm text-black text-left">
               GreenTech Resources Worldwide Canada can assist you in increasing
               your Comprehensive Ranking System (CRS) score for Express Entry in
               several ways:
             </p>
           </div>
         </div>
-      </Container>
-      <Container>
-        <Glass>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-7xl mx-auto">
-            {featuresPage.map((feature, index) => (
-              <Feature key={feature.title} {...feature} index={index} />
-            ))}
-          </div>
-        </Glass>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 w-full ">
+          {featuresPage.map((feature, index) => (
+            <Feature key={feature.title} {...feature} index={index} />
+          ))}
+        </div>
       </Container>
     </>
   );

@@ -3,61 +3,33 @@ import Glass from "@/lib/helpers";
 import { Feature } from "@/components/ui/cards-set";
 import Title from "@/components/ui/Title";
 import { featuresPage } from "@/components/ui/appointmentMap";
+import ContentBox from "@/app/revamp/revamp-components/content-box";
+import CallToAction from "@/app/revamp/revamp-components/cta";
 
 export default function Manitoba() {
   return (
     <>
-      <Container>
-        <Glass className="flex gap-2 px-10 py-10">
-          <div className="flex-1 flex flex-col gap-2">
-            <div className="relative w-max">
-              <div className="absolute top-0 left-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute top-[12px] transform rotate-90 -left-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-
-              <div className="px-3 py-1.5">
-                <h5 className="tracking-widest text-xl">
-                  Canada Immigration Program
-                </h5>
-              </div>
-
-              <div className="absolute bottom-0 right-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute bottom-[12px] transform rotate-90 -right-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-            </div>
-            <div className="flex flex-col justify-start gap-6">
-              <h3 className="tracking-wide text-left text-4xl text-black/70">
-                Express Entry
-              </h3>
-
-              <p className="text-sm text-black/60 text-left">
-                The Manitoba Provincial Nominee Program (MPNP) is an immigration
+      <ContentBox
+        subtitle="Canada Immigration Program"
+        title="Manitoba Provincial Nominee Program (MPNP)"
+        description={[
+          `  The Manitoba Provincial Nominee Program (MPNP) is an immigration
                 initiative that enables Manitoba to nominate individuals for
                 permanent residency in Canada. Designed to address economic and
                 labor market needs, the program attracts skilled workers,
                 businesspeople, and families to contribute to Manitoba&aposs
-                growth.
-              </p>
-
-              <p className="text-sm text-black/60 text-left">
-                The program includes streams like Skilled Worker Overseas,
+                growth.`,
+          `The program includes streams like Skilled Worker Overseas,
                 Skilled Worker in Manitoba, Business Investor, and International
                 Education, each tailored to specific qualifications and skills
                 required in the province. Successful candidates receive an
                 invitation to apply for permanent residence, contributing to
-                Manitoba&aposs economic and demographic goals.
-              </p>
-            </div>
-          </div>
-        </Glass>
-      </Container>
+                Manitoba&aposs economic and demographic goals.`,
+        ]}
+      />
+
       <Container>
-        <Title
-          subtitle="Benefits"
-          title={
-            <p className="text-4xl text-black/50 w-full text-left pt-3">
-              Benefits for your family
-            </p>
-          }
-        />
+        <Title subtitle="Benefits" title={"Benefits for your family"} />
         <p className="text-sm text-black/60 text-left">
           With provincial nomination, your entire family, including your spouse
           and children under 22 years of age (at the time of submitting the
@@ -116,14 +88,13 @@ British Columbia provincial nominee program"
         </div>
       </Container>
       <Container>
-        <Glass>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-7xl mx-auto">
-            {featuresPage.map((feature, index) => (
-              <Feature key={feature.title} {...feature} index={index} />
-            ))}
-          </div>
-        </Glass>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2  mx-auto">
+          {featuresPage.map((feature, index) => (
+            <Feature key={feature.title} {...feature} index={index} />
+          ))}
+        </div>
       </Container>
+      <CallToAction />
     </>
   );
 }

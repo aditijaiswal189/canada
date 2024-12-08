@@ -4,54 +4,102 @@ import { Feature } from "@/components/ui/cards-set";
 import Title from "@/components/ui/Title";
 import { FAQ } from "@/components/ui/FAQMap";
 import { featuresPage } from "@/components/ui/appointmentMap";
+import { CardTitle, Description } from "@/app/revamp/revamp-components/heading";
 
 export default function Saskatchewan() {
   return (
     <>
       <Container>
-        <Glass className="flex gap-2 px-10 py-10">
-          <div className="flex-1 flex flex-col gap-2">
-            <div className="relative w-max">
-              <div className="absolute top-0 left-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute top-[12px] transform rotate-90 -left-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
+        <div className="flex-1 flex flex-col gap-2">
+          <Title
+            title="Saskatchewan Immigrant Nominee Program (SINP)"
+            subtitle=" Canada Provincial Immigration Program "
+            description={[
+              `The Saskatchewan Provincial Nominee Program (SINP) is a program
+                approved by the province of Saskatchewan.`,
+            ]}
+          />
 
-              <div className="px-3 py-1.5">
-                <h5 className="tracking-widest text-xl">
-                  Canada Provincial Immigration Program
-                </h5>
-              </div>
+          <div className="flex flex-col justify-start gap-6">
+            <p className="text-sm text-black text-left">
+              SPNP consists of various streams aimed at attracting skilled
+              individuals and families with experience to settle and work in
+              Saskatchewan. This includes skilled workers, trade workers,
+              investors, entrepreneurs, and family sponsorship programs.
+            </p>
+            <p className="text-sm text-black text-left">
+              One of the significant advantages of SPNP is the expedited and
+              efficient nomination process. Through SPNP nomination, candidates
+              can apply for Canadian permanent residency more quickly and
+              conveniently. The Saskatchewan Provincial Nominee Program not only
+              helps the province attract the necessary talents and workforce but
+              also provides opportunities for immigrants to participate in and
+              contribute to the local community and economy of Saskatchewan.
+            </p>
+            <ul className="list-disc pl-6 mb-6 space-y-2">
+              <li>
+                <strong>Skilled Workers</strong>: For individuals with
+                qualifying education, work experience, and language skills.
+              </li>
+              <li>
+                <strong>Trade Workers</strong>: For skilled tradespeople who
+                meet specific criteria.
+              </li>
+              <li>
+                <strong>Investors</strong>: For individuals who invest in
+                Saskatchewan’s economy.
+              </li>
+              <li>
+                <strong>Entrepreneurs</strong>: For those looking to start or
+                buy a business in the province.
+              </li>
+              <li>
+                <strong>Family Sponsorship</strong>: For Canadian citizens and
+                permanent residents sponsoring family members.
+              </li>
+            </ul>
 
-              <div className="absolute bottom-0 right-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute bottom-[12px] transform rotate-90 -right-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-            </div>
-            <div className="flex flex-col justify-start gap-6">
-              <h3 className="tracking-wide text-left text-4xl text-black/70">
-                Saskatchewan Immigrant Nominee Program (SINP)
-              </h3>
+            {/* Benefits Section */}
+            <CardTitle className="text-2xl font-semibold mb-4">
+              Benefits of Choosing Saskatchewan Provincial Nominee Program SINP
+            </CardTitle>
+            <ul className="list-disc pl-6 space-y-2 mb-6">
+              <li>
+                <strong>Faster Processing</strong>: SINP offers an expedited
+                nomination process, which can significantly speed up your
+                application for Canadian permanent residency.
+              </li>
+              <li>
+                <strong>Opportunity to Contribute</strong>: By immigrating
+                through SINP, you can contribute your skills and expertise to
+                Saskatchewan’s economy and communities.
+              </li>
+              <li>
+                <strong>Integration and Community</strong>: SINP provides a
+                supportive environment for newcomers to settle and integrate
+                into Canadian society.
+              </li>
+            </ul>
 
-              <p className="text-sm text-black/60 text-left">
-                The Saskatchewan Provincial Nominee Program (SINP) is a program
-                approved by the province of Saskatchewan.
-              </p>
-              <p className="text-sm text-black/60 text-left">
-                SPNP consists of various streams aimed at attracting skilled
-                individuals and families with experience to settle and work in
-                Saskatchewan. This includes skilled workers, trade workers,
-                investors, entrepreneurs, and family sponsorship programs.
-              </p>
-              <p className="text-sm text-black/60 text-left">
-                One of the significant advantages of SPNP is the expedited and
-                efficient nomination process. Through SPNP nomination,
-                candidates can apply for Canadian permanent residency more
-                quickly and conveniently. The Saskatchewan Provincial Nominee
-                Program not only helps the province attract the necessary
-                talents and workforce but also provides opportunities for
-                immigrants to participate in and contribute to the local
-                community and economy of Saskatchewan.
-              </p>
-            </div>
+            <CardTitle className="text-2xl font-semibold mb-4">
+              Ready to Start Your Journey?
+            </CardTitle>
+            <Description className="text-lg">
+              If you’re interested in learning more about the{" "}
+              <strong>Saskatchewan Provincial Nominee Program (SINP)</strong>{" "}
+              and whether you qualify,{" "}
+              <a
+                href="https://www.saskatchewan.ca/residents/moving-to-saskatchewan/immigrating-to-saskatchewan/saskatchewan-immigrant-nominee-program"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-blue-600 underline hover:text-blue-800"
+              >
+                visit the official Saskatchewan Immigration website
+              </a>{" "}
+              for detailed information and application guidelines.
+            </Description>
           </div>
-        </Glass>
+        </div>
       </Container>
       <Container>
         <Title subtitle="Program Details" />
@@ -133,15 +181,11 @@ British Columbia provincial nominee program"
             </p>
           </div>
         </div>
-      </Container>
-      <Container>
-        <Glass>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-7xl mx-auto">
-            {featuresPage.map((feature, index) => (
-              <Feature key={feature.title} {...feature} index={index} />
-            ))}
-          </div>
-        </Glass>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 w-full mx-auto">
+          {featuresPage.map((feature, index) => (
+            <Feature key={feature.title} {...feature} index={index} />
+          ))}
+        </div>
       </Container>
     </>
   );

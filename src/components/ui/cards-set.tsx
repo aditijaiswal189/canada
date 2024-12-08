@@ -1,4 +1,9 @@
 import { cn } from "@/lib/utils";
+import { getSearchedIcon } from "./get-icons";
+import { use } from "react";
+import { Icon } from "@iconify/react/dist/iconify.js";
+import IconBackground from "@/app/revamp/revamp-components/icon-background";
+import { CardTitle, Description } from "@/app/revamp/revamp-components/heading";
 // import {
 //   IconAdjustmentsBolt,
 //   IconCloud,
@@ -68,14 +73,13 @@ export function FeaturesSectionDemo() {
 export const Feature = ({
   title,
   description,
-  icon,
   index,
 }: {
   title: string;
   description: string;
-  icon: React.ReactNode;
   index: number;
 }) => {
+  const icon = use(getSearchedIcon(title));
   return (
     <div
       className={cn(
@@ -85,25 +89,25 @@ export const Feature = ({
       )}
     >
       {index < 4 && (
-        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
+        <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-t from-green-100 dark:from-green-800 to-transparent pointer-events-none" />
       )}
       {index >= 4 && (
         <div className="opacity-0 group-hover/feature:opacity-100 transition duration-200 absolute inset-0 h-full w-full bg-gradient-to-b from-neutral-100 dark:from-neutral-800 to-transparent pointer-events-none" />
       )}
       {icon && (
         <div className="mb-4 relative z-10 px-4 md:px-10 text-neutral-600 dark:text-neutral-400">
-          {icon}
+          <IconBackground icon={icon} className="text-3xl" />
         </div>
       )}
       <div className="text-lg font-bold mb-2 relative z-10 px-4 md:px-10">
-        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-highlight dark:bg-highlight group-hover/feature:bg-blue-500 transition-all duration-200 origin-center" />
-        <span className="group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100 text-left">
+        <div className="absolute left-0 inset-y-0 h-6 group-hover/feature:h-8 w-1 rounded-tr-full rounded-br-full bg-highlight dark:bg-highlight group-hover/feature:bg-green-600 transition-all duration-200 origin-center" />
+        <CardTitle className="text-lg group-hover/feature:translate-x-2 transition duration-200 inline-block text-neutral-800 dark:text-neutral-100 text-left">
           {title}
-        </span>
+        </CardTitle>
       </div>
-      <p className="text-sm text-neutral-600 text-left dark:text-neutral-300 max-w-max md:max-w-xs  relative z-10 px-4 md:px-10">
+      <Description className="text-sm text-left max-w-max md:max-w-xs relative z-10 px-4 md:px-10">
         {description}
-      </p>
+      </Description>
     </div>
   );
 };

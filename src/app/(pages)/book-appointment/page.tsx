@@ -1,4 +1,7 @@
 "use client";
+import ContentBox from "@/app/revamp/revamp-components/content-box";
+import CallToAction from "@/app/revamp/revamp-components/cta";
+import { StatsSection } from "@/app/revamp/revamp-components/stats-section";
 import { appointment } from "@/components/ui/appointmentMap";
 import { Feature } from "@/components/ui/cards-set";
 import Container from "@/components/ui/container";
@@ -10,22 +13,15 @@ import CountUp, { useCountUp } from "react-countup";
 
 export default function BookAppointment() {
   return (
-    <>
-      <Container className="flex flex-col py-20 gap-20">
-        <Title
-          title={
-            "Why Choosing Saskatchewan Immigration and a Consultant in Saskatchewan is vital?"
-          }
-          subtitle={"Saskatchewan stands out as a province in Canada."}
-          description={
-            <div className="flex flex-col gap-4">
-              <p className="text-left">
-                Saskatchewan stands out as a province in Canada with open
+    <div className="flex flex-col gap-8">
+      <ContentBox
+        subtitle="Saskatchewan stands out as a province in Canada."
+        title="Why Choosing Saskatchewan Immigration and a Consultant in Saskatchewan is vital?"
+        description={[
+          `Saskatchewan stands out as a province in Canada with open
                 immigration schemes that are suitable for many individuals
-                seeking to establish themselves in the country.
-              </p>
-              <p className="text-left">
-                With its diverse economy, welcoming communities, and ample
+                seeking to establish themselves in the country.`,
+          `With its diverse economy, welcoming communities, and ample
                 opportunities for skilled workers, entrepreneurs, and investors,
                 Saskatchewan has become an attractive destination for
                 immigrants. However, navigating the immigration process in
@@ -35,93 +31,21 @@ export default function BookAppointment() {
                 unique immigration pathways offered by the province, such as the
                 Saskatchewan Immigrant Nominee Program (SINP), and can provide
                 tailored guidance to individuals looking to make Saskatchewan
-                their new home.
-              </p>
-              <p className="text-left">
-                Given the multitude of options available and the intricacies of
+                their new home.`,
+          `Given the multitude of options available and the intricacies of
                 the application process, choosing the right immigration
                 consultant in Saskatchewan is paramount to ensuring a smooth and
                 successful immigration journey. With their knowledge of
                 Saskatchewan&aposs immigration policies, labor market demands,
                 and community dynamics, these consultants play a pivotal role in
                 helping individuals realize their aspirations of settling and
-                thriving in Saskatchewan.
-              </p>
-            </div>
-          }
-        />
-      </Container>
-      <Container>
-        <Glass
-          className="flex-col  gap-8 py-20 justify-center items-center bg-cover bg-center relative"
-          style={{
-            backgroundImage: `url(/immigration.png)`,
-          }}
-        >
-          <div className="bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 rounded-2xl border-gray-100  h-full absolute top-0 left-0 w-full"></div>
+                thriving in Saskatchewan.`,
+        ]}
+      />
 
-          <div className="md:flex-row flex-col flex z-10 gap-20 justify-start items-start">
-            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-              <Icon
-                icon={"mdi:checkbox-marked-outline"}
-                className="text-5xl cursor-pointer  rounded-full py-2 px-2"
-              />
-              <div className="flex gap-2 justify-center items-center">
-                <CountUp
-                  enableScrollSpy={true}
-                  end={100}
-                  className="text-6xl"
-                />
-                <span className="text-4xl">+</span>
-              </div>
-              <span className="uppercase text-lg font-primary tracking-widest">
-                successful visas in 2023
-              </span>
-            </div>
-            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-              <Icon
-                icon={"icon-park-outline:message-success"}
-                className="text-5xl cursor-pointer  rounded-full py-2 px-2"
-              />
-
-              <div className="flex gap-2 justify-center items-center">
-                <CountUp enableScrollSpy={true} end={14} className="text-6xl" />
-              </div>
-              <span className="uppercase text-lg font-primary tracking-widest">
-                Success Start Up Visa
-              </span>
-            </div>
-            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-              <Icon
-                icon={"cil:happy"}
-                className="text-5xl cursor-pointer  rounded-full py-2 px-2"
-              />
-              <div className="flex gap-2 justify-center items-center">
-                <CountUp enableScrollSpy={true} end={95} className="text-6xl" />
-                <span className="text-4xl"> %</span>
-              </div>
-
-              <span className="uppercase text-lg font-primary tracking-widest">
-                happy clients
-              </span>
-            </div>
-            <div className="flex w-full md:flex-1 justify-center items-center  flex-col gap-4 text-white/60">
-              <Icon
-                icon={"game-icons:trophy-cup"}
-                className="text-5xl cursor-pointer rounded-full py-2 px-2"
-              />
-              <div className="flex gap-2 flex-col  justify-center items-center">
-                <CountUp enableScrollSpy={true} end={3} className="text-6xl" />
-              </div>
-              <span className="uppercase text-lg font-primary tracking-widest">
-                Consultants
-              </span>
-            </div>
-          </div>
-        </Glass>
-      </Container>
       <Container>
         <Title
+          subtitle="Immigration Consultant in Saskatchewan"
           title={"How to check if my consultant is RCIC?"}
           description={
             <div className="flex flex-col gap-4">
@@ -200,74 +124,73 @@ export default function BookAppointment() {
           }
         />
       </Container>
+      <StatsSection />
+
       <Container>
-        <Glass className="flex flex-col gap-4 px-10">
-          <Title title={"Why GTR Immigration?"} />
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-7xl mx-auto">
-            {appointment.map((feature, index) => (
-              <Feature key={feature.title} {...feature} index={index} />
-            ))}
-          </div>
-        </Glass>
+        <Title title={"Why GTR Immigration?"} subtitle="GTR Immigration" />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 w-full">
+          {appointment.map((feature, index) => (
+            <Feature key={feature.title} {...feature} index={index} />
+          ))}
+        </div>
+
+        <Title
+          subtitle="Immigration Consultant in Saskatchewan"
+          title={"What Can an Immigration Consultant Do?"}
+          description={
+            <div className="flex flex-col gap-6">
+              <p className="text-left">
+                Immigration consultants offer a range of services to assist
+                clients throughout the immigration process. Some of the key
+                roles they play include:
+              </p>
+              <ul className="flex flex-col gap-6">
+                <li>
+                  <p className="text-left font-primary tracking-widest text-2xl text-red-900">
+                    Assessment and Eligibility
+                  </p>
+                  <p className="text-left">
+                    Consultants assess clients&apos eligibility for various
+                    immigration programs and provide personalized advice based
+                    on individual circumstances.
+                  </p>
+                </li>
+                <li>
+                  <p className="text-left font-primary tracking-widest text-2xl text-red-900">
+                    Application Preparation
+                  </p>
+                  <p className="text-left">
+                    Consultants assist in completing and submitting immigration
+                    applications, ensuring all required documents are accurate
+                    and submitted within deadlines.
+                  </p>
+                </li>
+                <li>
+                  <p className="text-left font-primary tracking-widest text-2xl text-red-900">
+                    Representation and Advocacy
+                  </p>
+                  <p className="text-left">
+                    Consultants represent clients in communications with
+                    immigration authorities, advocating on their behalf and
+                    addressing any concerns or inquiries.
+                  </p>
+                </li>
+                <li>
+                  <p className="text-left font-primary tracking-widest text-2xl text-red-900">
+                    Post-Immigration Support
+                  </p>
+                  <p className="text-left">
+                    Consultants offer support and guidance even after
+                    immigration approval, assisting with settlement, obtaining
+                    essential documents, and navigating life in Canada.
+                  </p>
+                </li>
+              </ul>
+            </div>
+          }
+        />
       </Container>
-      <Container>
-        <Glass className="px-10">
-          <Title
-            title={"What Can an Immigration Consultant Do?"}
-            description={
-              <div className="flex flex-col gap-6">
-                <p className="text-left">
-                  Immigration consultants offer a range of services to assist
-                  clients throughout the immigration process. Some of the key
-                  roles they play include:
-                </p>
-                <ul className="flex flex-col gap-6">
-                  <li>
-                    <p className="text-left font-primary tracking-widest text-2xl text-red-900">
-                      Assessment and Eligibility
-                    </p>
-                    <p className="text-left">
-                      Consultants assess clients&apos eligibility for various
-                      immigration programs and provide personalized advice based
-                      on individual circumstances.
-                    </p>
-                  </li>
-                  <li>
-                    <p className="text-left font-primary tracking-widest text-2xl text-red-900">
-                      Application Preparation
-                    </p>
-                    <p className="text-left">
-                      Consultants assist in completing and submitting
-                      immigration applications, ensuring all required documents
-                      are accurate and submitted within deadlines.
-                    </p>
-                  </li>
-                  <li>
-                    <p className="text-left font-primary tracking-widest text-2xl text-red-900">
-                      Representation and Advocacy
-                    </p>
-                    <p className="text-left">
-                      Consultants represent clients in communications with
-                      immigration authorities, advocating on their behalf and
-                      addressing any concerns or inquiries.
-                    </p>
-                  </li>
-                  <li>
-                    <p className="text-left font-primary tracking-widest text-2xl text-red-900">
-                      Post-Immigration Support
-                    </p>
-                    <p className="text-left">
-                      Consultants offer support and guidance even after
-                      immigration approval, assisting with settlement, obtaining
-                      essential documents, and navigating life in Canada.
-                    </p>
-                  </li>
-                </ul>
-              </div>
-            }
-          />
-        </Glass>
-      </Container>
-    </>
+      <CallToAction />
+    </div>
   );
 }

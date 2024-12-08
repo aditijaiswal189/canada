@@ -7,50 +7,37 @@ import { Icon } from "@iconify/react/dist/iconify.js";
 
 import { FAQ } from "@/components/ui/FAQMap";
 import { featuresPage } from "@/components/ui/appointmentMap";
+import CallToAction from "@/app/revamp/revamp-components/cta";
+import ContentBox from "@/app/revamp/revamp-components/content-box";
 
 export default function BritishColumbia() {
   return (
     <>
-      <Container>
-        <Glass className="flex gap-2 px-10 py-10">
-          <div className="flex-1 flex flex-col gap-2">
-            <div className="relative w-max">
-              <div className="absolute top-0 left-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute top-[12px] transform rotate-90 -left-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-
-              <div className="px-3 py-1.5">
-                <h5 className="tracking-widest text-xl">
-                  Canada Provincial Nomination Program
-                </h5>
-              </div>
-
-              <div className="absolute bottom-0 right-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute bottom-[12px] transform rotate-90 -right-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-            </div>
-            <div className="flex flex-col justify-start gap-6">
-              <h3 className="tracking-wide text-left text-4xl text-black/70">
-                British Columbia Provincial Nominee Program (BC PNP)
-              </h3>
-
-              <p className="text-sm text-black/60 text-left">
-                The BC Provincial Nominee Program (BC PNP) is an economic
+      <ContentBox
+        title="British Columbia Provincial Nominee Program (BC PNP)"
+        subtitle="Canada Provincial Nomination Program"
+        description={[
+          `  The BC Provincial Nominee Program (BC PNP) is an economic
                 immigration program. It lets the Province select economic
                 immigrants who will live in B.C. and help fill job vacancies or
-                operate businesses.
-              </p>
-              <p className="text-sm text-black/60 text-left">
-                If you are nominated, you and your family can apply to
+                operate businesses.`,
+          `If you are nominated, you and your family can apply to
                 Immigration, Refugees and Citizenship Canada (IRCC) for
-                permanent residence in Canada.
-              </p>
-            </div>
-          </div>
-        </Glass>
-      </Container>
-      <Container>
-        <Title subtitle="The BC PNP has two main components" />
+                permanent residence in Canada.`,
+        ]}
+      />
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  relative z-10 py-2 max-w-7xl mx-auto">
+      <Container>
+        <Title
+          subtitle="Canada provincial nomination program"
+          title={"British Columbia Provincial Nominee Program (BC PNP)"}
+          description={[
+            "The BC Provincial Nominee Program (BC PNP) is an economic immigration program. It lets the Province select economic immigrants who will live in B.C. and help fill job vacancies or operate businesses.",
+            "If you are nominated, you and your family can apply to Immigration, Refugees and Citizenship Canada (IRCC) for permanent residence in Canada.",
+            "The BC PNP has two main components",
+          ]}
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  relative z-10 py-2 max-w-7xl ">
           {twoFeatures.map((feature, index) => (
             <Feature key={feature.title} {...feature} index={index} />
           ))}
@@ -193,16 +180,14 @@ British Columbia provincial nominee program"
             </p>
           </div>
         </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-7xl mx-auto">
+          {featuresPage.map((feature, index) => (
+            <Feature key={feature.title} {...feature} index={index} />
+          ))}
+        </div>
       </Container>
-      <Container>
-        <Glass>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-7xl mx-auto">
-            {featuresPage.map((feature, index) => (
-              <Feature key={feature.title} {...feature} index={index} />
-            ))}
-          </div>
-        </Glass>
-      </Container>
+      <CallToAction />
     </>
   );
 }

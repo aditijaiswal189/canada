@@ -1,3 +1,5 @@
+import { Description } from "@/app/revamp/revamp-components/heading";
+import { Timeline } from "@/app/revamp/revamp-components/timeline";
 import {
   Accordion,
   AccordionContent,
@@ -21,10 +23,14 @@ export const FAQ = ({
       collapsible
       className="w-full px-2 md:px-0 flex flex-col gap-2"
     >
-      <AccordionItem value="item-1" className="w-full ">
-        <AccordionTrigger>{title}</AccordionTrigger>
-        <AccordionContent className="">
-          <div className="flex flex-col gap-2 my-2">{description}</div>
+      <AccordionItem value="item-1" className="w-full my-2">
+        <AccordionTrigger className="bg-green-600 w-full text-left text-white rounded-none  data-[state=open]:rounded-none">
+          {title}
+        </AccordionTrigger>
+        <AccordionContent className="border px-2">
+          <Description className="flex text-sm flex-col gap-2 my-2">
+            {description}
+          </Description>
         </AccordionContent>
       </AccordionItem>
     </Accordion>

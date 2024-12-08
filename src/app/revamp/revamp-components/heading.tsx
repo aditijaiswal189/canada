@@ -9,7 +9,7 @@ export function Heading() {
 export function Subtitle({
   children,
   position = "left",
-  className = "",
+  className = "text-left",
   highliterClassName = "",
 }) {
   const positionClass = {

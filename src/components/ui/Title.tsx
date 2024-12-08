@@ -1,23 +1,27 @@
+import { Description, Subtitle } from "@/app/revamp/revamp-components/heading";
 import { cn } from "@/lib/utils";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
 import React from "react";
+import { Title as TitleRevamp } from "@/app/revamp/revamp-components/heading";
 // import { Link } from "react-router-dom";
 
 export default function Title({
   title,
   subtitle,
   description,
+  titleClassName,
   to,
   cta,
   className,
 }: {
   title?: string | React.ReactNode;
   subtitle?: string;
-  description?: string | React.ReactNode;
+  description?: string[] | React.ReactNode;
   to?: string;
   cta?: string;
   className?: string;
+  titleClassName?: string;
 }) {
   return (
     <div className="flex w-full justify-between ">
@@ -27,12 +31,14 @@ export default function Title({
           className
         )}
       >
-        <h4 className="text-highlight text-2xl">{subtitle}</h4>
+        <Subtitle className="text-2xl">{subtitle}</Subtitle>
         <div className="flex flex-col gap-3 w-full">
           {typeof title === "string" ? (
-            <h2 className="text-2xl md:text-4xl tracking-wider text-black/50 w-full text-left">
+            <TitleRevamp
+              className={cn("tracking-wider w-full text-left", titleClassName)}
+            >
               {title}
-            </h2>
+            </TitleRevamp>
           ) : (
             title
           )}
@@ -40,8 +46,12 @@ export default function Title({
         <span className="block h-0.5 bg-highlight w-max"></span>
 
         {description &&
-          (typeof description === "string" ? (
-            <p className="text-left text-black/50 w-[70%]">{description}</p>
+          (Array.isArray(description) ? (
+            <Description className="text-left w-[80%]">
+              {description.map((desc, index) => (
+                <p key={index}>{desc}</p>
+              ))}
+            </Description>
           ) : (
             description
           ))}
