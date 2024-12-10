@@ -6,10 +6,7 @@ import { appointment } from "@/components/ui/appointmentMap";
 import { Feature } from "@/components/ui/cards-set";
 import Container from "@/components/ui/container";
 import Title from "@/components/ui/Title";
-import Glass from "@/lib/helpers";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import React from "react";
-import CountUp, { useCountUp } from "react-countup";
 
 export default function BookAppointment() {
   return (
