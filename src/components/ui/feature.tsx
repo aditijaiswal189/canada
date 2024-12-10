@@ -1,6 +1,7 @@
 import Glass from "@/lib/helpers";
 import Container from "./container";
 import { cn } from "@/lib/utils";
+import { Description } from "@/app/revamp/revamp-components/heading";
 
 export function FeatureSection({
   title,
@@ -11,14 +12,14 @@ export function FeatureSection({
 }: {
   title?: string;
   subtitle?: string;
-  description?: string;
+  description?: string[];
   children?: React.ReactNode;
   className?: string;
   childClass?: string;
 }) {
   return (
     <>
-      <div className="max-w-xl  md:mx-auto sm:text-center lg:max-w-2xl">
+      <div className="max-w-xl  md:mx-auto sm:text-center lg:max-w-full">
         <div>
           <p className="inline-block z-10 bg-green-600 px-4 py-2 mb-4 text-xs font-semibold tracking-wider text-white uppercase rounded-full bg-teal-accent-400">
             {subtitle}
@@ -27,7 +28,11 @@ export function FeatureSection({
         <h2 className="max-w-lg mb-6 font-sans text-3xl font-bold leading-none tracking-tight text-gray-900 sm:text-4xl md:mx-auto z-10 relative">
           {title}
         </h2>
-        <p className="text-base text-gray-700 md:text-lg">{description}</p>
+        <div className="flex flex-col gap-2">
+          {description.map((item, index) => (
+            <Description className="text-base lg:text-lg">{item}</Description>
+          ))}
+        </div>
       </div>
       <div className={cn("grid gap-8 row-gap-10 lg:grid-cols-2", childClass)}>
         {children}

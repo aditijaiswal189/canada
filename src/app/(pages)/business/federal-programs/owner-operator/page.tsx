@@ -1,3 +1,5 @@
+import ContentBox from "@/app/revamp/revamp-components/content-box";
+import CallToAction from "@/app/revamp/revamp-components/cta";
 import { Feature } from "@/components/ui/cards-set";
 import Container from "@/components/ui/container";
 import { Eligibility } from "@/components/ui/eligibilityMap";
@@ -10,63 +12,59 @@ import React from "react";
 
 export default function OwnerOperator() {
   return (
-    <Container className="flex flex-col gap-20">
-      <Glass className="flex gap-8 flex-col py-10 px-10">
-        <Title title={"What is LMIA?"} />
-        <div className="flex flex-col gap-6 px- text-left">
-          <p className="text-black/60 text-left">
-            A Labour Market Impact Assessment (LMIA) is a document that an
-            employer in Canada may need to get before hiring a foreign worker..
-          </p>
-          <p className="text-black/60 text-left">
-            A positive LMIA will show that there is a need for a foreign worker
+    <>
+      <ContentBox
+        title="What is LMIA?"
+        subtitle="LMIA"
+        description={[
+          `A Labour Market Impact Assessment (LMIA) is a document that an
+            employer in Canada may need to get before hiring a foreign worker..`,
+          `A positive LMIA will show that there is a need for a foreign worker
             to fill the job. It will also show that no Canadian worker or
             permanent resident is available to do the job. A positive LMIA is
-            sometimes called a confirmation letter.
-          </p>
-          <p className="text-black/60">
-            If the employer needs an LMIA, they must apply for one. Once an
+            sometimes called a confirmation letter.`,
+          `If the employer needs an LMIA, they must apply for one. Once an
             employer gets the LMIA, the worker can apply for a work permit. To
-            apply for a work permit, a worker needs:
-          </p>
-          <ul className="list-disc text-left px-6 text-black/60">
-            <li className="text-left">a job offer letter</li>
-            <li>a contract</li>
-            <li>a copy of the LMIA, and,</li>
-            <li>the LMIA number.</li>
-          </ul>
+            apply for a work permit, a worker needs:`,
+          `a job offer letter`,
+          `a contract`,
+          `a copy of the LMIA, and,`,
+          `the LMIA number.`,
+        ]}
+      />
+      <Container className="flex flex-col gap-20">
+        <div>
+          <div className="flex w-full flex-col gap-4 justify-start items-start ">
+            <Title title={"Eligibility"} description={"What are the steps?"} />
+            {Eligibility.map((item, index) => (
+              <div
+                key={index}
+                className="text-left flex gap-2 items-start justify-center"
+              >
+                <Icon
+                  icon={"material-symbols:library-add-check-rounded"}
+                  className="mt-1"
+                />
+                <p>{item.title}</p>
+              </div>
+            ))}
+          </div>
         </div>
-      </Glass>
-      <div>
-        <div className="flex w-full flex-col gap-4 justify-start items-start ">
-          <Title title={"Eligibility"} description={"What are the steps?"} />
-          {Eligibility.map((item, index) => (
-            <div
-              key={index}
-              className="text-left flex gap-2 items-start justify-center"
-            >
-              <Icon
-                icon={"material-symbols:library-add-check-rounded"}
-                className="mt-1"
-              />
-              <p>{item.title}</p>
-            </div>
+        <Title
+          title={"Ower operator lmia"}
+          subtitle="What can we help you?"
+          description={[
+            "GreenTech Resource Worldwide Canada can help with all the resource and support during the process to help you choose the right place to settle in Canada and support you with launching or purchasing your business. Not only that, we will ensure to make a process of your immigration documents are properly filed with quality and professional manners.",
+          ]}
+        />
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 w-full">
+          {features.map((feature, index) => (
+            <Feature key={feature.title} {...feature} index={index} />
           ))}
         </div>
-      </div>
-      <Title
-        title={"Ower operator lmia"}
-        subtitle="What can we help you?"
-        description={
-          "GreenTech Resource Worldwide Canada can help with all the resource and support during the process to help you choose the right place to settle in Canada and support you with launching or purchasing your business. Not only that, we will ensure to make a process of your immigration documents are properly filed with quality and professional manners."
-        }
-      />
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
-        {features.map((feature, index) => (
-          <Feature key={feature.title} {...feature} index={index} />
-        ))}
-      </div>
-    </Container>
+      </Container>
+      <CallToAction />
+    </>
   );
 }
 

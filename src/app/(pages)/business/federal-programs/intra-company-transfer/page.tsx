@@ -20,13 +20,13 @@ export default function IntraCompanyTransfer() {
           foreign nationals to obtain a work permit without needing an LMIA.
         </p>
       </Glass>
-      <div className="flex flex-col gap-4 px-6 justify-center items-center">
+      <div className="flex flex-col gap-4  justify-center items-center">
         <Title
           title={"How can we help you?"}
           subtitle="INTRA-COMPANY tRANSFER"
           description="GTR Worldwide can assist you by providing a range of valuable services"
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  relative z-10 py-10 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-2  relative z-10 py-10 w-full">
           {features.map((feature, index) => (
             <Feature key={feature.title} {...feature} index={index} />
           ))}

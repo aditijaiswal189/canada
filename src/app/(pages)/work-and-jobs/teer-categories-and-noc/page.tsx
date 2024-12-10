@@ -1,4 +1,5 @@
 "use client";
+import CallToAction from "@/app/revamp/revamp-components/cta";
 import Container from "@/components/ui/container";
 import { CTADefault } from "@/components/ui/cta";
 import {
@@ -73,12 +74,7 @@ export default function TeerCategoriesAndNoc() {
           </Table>
         </Glass>
       </Container>
-      <CTADefault
-        title="Take the first step towards your family&aposs Canadian dream"
-        subtitle="Book a consultation today to explore options and secure your family&aposs future in Canada"
-        image="/toronto.jpg"
-      />
-      <Container>{/* <NewsShowcase /> */}</Container>
+      <CallToAction />
     </>
   );
 }

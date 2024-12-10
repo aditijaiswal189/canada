@@ -6,56 +6,33 @@ import Glass from "@/lib/helpers";
 import { Feature } from "@/components/ui/cards-set";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { FAQ } from "@/components/ui/FAQMap";
+import ContentBox from "@/app/revamp/revamp-components/content-box";
+import CallToAction from "@/app/revamp/revamp-components/cta";
 
 export default function WorkPermit() {
   return (
     <>
-      <Container>
-        <Glass className="flex gap-2 px-10 py-10">
-          <div className="flex-1 flex flex-col gap-2">
-            <div className="relative w-max">
-              <div className="absolute top-0 left-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute top-[12px] transform rotate-90 -left-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
+      <ContentBox
+        title="Work Permits (WP)"
+        subtitle="Canada Immigration Program"
+        description={[
+          `Working in Canada typically requires foreign nationals to obtain a
+              work permit. There are several different types of work permits
+              available in Canada. Here are some common types`,
+          ,
+        ]}
+      />
 
-              <div className="px-3 py-1.5">
-                <h5 className="tracking-widest text-xl">
-                  Canada Immigration Program
-                  {/* {albertaImmigrationAAIP[language].title} */}
-                </h5>
-              </div>
-
-              <div className="absolute bottom-0 right-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute bottom-[12px] transform rotate-90 -right-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-            </div>
-            <div className="flex flex-col justify-start gap-6">
-              <h3 className="tracking-wide text-left text-4xl text-black/70">
-                Work Permits (WP)
-              </h3>
-              <Title subtitle="Types of Work Permits" />
-
-              <p className="text-sm text-black/60 text-left">
-                Working in Canada typically requires foreign nationals to obtain
-                a work permit. There are several different types of work permits
-                available in Canada. Here are some common types
-              </p>
-
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
-                {features.map((feature, index) => (
-                  <Feature key={feature.title} {...feature} index={index} />
-                ))}
-              </div>
-            </div>
-          </div>
-        </Glass>
-      </Container>
       <Container px-6>
-        <Title subtitle="How to apply for a Work Permit" />
-
-        <p className="text-sm text-black/60 text-left">
-          Applying for a work permit in Canada can be a multi-step process,
+        <Title
+          subtitle="How to apply for a Work Permit"
+          description={[
+            `Applying for a work permit in Canada can be a multi-step process,
           depending on your situation and the type of work permit you require.
-          Here are the general steps to follow
-        </p>
+          Here are the general steps to follow`,
+          ]}
+        />
+
         <div className="flex flex-col gap-2">
           {workPermitFaq.map((item) => (
             <FAQ
@@ -66,18 +43,7 @@ export default function WorkPermit() {
           ))}
         </div>
       </Container>
-      <CTADefault
-        title="Take the first step towards your family&aposs Canadian dream
-"
-        subtitle={
-          <p className="text-xl text-white/90">
-            Book a consultation today to explore immigration options
-            <br />
-            and secure your family&aposs future in Canada.
-          </p>
-        }
-        image={"/service.jpg"}
-      />
+      <CallToAction />
     </>
   );
 }

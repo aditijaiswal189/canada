@@ -8,81 +8,43 @@ import { CardDemo } from "@/components/ui/animated-card";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import HoverCard from "@/components/ui/hover-card";
 import { color } from "framer-motion";
+import CallToAction from "@/app/revamp/revamp-components/cta";
+import TreeViewList from "@/app/revamp/revamp-components/tree-view-list";
 
 export default function InDemandJobs() {
   return (
     <>
       <Container>
-        <Glass className="flex gap-2 px-10 py-10">
-          <div className="flex-1 flex flex-col gap-2">
-            <div className="relative w-max">
-              <div className="absolute top-0 left-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute top-[12px] transform rotate-90 -left-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-
-              <div className="px-3 py-1.5">
-                <h5 className="tracking-widest text-xl">
-                  GREENTECH RESOURCES WORLDWIDECANADA
-                  {/* {albertaImmigrationAAIP[language].title} */}
-                </h5>
-              </div>
-
-              <div className="absolute bottom-0 right-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute bottom-[12px] transform rotate-90 -right-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-            </div>
-            <div className="flex flex-col justify-start gap-6">
-              <h3 className="tracking-wide text-left text-4xl text-black/70">
-                We are hiring - JAL/LMIA available
-              </h3>
-
-              <p className="text-sm text-black/60 text-left">
-                GreenTech Resources Worldwide Canada&aposs partners currently
+        <Title
+          title="We are hiring - JAL/LMIA available"
+          subtitle="GREENTECH RESOURCES WORLDWIDECANADA"
+          description={[
+            `  GreenTech Resources Worldwide Canada&aposs partners currently
                 have a demand for hiring foreign workers for the following
                 positions. Please contact us to submit your application and
-                arrange for interviews
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-4   h-max justify-center items-center">
-                {data.map((item, index) => (
-                  <CardDemo key={index}>
-                    <div
-                      key={index}
-                      className="flex flex-col gap-0 w-full px-6 relative z-10"
-                    >
-                      <h5 className="text-4xl text-left text-highlight">
-                        {item.title}
-                      </h5>
-                      {/* <p className="text-sm text-left text-black/70">
-            {truncateTextHeading(item.subtitle)}
-          </p> */}
-                    </div>
-                    <div className="flex gap-1.5 flex-col justify-start items-start w-full px-6 relative z-10">
-                      {item.list.map((item, index) => (
-                        <li
-                          key={index}
-                          className="list-none flex gap-1 justify-start items-start text-left text-black/60"
-                        >
-                          <div className="w-6 mt-2">
-                            <Icon
-                              icon={
-                                "material-symbols:bookmark-check-outline-rounded"
-                              }
-                            />
-                          </div>
-                          <div className=" flex justify-start">
-                            {item.title}
-                          </div>
-                        </li>
-                      ))}
-                    </div>
-                  </CardDemo>
-                ))}
+                arrange for interviews`,
+          ]}
+        />
+        <div className="flex gap-2">
+          {data.map((item, index) => (
+            <div className="flex-1 flex flex-col gap-2 border rounded-md py-2">
+              <div
+                key={index}
+                className="flex flex-col gap-0 w-full px-6 relative z-10"
+              >
+                <h5 className="text-4xl text-left text-highlight">
+                  {item.title}
+                </h5>
+              </div>
+              <div className="flex gap-1.5 flex-col justify-start items-start w-full px-6 relative z-10">
+                <TreeViewList items={item.list} />
               </div>
             </div>
-          </div>
-        </Glass>
+          ))}
+        </div>
       </Container>
       <Container>
-        {" "}
-        <Title subtitle="Jobs in high demand in Canada" />
+        <Title subtitle="Jobs in high demand in Canada" title="Jobs" />
         <div className="grid lg:grid-cols-3 justify-center items-center md:grid-cols-3 sm:grid-cols-2 grid-cols-1 w-full gap-10">
           {jobsConfig.map((item, index) => (
             <HoverCard
@@ -98,38 +60,7 @@ export default function InDemandJobs() {
           ))}
         </div>
       </Container>
-      <Container>
-        {/* <Title
-          subtitle="Student direct stream (SDS"
-          title={
-            <p className="text-xl text-black/50 w-full text-left pt-3">
-              What can we help you?
-            </p>
-          }
-        />
-        <p className="text-sm text-black/60 text-left">
-          Immigration policies can change over time, so it’s essential to stay
-          updated with us for the latest information from the respective
-          provincial or territorial immigration authorities.
-        </p>
-        <p className="text-sm text-black/60 text-left">
-          Consult GreenTech Resources Worldwide Canada experts to understand
-          specific requirements and eligibility for these pathways based on your
-          circumstances
-        </p> */}
-        <CTADefault
-          title="CIC Canada Jobs Bank
-"
-          subtitle={
-            <p className="text-xl text-white/90">
-              Finding a job in Canada as a foreign national can be a challenging
-              but it is rewarding process. Surf for your dream job at CIC Canada
-              Job Bank
-            </p>
-          }
-          image={"/service.jpg"}
-        />
-      </Container>
+      <CallToAction />
     </>
   );
 }

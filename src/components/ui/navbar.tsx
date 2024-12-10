@@ -855,4 +855,8 @@ const router = [
       },
     ],
   },
+  {
+    path: "/news",
+    element: "News",
+  },
 ];

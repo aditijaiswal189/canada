@@ -8,162 +8,113 @@ import { Feature } from "@/components/ui/cards-set";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { ServicesCard } from "@/components/ui/services-card";
 import HoverCard from "@/components/ui/hover-card";
+import ContentBox from "@/app/revamp/revamp-components/content-box";
 
 export default function PathwayFromStudyToPr() {
   return (
-    <div className="flex flex-col gap-8">
-      <Container>
-        <Glass className="flex gap-2 px-10 py-10">
-          <div className="flex-1 flex flex-col gap-2">
-            <div className="relative w-max">
-              <div className="absolute top-0 left-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute top-[12px] transform rotate-90 -left-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-
-              <div className="px-3 py-1.5">
-                <h5 className="tracking-widest text-xl">
-                  Canada Immigration Program
-                  {/* {albertaImmigrationAAIP[language].title} */}
-                </h5>
-              </div>
-
-              <div className="absolute bottom-0 right-0 w-6 h-0.5 bg-highlight rounded-md"></div>
-              <div className="absolute bottom-[12px] transform rotate-90 -right-[12px] w-6 h-0.5 bg-highlight rounded-md"></div>
-            </div>
-            <div className="flex flex-col justify-start gap-6">
-              <h3 className="tracking-wide text-left text-4xl text-black/70">
-                Pathway from Study to PR
-              </h3>
-
-              <p className="text-sm text-black/60 text-left">
-                Common Pathway for International Students to Become Permanent
-                Residents in Canada
-              </p>
-              <Title subtitle="Completion of a Study Program in Canada" />
-              <p className="text-sm text-black/60 text-left">
-                <ul className="pl-6 list-disc">
-                  <li>
-                    Enroll in a study program at a designated learning
-                    institution in Canada.
-                  </li>
-                  <li>
-                    {" "}
-                    Ensure compliance with immigration and study regulations
-                    during your study period.
-                  </li>
-                </ul>
-              </p>
-              <Title subtitle="Working under Post-Graduation Work Permit (PGWP)" />
-              <p className="text-sm text-black/60 text-left">
-                <ul className="pl-6 list-disc">
-                  <li>
-                    After completing your study program in Canada, apply for a
-                    Post-Graduation Work Permit (PGWP). PGWP allows you to work
-                    in Canada for a specific duration after graduation (8 months
-                    to 3 years, depending on your program)
-                  </li>
-                  <li>
-                    Accumulating work experience in Canada can enhance your
-                    chances of obtaining permanent residency.
-                  </li>
-                </ul>
-              </p>
-              <Title subtitle="Get Permanent Residency through Popular Routes" />
-
-              <p className="text-sm text-black/60 text-left">
-                <ul className="pl-6 list-disc">
-                  <li>Permanent Residency through Popular Routes</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-        </Glass>
-      </Container>
-      <Container className="flex flex-col gap-14">
-        <div className="flex flex-col gap-4">
+    <>
+      <ContentBox
+        title="Pathway from Study to PR"
+        subtitle="Canada Immigration Program"
+        description={[
+          `Common Pathway for International Students to Become Permanent
+                Residents in Canada`,
+        ]}
+      />
+      <div className="flex flex-col gap-8">
+        <Container>
           <Title
-            subtitle="For Post-Graduate students"
-            title={
-              <p className="text-4xl text-black/50 w-full text-left pt-3">
-                Where is it easy to apply for permanent residency?
-              </p>
-            }
+            subtitle="Completion of a Study Program in Canada"
+            description={[
+              `Enroll in a study program at a designated learning
+                      institution in Canada.`,
+              `Ensure compliance with immigration and study regulations
+                      during your study period.`,
+            ]}
           />
-          <p className="text-sm text-black/60 text-left">
-            The competition in Canada’s Express Entry system is currently very
-            high, and the required scores for receiving an Invitation to Apply
-            (ITA) for permanent residency through the Canadian Experience Class
-            (CEC) or Federal Skilled Worker (FSW) programs are quite
-            competitive. Therefore, if you plan to study abroad and wish to
-            stay, work, and obtain permanent residency in Canada, you should
-            consider your choice of school, study programs, and provincial
-            immigration policies.
-          </p>
-          <p className="text-sm text-black/60 text-left">
-            Some provinces and territories in Canada offer Post-Graduation
-            Immigration Programs specifically for international students. These
-            programs typically require that international students have
-            completed a study program in the respective province or territory
-            and meet specific requirements. If you’re interested, consider
-            reaching out to GTR Worldwide to learn more about the specific
-            criteria for nomination
-          </p>
-        </div>
-        <div className="grid grid-cols-2 gap-4 w-full">
-          {dummypathway.map((item, index) => (
-            <HoverCard
-              className="w-[550px]"
-              key={item.id}
-              color={item.color}
-              title={item.title}
-              description={item.description}
-            />
-          ))}
-        </div>
-      </Container>
-      <Container className="flex flex-col gap-10">
-        <Glass className="flex flex-col">
-          <div className="flex flex-col gap-2 px-10">
+
+          <Title
+            subtitle="Working under Post-Graduation Work Permit (PGWP)"
+            description={[
+              `After completing your study program in Canada, apply for a
+                      Post-Graduation Work Permit (PGWP). PGWP allows you to
+                      work in Canada for a specific duration after graduation (8
+                      months to 3 years, depending on your program)`,
+              ` Accumulating work experience in Canada can enhance your
+                      chances of obtaining permanent residency.`,
+            ]}
+          />
+
+          <Title
+            subtitle="Get Permanent Residency through Popular Routes"
+            description={[`Permanent Residency through Popular Routes`]}
+          />
+        </Container>
+        <Container className="flex flex-col gap-14">
+          <div className="flex flex-col gap-4">
             <Title
-              subtitle="STUDY TO PR"
-              title={
-                <p className="text-4xl text-black/50 w-full text-left pt-3">
-                  What can we help you?
-                </p>
-              }
+              subtitle="For Post-Graduate students"
+              title={"Where is it easy to apply for permanent residency?"}
+              description={[
+                `The competition in Canada’s Express Entry system is currently very
+              high, and the required scores for receiving an Invitation to Apply
+              (ITA) for permanent residency through the Canadian Experience
+              Class (CEC) or Federal Skilled Worker (FSW) programs are quite
+              competitive. Therefore, if you plan to study abroad and wish to
+              stay, work, and obtain permanent residency in Canada, you should
+              consider your choice of school, study programs, and provincial
+              immigration policies.`,
+                `Some provinces and territories in Canada offer Post-Graduation
+              Immigration Programs specifically for international students.
+              These programs typically require that international students have
+              completed a study program in the respective province or territory
+              and meet specific requirements. If you’re interested, consider
+              reaching out to GTR Worldwide to learn more about the specific
+              criteria for nomination`,
+              ]}
             />
-            <p className="text-sm text-black/60 text-left">
-              Immigration policies can change over time, so it’s essential to
-              stay updated with us for the latest information from the
-              respective provincial or territorial immigration authorities.
-            </p>
-            <p className="text-sm text-black/60 text-left">
-              Consult GreenTech Resources Worldwide Canada experts to understand
-              specific requirements and eligibility for these pathways based on
-              your circumstances
-            </p>
           </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  relative z-10 py-2 max-w-7xl mx-auto">
+          <div className="grid grid-cols-2 gap-4 w-full">
+            {dummypathway.map((item, index) => (
+              <HoverCard
+                className=""
+                key={item.id}
+                color={item.color}
+                title={item.title}
+                description={item.description}
+              />
+            ))}
+          </div>
+        </Container>
+        <Container className="flex flex-col gap-10">
+          <Title
+            subtitle="STUDY TO PR"
+            title={"What can we help you?"}
+            description={[
+              `Immigration policies can change over time, so it’s essential to
+                stay updated with us for the latest information from the
+                respective provincial or territorial immigration authorities.`,
+              `Consult GreenTech Resources Worldwide Canada experts to
+                understand specific requirements and eligibility for these
+                pathways based on your circumstances`,
+            ]}
+          />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  relative z-10 py-2 w-full ">
             {countriesProgram.map((feature, index) => (
               <Feature key={feature.title} {...feature} index={index} />
             ))}
           </div>
-        </Glass>
-      </Container>
-      <Container>
-        <CTADefault
-          title="Take the first step towards your family&aposs Canadian dream
+        </Container>
+      </div>
+      <CTADefault
+        title="Take the first step towards your family&aposs Canadian dream
 "
-          subtitle={
-            <p className="text-xl text-white/90">
-              Book a consultation today to explore immigration options
-              <br />
-              and secure your family&aposs future in Canada.
-            </p>
-          }
-          image={"/service.jpg"}
-        />
-      </Container>
-    </div>
+        subtitle={`Book a consultation today to explore immigration options
+                and secure your family&aposs future in Canada.`}
+        image={"/service.jpg"}
+      />
+    </>
   );
 }
 const dummypathway = [

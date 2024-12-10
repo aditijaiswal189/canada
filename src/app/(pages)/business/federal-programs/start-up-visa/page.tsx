@@ -13,10 +13,11 @@ export default function StartUpVisa() {
   return (
     <Container className="flex flex-col gap-10">
       <Title
+        subtitle="Start-Up Visa Program"
         title={"Benefits of SUV Program"}
-        description={
-          "The Start-Up Visa (SUV) program in Canada offers several benefits to entrepreneurs and innovative start-ups looking to establish themselves in Canada with key benefits"
-        }
+        description={[
+          "The Start-Up Visa (SUV) program in Canada offers several benefits to entrepreneurs and innovative start-ups looking to establish themselves in Canada with key benefits",
+        ]}
       />
       <div className="flex gap-6 md:flex-row flex-col">
         <HoverCard
@@ -45,31 +46,30 @@ export default function StartUpVisa() {
         />
       </div>
 
-      <Glass className="px-8 flex flex-col gap-8">
+      <Glass className=" flex flex-col gap-8">
         <Title
+          subtitle="Family Benefits"
           title={"Benefits for your family"}
-          description={
-            "Your entire family, including your spouse and children under 22 years of age (at the time of submitting the provincial nomination application), will receive a Permanent Resident Card in Canada and enjoy most of the benefits like Canadian citizens."
-          }
+          description={[
+            "Your entire family, including your spouse and children under 22 years of age (at the time of submitting the provincial nomination application), will receive a Permanent Resident Card in Canada and enjoy most of the benefits like Canadian citizens.",
+          ]}
         />
 
-        <div className="px-6 py-4 rounded-md flex flex-col gap-4">
+        <div className="py-4 rounded-md flex flex-col gap-4">
           <Title
             subtitle="Work"
             title={
-              <p className="text-4xl text-black/50 w-full text-left pt-3">
-                While waiting for permanent residency, your family can apply to
-                come, work and study in Canada
-              </p>
+              "While waiting for permanent residency, your family can apply to come, work and study in Canada"
             }
-          />
-          <p className="text-sm text-black/60 text-left">
-            With provincial nomination, your entire family, including your
+            description={[
+              `With provincial nomination, your entire family, including your
             spouse and children under 22 years of age (at the time of submitting
             the provincial nomination application), can submit for Canada
             Permanent Resident to enjoy most of the benefits like Canadian
-            citizen
-          </p>
+            citizen`,
+            ]}
+          />
+          <p className="text-sm text-black/60 text-left"></p>
           <p className="text-sm text-black/60 text-left ">
             During the wait for permanent residency, your family can apply to
             come, work and study in Canada
@@ -104,9 +104,10 @@ export default function StartUpVisa() {
 
       <Title
         title={"Eligibility"}
-        description={
-          "Meeting the program&aposs eligibility criteria and demonstrating the potential for business success in Canada are key factors in the selection process"
-        }
+        subtitle="START-UP VISA PROGRAM"
+        description={[
+          "Meeting the program&aposs eligibility criteria and demonstrating the potential for business success in Canada are key factors in the selection process",
+        ]}
       />
       <div className="flex flex-col gap-2">
         {startUpFAQ.map((item, index) => (
@@ -119,7 +120,7 @@ export default function StartUpVisa() {
       </div>
 
       <div>
-        <FeatureSection title="SUV ROADMAP" subtitle="RoadMap">
+        <FeatureSection title="SUV ROADMAP" subtitle="RoadMap" description={[]}>
           {features.map((item, index) => (
             <div
               key={index}
@@ -145,10 +146,11 @@ export default function StartUpVisa() {
       </div>
       <div>
         <Title
+          subtitle="Designated Organization"
           title={"List of Designated Organization"}
-          description={
-            "The list is subjected to be updated without prior notification. Please contact us for consultant."
-          }
+          description={[
+            "The list is subjected to be updated without prior notification. Please contact us for consultant.",
+          ]}
         />
 
         <div className="flex flex-col gap-2">
@@ -165,9 +167,11 @@ export default function StartUpVisa() {
         <Title
           title={"What can we help you?"}
           subtitle="START-UP VISA PROGRAM"
-          description="It’s important to choose a reputable and licensed immigration agent or consultant who is knowledgeable about the Start-Up Visa business immigration programs to ensure that applicants receive accurate and up-to-date information and guidance throughout the process. "
+          description={[
+            "It’s important to choose a reputable and licensed immigration agent or consultant who is knowledgeable about the Start-Up Visa business immigration programs to ensure that applicants receive accurate and up-to-date information and guidance throughout the process. ",
+          ]}
         />
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 max-w-7xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-10 w-full ">
           {featuresBottom.map((feature, index) => (
             <Feature key={feature.title} {...feature} index={index} />
           ))}

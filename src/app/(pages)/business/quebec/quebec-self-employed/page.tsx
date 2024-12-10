@@ -1,8 +1,10 @@
+import { AccordionSection } from "@/app/revamp/revamp-components/accordion-section";
+import TreeViewList from "@/app/revamp/revamp-components/tree-view-list";
 import { Feature } from "@/components/ui/cards-set";
 import Container from "@/components/ui/container";
 import { truncateTextHeading } from "@/components/ui/cta";
 import { Button } from "@/components/ui/custom";
-import { FAQ } from "@/components/ui/faq";
+// import { FAQ } from "@/components/ui/faq";
 import { FeatureSection } from "@/components/ui/feature";
 import HoverCard from "@/components/ui/hover-card";
 import { ServicesCard } from "@/components/ui/services-card";
@@ -27,9 +29,9 @@ export default function SelfEmployed() {
         title={
           "To immigrate to Québec as a self-employed worker, you must meet the following conditions."
         }
-        description={
-          "With the Québec Entrepreneur Program, you can develop your project either alone or with up to three other people applying to this program for the same project."
-        }
+        description={[
+          "With the Québec Entrepreneur Program, you can develop your project either alone or with up to three other people applying to this program for the same project.",
+        ]}
         subtitle={"Eligibility"}
         childClass="lg:grid-cols-1"
         className="py-8"
@@ -37,7 +39,12 @@ export default function SelfEmployed() {
         <div className="flex w-full flex-col gap-4 justify-start items-start ">
           <p className="text-left">List of conditions to be honoured:.</p>
           {quebecFAQ.map((item, index) => (
-            <FAQ key={index} description={item.answer} title={item.question} />
+            <AccordionSection
+              items={quebecFAQ}
+              key={index}
+              description={item.answer}
+              title={item.title}
+            />
           ))}
         </div>
       </FeatureSection>
@@ -64,8 +71,9 @@ export default function SelfEmployed() {
           "Here are the steps for applying for permanent selection under Québec Entrepreneur Program"
         }
       />
+      <TreeViewList items={applicationStepsConfig} />
 
-      <div className="flex gap-4">
+      {/* <div className="flex gap-4">
         <HoverCard
           color="bg-sky-400"
           icon="fa6-brands:wpforms"
@@ -92,51 +100,49 @@ Each dependent child: $186"
 285, rue Notre-Dame Ouest, 4e étage Montréal (Québec) 
 H2Y 1T8 CANADA"
         />
-      </div>
+      </div> */}
 
-      <Glass className=" flex flex-col gap-10 px-10">
-        <div className="flex-1 flex flex-col gap-2 pt-8 justify-center items-center">
-          <Title
-            subtitle="Québec Entrepreneur Program"
-            title="What can we help you?    "
-            description="It’s important to choose a reputable and licensed immigration agent or consultant who is knowledgeable about the Québec immigration programs to ensure that applicants receive accurate and up-to-date information and guidance throughout the process."
-          />
+      <div className="flex-1 flex flex-col gap-2 pt-8 justify-center items-center">
+        <Title
+          subtitle="Québec Entrepreneur Program"
+          title="What can we help you?    "
+          description="It’s important to choose a reputable and licensed immigration agent or consultant who is knowledgeable about the Québec immigration programs to ensure that applicants receive accurate and up-to-date information and guidance throughout the process."
+        />
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 max-w-7xl mx-auto">
-            {features.map((feature, index) => (
-              <Feature key={feature.title} {...feature} index={index} />
-            ))}
-          </div>
-
-          <Title
-            className="justify-center items-center mt-4"
-            title={
-              <p className="text-2xl text-black/50 w-full text">
-                Take the first step towards your family&aposs Canadian dream
-              </p>
-            }
-            description={
-              <p className="text-center  text-black/50 w-[70%]">
-                For personalized assistance and expert guidance, contact
-                GreenTech Resources Worldwide Canada so our experts can help you
-                navigate the work permit application process and ensure a smooth
-                transition to working in Canada
-              </p>
-            }
-          />
-          <Button
-            className="py-3 px-6 mt-3"
-            icon={
-              <div className="flex gap-2 justify-center items-center text-xs ">
-                <Icon icon={"mdi:phone"} />
-                <span>+1855 477 9797</span>
-              </div>
-            }
-          >
-            <span className="text-sm">Book An Appointment</span>
-          </Button>
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4  relative z-10 py-2 w-full">
+          {features.map((feature, index) => (
+            <Feature key={feature.title} {...feature} index={index} />
+          ))}
         </div>
-      </Glass>
+
+        <Title
+          className="justify-center items-center mt-4"
+          title={
+            <p className="text-2xl text-black/50 w-full text">
+              Take the first step towards your family&aposs Canadian dream
+            </p>
+          }
+          description={
+            <p className="text-center  text-black/50 w-[70%]">
+              For personalized assistance and expert guidance, contact GreenTech
+              Resources Worldwide Canada so our experts can help you navigate
+              the work permit application process and ensure a smooth transition
+              to working in Canada
+            </p>
+          }
+        />
+        <Button
+          className="py-3 px-6 mt-3"
+          icon={
+            <div className="flex gap-2 justify-center items-center text-xs ">
+              <Icon icon={"mdi:phone"} />
+              <span>+1855 477 9797</span>
+            </div>
+          }
+        >
+          <span className="text-sm">Book An Appointment</span>
+        </Button>
+      </div>
     </Container>
   );
 }
@@ -144,39 +150,39 @@ H2Y 1T8 CANADA"
 const quebecFAQ = [
   {
     id: 1,
-    question: "Settle in Québec to work here",
-    answer:
+    title: "Settle in Québec to work here",
+    content:
       "You must practise your profession or business activities in Québec, alone or with others, with or without paid help.",
   },
   {
     id: 2,
-    question: "Have a minimum net worth",
-    answer:
+    title: "Have a minimum net worth",
+    content:
       "You must have a net worth of at least CDN$100,000. You can share this net worth with your spouse or common-law partner who is accompanying you to Québec. You must be able to demonstrate the legal origin and accumulation of your net worth.",
   },
   {
     id: 3,
-    question: "Make a start-up deposit",
-    answer:
+    title: "Make a start-up deposit",
+    content:
       "You will need to make a start-up deposit with a financial institution located in the area where you plan to practise your trade or profession:   ",
   },
   {
     id: 4,
-    question: "Obtain enough points in the program’s selection grid",
-    answer:
+    title: "Obtain enough points in the program’s selection grid",
+    content:
       "You are awarded points for each factor as education, age language .. and criterion on the grid. You must score at least 41 out of 85 points on the grid to meet the cut-off for factors.",
   },
   {
     id: 5,
-    question: "Obtain an attestation of learning about democratic values",
-    answer:
+    title: "Obtain an attestation of learning about democratic values",
+    content:
       "You must obtain your attestation within a maximum of 60 days after receiving this request",
   },
   {
     id: 6,
-    question:
+    title:
       "Obtain the legal right to practise if you are self-employed in a regulated profession",
-    answer:
+    content:
       "If you wish to practise a regulated profession or trade in Québec, you must obtain the legal right to practise, even if you have obtained a degree or license outside of Québec",
   },
 ];
@@ -246,5 +252,24 @@ const features = [
         className="text-6xl w-[50px]"
       />
     ),
+  },
+];
+
+const applicationStepsConfig = [
+  {
+    title: "Preparing and completing the required forms and documents",
+    description: "",
+  },
+  {
+    title: "Paying your application review fee",
+    description: `The fees are adjusted on January 1 of each year.
+
+Principal applicant: $1,176
+Wife or husband, spouse or common-law partner: $186
+Each dependent child: $186`,
+  },
+  {
+    title: "Send your complete application by mail, in one envelope",
+    description: "",
   },
 ];

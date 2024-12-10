@@ -10,6 +10,7 @@ import { ServicesCard } from "@/components/ui/services-card";
 import { truncateTextHeading } from "@/components/ui/newsCard";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import { FAQ } from "@/components/ui/FAQMap";
+import { Description } from "@/app/revamp/revamp-components/heading";
 
 export default function StudyInCanada() {
   return (
@@ -17,12 +18,8 @@ export default function StudyInCanada() {
       <Container>
         <Title
           subtitle="Study in Canada"
-          title={
-            <p className="text-xl text-black/50 w-full text-left pt-3">
-              Studying abroad is a lengthy journey that requires thorough
-              preparation. Here are some features of studying in Canada.
-            </p>
-          }
+          title={`Studying abroad is a lengthy journey that requires thorough
+              preparation. Here are some features of studying in Canada.`}
         />
         <Glass>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  relative z-10 py-2 max-w-7xl mx-auto">
@@ -35,14 +32,10 @@ export default function StudyInCanada() {
       <Container>
         <Title
           subtitle="Working While Studying:"
-          title={
-            <p className="text-4xl text-black/50 w-full text-left pt-3">
-              Working While Studying & Post-Graduation Work Permit (PGWP)
-            </p>
-          }
+          title={"Working While Studying & Post-Graduation Work Permit (PGWP)"}
         />
-        <p className="text-sm text-black/60 text-left">
-          <ul>
+        <p className="text-sm  text-left">
+          <ul className="flex flex-col gap-2">
             <li>
               On-Campus Work: As an international student, you are generally
               allowed to work on-campus without a work permit.
@@ -66,31 +59,23 @@ export default function StudyInCanada() {
       <Container>
         <Title
           subtitle="Post-Graduation Work Permit (PGWP)"
-          title={
-            <p className="text-4xl text-black/50 w-full text-left pt-3">
-              Eligibility
-            </p>
-          }
+          title={"Eligibility"}
         />
-        <p className="text-sm text-black/60 text-left">
+        <Description className="text-sm text-black text-left">
           After completing a program of study at a designated learning
           institution in Canada, you may be eligible for a Post-Graduation Work
           Permit (PGWP).
-        </p>
-        <p className="text-sm text-black/60 text-left">
+        </Description>
+        <Description className="text-sm text-black text-left">
           The length of the PGWP depends on the duration of your program and can
           be valid for up to three years.
-        </p>
+        </Description>
       </Container>
       <Container>
         <Title
           subtitle="Plan your studies in Canada"
-          title={
-            <p className="text-4xl text-black/50 w-full text-left pt-3">
-              To plan your studies in Canada, you need to prepare a series of
-              important steps
-            </p>
-          }
+          title={`To plan your studies in Canada, you need to prepare a series of
+              important steps`}
         />
         <div className="py-6 ">
           {faqStudy.map((item) => {
@@ -106,33 +91,21 @@ export default function StudyInCanada() {
         </div>
       </Container>
       <Container>
-        <div className="flex-1 flex flex-col gap-4">
-          <Title
-            subtitle="PLAN YOUR STUDY IN CANADA"
-            title={
-              <p className="text-4xl text-black/50 w-full text-left pt-3">
-                Let&aposs GreenTech Resources Worldwide Canada assist you!
-              </p>
-            }
-          />
-
-          <div className="flex flex-col justify-start gap-6">
-            <p className="text-sm text-black/60 text-left">
-              Studying abroad is a lengthy journey that requires thorough
+        <Title
+          subtitle="PLAN YOUR STUDY IN CANADA"
+          title={`Let GreenTech Resources Worldwide Canada assist you!`}
+          description={[
+            `Studying abroad is a lengthy journey that requires thorough
               preparation. GreenTech Resources Worldwide Canada can assist you
-              with the following
-            </p>
-          </div>
+              with the following`,
+          ]}
+        />
+
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  relative z-10 py-2 w-full mx-auto">
+          {features.map((feature, index) => (
+            <Feature key={feature.title} {...feature} index={index} />
+          ))}
         </div>
-      </Container>
-      <Container>
-        <Glass>
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  relative z-10 py-2 max-w-7xl mx-auto">
-            {features.map((feature, index) => (
-              <Feature key={feature.title} {...feature} index={index} />
-            ))}
-          </div>
-        </Glass>
       </Container>
     </>
   );

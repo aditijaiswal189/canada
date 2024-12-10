@@ -35,7 +35,7 @@ export default function Title({
         <div className="flex flex-col gap-3 w-full">
           {typeof title === "string" ? (
             <TitleRevamp
-              className={cn("tracking-wider w-full text-left", titleClassName)}
+              className={cn("leading-[50px] w-full text-left", titleClassName)}
             >
               {title}
             </TitleRevamp>

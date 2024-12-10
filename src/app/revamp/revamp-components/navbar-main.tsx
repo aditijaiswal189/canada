@@ -1,8 +1,6 @@
 "use client";
-import { Search, Phone, Menu } from "lucide-react";
+import { Phone } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
-import { Button } from "@/components/ui/custom";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import {
@@ -18,7 +16,6 @@ import { useState } from "react";
 import { motion } from "framer-motion";
 
 export function MainNav() {
-  const [isOpen, setIsOpen] = useState(false);
   const [hoveredPath, setHoveredPath] = useState(null);
   return (
     <div className="w-full bg-white shadow-xl  px-0">
@@ -401,5 +398,9 @@ const router = [
         element: "Student Direct Stream (SDS)",
       },
     ],
+  },
+  {
+    path: "/news",
+    element: "News",
   },
 ];

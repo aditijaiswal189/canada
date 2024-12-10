@@ -7,6 +7,7 @@ import Title from "./Title";
 import Container from "./container";
 import Glass from "@/lib/helpers";
 import Link from "next/link";
+import { CardTitle, Subtitle } from "@/app/revamp/revamp-components/heading";
 
 export default function CTA() {
   return (
@@ -257,40 +258,40 @@ export const CTADefault = ({
   image: string;
 }) => {
   return (
-    <Container>
-      <Glass
-        className="flex-col  gap-8 py-20 justify-center items-center bg-cover bg-center relative"
-        style={{ backgroundImage: `url(${image})` }}
+    <div
+      className="flex-col w-full gap-8 flex h-80 justify-center items-center bg-cover bg-center relative"
+      style={{ backgroundImage: `url(${image})` }}
+    >
+      <div className="absolute top-0 left-0 w-full h-full bg-black bg-opacity-40" />
+      <div className="flex flex-col justify-center w-[70%] mx-auto items-center gap-8 md:gap-3 relative z-10 ">
+        {typeof subtitle === "string" ? (
+          <Subtitle
+            className="text-xl text-white/90 text-center"
+            position="center"
+          >
+            {subtitle}
+          </Subtitle>
+        ) : (
+          subtitle
+        )}
+        <CardTitle className="text-4xl tracking-wider text-center text-white">
+          {title}
+        </CardTitle>
+      </div>
+      <Button
+        className="py-3 w-[190px]"
+        icon={
+          <div className="flex gap-2 text-[10px] justify-center items-center">
+            <Icon icon={"mdi:phone"} />
+            <span>+1855 477 9797</span>
+          </div>
+        }
       >
-        <div className="bg-gray-100 bg-clip-padding backdrop-filter backdrop-blur-md bg-opacity-20 rounded-2xl border-gray-100  h-full absolute top-0 left-0 w-full"></div>
-        <div className="flex flex-col gap-8 md:gap-3 relative z-10">
-          <h4 className="text-4xl tracking-wider text-center text-white">
-            {title}
-          </h4>
-          {typeof subtitle === "string" ? (
-            <p className="text-4xl text-white/90">{subtitle}</p>
-          ) : (
-            subtitle
-          )}
-        </div>
-        <Button
-          className="py-3 w-[190px]"
-          icon={
-            <div className="flex gap-2 text-[10px] justify-center items-center">
-              <Icon icon={"mdi:phone"} />
-              <span>+1855 477 9797</span>
-            </div>
-          }
-        >
-          <span className="text-[10px] relative flex gap-1 justify-start items-center">
-            <Icon
-              icon={"teenyicons:appointments-outline"}
-              className="-mt-0.5"
-            />
-            BOOK AN APPOINTMENT
-          </span>
-        </Button>
-      </Glass>
-    </Container>
+        <span className="text-[10px] relative flex gap-1 justify-start items-center">
+          <Icon icon={"teenyicons:appointments-outline"} className="-mt-0.5" />
+          BOOK AN APPOINTMENT
+        </span>
+      </Button>
+    </div>
   );
 };
