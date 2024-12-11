@@ -1,13 +1,8 @@
 "use client";
 import React from "react";
 import Container from "@/components/ui/container";
-import { CTADefault } from "@/components/ui/cta";
 import Title from "@/components/ui/Title";
-import Glass from "@/lib/helpers";
-import { CardDemo } from "@/components/ui/animated-card";
-import { Icon } from "@iconify/react/dist/iconify.js";
 import HoverCard from "@/components/ui/hover-card";
-import { color } from "framer-motion";
 import CallToAction from "@/app/revamp/revamp-components/cta";
 import TreeViewList from "@/app/revamp/revamp-components/tree-view-list";
 
@@ -27,7 +22,10 @@ export default function InDemandJobs() {
         />
         <div className="flex gap-2">
           {data.map((item, index) => (
-            <div className="flex-1 flex flex-col gap-2 border rounded-md py-2">
+            <div
+              className="flex-1 flex flex-col gap-2 border rounded-md py-2"
+              key={index}
+            >
               <div
                 key={index}
                 className="flex flex-col gap-0 w-full px-6 relative z-10"

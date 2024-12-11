@@ -1,6 +1,5 @@
 "use client";
 import Navbar from "./navbar";
-import { Button } from "./custom";
 import { Icon } from "@iconify/react/dist/iconify.js";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
