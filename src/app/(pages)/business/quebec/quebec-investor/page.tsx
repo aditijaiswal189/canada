@@ -24,9 +24,9 @@ export default function QuebecInvestor() {
       <Container className="flex flex-col gap-8">
         <FeatureSection
           title={"Eligibility"}
-          description={
-            "Quebec&aposs dynamic cities, picturesque landscapes, and strong economy make it an appealing choice for immigration."
-          }
+          description={[
+            "Quebec  dynamic cities, picturesque landscapes, and strong economy make it an appealing choice for immigration.",
+          ]}
           subtitle={"Quebec Immigrant Investor Program (QIIP)"}
           childClass="lg:grid-cols-1"
           className="py-8"
