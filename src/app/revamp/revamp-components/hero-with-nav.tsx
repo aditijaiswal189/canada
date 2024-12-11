@@ -29,7 +29,7 @@ export default function HeroWithNav() {
             />
 
             <div
-              className="z-10 text-white  text-center relative w-[70%] mx-auto leading-[60px]  text-[60px] font-bold"
+              className="text-white  text-center relative w-[70%] mx-auto leading-[60px]  text-[60px] font-bold"
               dangerouslySetInnerHTML={{ __html: text }}
             />
           </div>

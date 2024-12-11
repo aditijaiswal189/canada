@@ -31,7 +31,7 @@ export function HeroSection() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   return (
-    <section className="relative">
+    <section className="z-1">
       {/* Hero Main Content */}
       <div className="relative overflow-hidden">
         <div className="grid lg:grid-cols-2">
@@ -48,7 +48,7 @@ export function HeroSection() {
             />
 
             {/* Content */}
-            <div className="relative z-10 max-w-xl">
+            <div className="relative max-w-xl">
               <div className="inline-block bg-green-600 px-4 py-2 text-sm text-white mb-6">
                 Trusted Recruitment Agency
               </div>

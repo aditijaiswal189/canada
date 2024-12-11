@@ -18,7 +18,7 @@ import { motion } from "framer-motion";
 export function MainNav() {
   const [hoveredPath, setHoveredPath] = useState(null);
   return (
-    <div className="w-full bg-white shadow-xl  px-0">
+    <div className="w-full bg-white shadow-xl  px-0 ">
       <div className="flex items-center justify-between">
         <div className="flex gap-4">
           <Link href="/" className="flex items-start bg-green-600 px-4">
@@ -29,53 +29,51 @@ export function MainNav() {
             />
           </Link>
 
-          <nav className="hidden lg:flex items-center space-x-4">
-            <NavigationMenu>
-              <NavigationMenuList className="flex gap-2">
-                {router.map((navItem) => (
-                  <NavigationMenuItem
-                    key={navItem.path}
-                    className="relative min-w-12"
-                  >
-                    {navItem.element ? (
-                      <NavigationMenuLink
-                        className={cn(
-                          "group inline-flex h-9 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors hover:text-white focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-highlight data-[state=open]:bg-highlight hover:bg-green-600 rounded-none text-black relative group bg-transparent "
-                        )}
+          <NavigationMenu>
+            <NavigationMenuList className="flex gap-2">
+              {router.map((navItem) => (
+                <NavigationMenuItem
+                  key={navItem.path}
+                  className="relative min-w-12"
+                >
+                  {navItem.element ? (
+                    <NavigationMenuLink
+                      className={cn(
+                        "group inline-flex h-9 w-max items-center justify-center px-4 py-2 text-sm font-medium transition-colors hover:text-white focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-highlight data-[state=open]:bg-highlight hover:bg-green-600 rounded-none text-black relative group bg-transparent "
+                      )}
+                    >
+                      <Link
+                        className={cn("text-black  group-hover:text-black")}
+                        href={navItem.path}
                       >
-                        <Link
-                          className={cn("text-black  group-hover:text-black")}
-                          href={navItem.path}
-                        >
-                          {navItem.element}
-                        </Link>
-                      </NavigationMenuLink>
-                    ) : (
-                      <NavigationMenuTrigger
-                        className={cn(
-                          "bg-transparent data-[state=open]:text-white data-[state=open]:bg-green-600 rounded-none py-1 focus:bg-green-600 hover:bg-green-600 ",
-                          "text-black"
+                        {navItem.element}
+                      </Link>
+                    </NavigationMenuLink>
+                  ) : (
+                    <NavigationMenuTrigger
+                      className={cn(
+                        "bg-transparent data-[state=open]:text-white data-[state=open]:bg-green-600 rounded-none py-1 focus:bg-green-600 hover:bg-green-600 ",
+                        "text-black"
+                      )}
+                    >
+                      {navItem.path}
+                    </NavigationMenuTrigger>
+                  )}
+                  {navItem.children && (
+                    <NavigationMenuContent className="bg-green-600 overflow-visible  px-0 rounded-none border-none ">
+                      <div className="w-[200px] py-2 ">
+                        {renderSubmenus(
+                          navItem.children,
+                          hoveredPath,
+                          setHoveredPath
                         )}
-                      >
-                        {navItem.path}
-                      </NavigationMenuTrigger>
-                    )}
-                    {navItem.children && (
-                      <NavigationMenuContent className="absolute bg-green-600 overflow-visible left-0 px-0 rounded-none border-none z-[9999999999]">
-                        <div className="w-[200px] py-2 ">
-                          {renderSubmenus(
-                            navItem.children,
-                            hoveredPath,
-                            setHoveredPath
-                          )}
-                        </div>
-                      </NavigationMenuContent>
-                    )}
-                  </NavigationMenuItem>
-                ))}
-              </NavigationMenuList>
-            </NavigationMenu>
-          </nav>
+                      </div>
+                    </NavigationMenuContent>
+                  )}
+                </NavigationMenuItem>
+              ))}
+            </NavigationMenuList>
+          </NavigationMenu>
         </div>
 
         <div className="flex items-center space-x-6 h-full">
@@ -108,7 +106,7 @@ export function MainNav() {
 
 const renderSubmenus = (submenus, hoveredPath, setHoveredPath) => {
   return (
-    <ul className="z-[10000000000000000000]">
+    <ul className=" relative">
       {submenus.map((subPage) => (
         <li
           key={subPage.path}
@@ -117,7 +115,7 @@ const renderSubmenus = (submenus, hoveredPath, setHoveredPath) => {
           onMouseLeave={() => setHoveredPath(null)}
         >
           {subPage.children ? (
-            <div className="relative w-full">
+            <div className="relative w-full ">
               <div
                 className={cn(
                   "flex justify-between cursor-pointer items-center text-left text-sm px-2 w-full rounded-none py-1",
@@ -130,7 +128,7 @@ const renderSubmenus = (submenus, hoveredPath, setHoveredPath) => {
                 <Icon icon={"zondicons:cheveron-right"} />
               </div>
               <div
-                className={`absolute top-0 left-[188px] w-[300px] bg-green-600 overflow-visible text-left py-0.5 flex flex-col z-10 
+                className={`absolute top-0 left-[188px] w-[300px] bg-green-600 overflow-visible text-left py-0.5 flex flex-col 
                   transition-all duration-300 transform ease-out ${
                     hoveredPath === subPage.path
                       ? "opacity-100 translate-x-0"
