@@ -3,7 +3,6 @@ import ContentBox from "@/app/revamp/revamp-components/content-box";
 import Container from "@/components/ui/container";
 import { FeatureSection, FeatureSection2 } from "@/components/ui/feature";
 import { features } from "@/components/ui/featuresMap";
-import { truncateTextHeading } from "@/components/ui/newsCard";
 import { Icon } from "@iconify/react/dist/iconify.js";
 
 export default function QuebecInvestor() {
