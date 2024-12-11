@@ -99,7 +99,9 @@ export function HeroSection() {
       <PatternBackground>
         <div className="container mx-auto px-4">
           <div className="text-center mb-12 flex flex-col gap-3">
-            <Subtitle position="center">WHAT ARE YOU LOOKING FOR?</Subtitle>
+            <Subtitle position="center" className="text-center">
+              WHAT ARE YOU LOOKING FOR?
+            </Subtitle>
             <Title>Comprehensive solutions for all your needs!</Title>
           </div>
 
