@@ -28,7 +28,7 @@ export function Subtitle({
         )}
       ></div>
       <h6
-        className={cn("mt-4 text-green-600  font-semibold text-xs", className)}
+        className={cn("mt-4 text-green-600  font-semibold text-sm", className)}
       >
         {children}
       </h6>
